@@ -1,7 +1,7 @@
 body {
-  font: 12 "Helvetica Neue",Arial,sans-serif;
+  font: 12px "Helvetica Neue",Arial,sans-serif;
   line-height: 18px;
-  color: #333;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,7 +24,6 @@ em {
   font-style: italic;
 }
 
-
 quote {
   font-style: italic;
 }
@@ -32,8 +31,6 @@ quote {
 strong, bold {
   font-weight: bold;
 }
-
-
 
 /* ----- / Headings ----- */
 h1, h2, h3, h4, h5 {
@@ -83,6 +80,18 @@ a:hover,
 a:focus,
 a:active {
   color: #ffffff;
+}
+
+li a,
+li a.active {
+    color: #fff;
+}
+
+/*--- main-menu ---*/
+
+#main-menu li a {
+  font-family: "TitilliumText22LRegular", Arial, sans-serif;
+  text-decoration: none;
 }
 
 .node .content a {

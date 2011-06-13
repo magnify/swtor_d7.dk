@@ -7,3 +7,49 @@ body {
   background: url('../images/background.jpg') no-repeat top center;
   min-height: 100%;
 }
+
+#header {
+  position: relative;
+  min-height: 188px;
+}
+
+/*--- Logo ---*/
+
+#logo {
+  overflow: auto;
+  position: absolute;
+  top: 25px;
+}
+
+/*--- Main menu ---*/
+
+#main-menu {
+  background-color: #050505;
+  bottom: 0;
+  overflow: auto;
+  position: absolute;
+}
+
+#main-menu li.first {
+  -webkit-border-radius: 8px 0 0 8px;
+  -moz-border-radius: 8px 0 0 8px;
+  border-radius: 4px 0 0 4px;
+}
+
+#main-menu li {
+  border-right: 1px solid #2d2d2e;
+  border-top: 1px solid #1f1f20;
+  float: left;
+}
+
+#main-menu li.active {
+  background-color: #2a2a2a;
+}
+
+#main-menu li:hover {
+  background-color: #1e1e1e;
+}
+#main-menu li a {
+  display: block;
+  padding: 8px 30px;
+}

@@ -89,7 +89,7 @@
   <?php print render($page['header']); ?>
 
   <?php if ($main_menu): ?>
-    <div id="main-menu" class="navigation">
+    <div id="main-menu" class="navigation container-12">
       <?php print theme('links__system_main_menu', array(
         'links' => $main_menu,
         'attributes' => array(

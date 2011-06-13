@@ -8,6 +8,7 @@ stylesheets[all][] = styles/swtor-reset-min.css
 stylesheets[all][] = styles/swtor-grid.css
 stylesheets[all][] = styles/swtor-styles.css
 stylesheets[all][] = styles/swtor-typography.css
+stylesheets[screen][] = font-kits/titillium/titillium.css
 
 regions[header] = Header
 regions[page_top] = Page top
