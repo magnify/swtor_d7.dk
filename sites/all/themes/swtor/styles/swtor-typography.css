@@ -1,0 +1,106 @@
+body {
+  font: 12 "Helvetica Neue",Arial,sans-serif;
+  line-height: 18px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 0.6em;
+}
+
+.node ul, 
+.node ol {
+  margin-bottom: 0.5em;
+  margin-left: 20px;
+}
+
+.node ul>li,
+.node ol>li {
+  margin-bottom: 0.2em;
+}
+
+em {
+  font-style: italic;
+}
+
+
+quote {
+  font-style: italic;
+}
+
+strong, bold {
+  font-weight: bold;
+}
+
+
+
+/* ----- / Headings ----- */
+h1, h2, h3, h4, h5 {
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 0 0 15px;
+  color: #222;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  line-height: 20px;
+  margin: 1.5em 0 0.2em;
+  font-weight: bold;
+  color: #222;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 1em 0 0.2em;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ----- / Links ----- */
+a,
+a:link {
+  color: #ffba00;
+}
+
+a:visited {
+  color: #ecc459;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #ffffff;
+}
+
+.node .content a {
+  border-bottom: 1px dotted #ffba00;
+  margin-bottom: -1px;
+  text-decoration: none;
+}
+
+.node .content a:link {
+    border-bottom: 1px dotted #ffba00;
+}
+
+.node .content a:visited {
+  border-bottom: 1px dotted #ecc459;
+}
+
+.node .content a:hover,
+.node .content a:active {
+  border: none;
+  margin-bottom: 0;
+}

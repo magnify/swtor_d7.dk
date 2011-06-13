@@ -1,0 +1,9 @@
+html {
+  background: #191919 url('../images/repeat-bg.png') repeat-x top center;
+  height: 100%; /* Important for 100% body height*/
+}
+
+body {
+  background: url('../images/background.jpg') no-repeat top center;
+  min-height: 100%;
+}
