@@ -9,6 +9,8 @@ stylesheets[all][] = styles/swtor-grid.css
 stylesheets[all][] = styles/swtor-styles.css
 stylesheets[all][] = styles/swtor-typography.css
 stylesheets[screen][] = font-kits/titillium/titillium.css
+stylesheets[all][] = styles/nice_menus.css
+stylesheets[all][] = styles/nice_menus_default.css
 
 regions[header] = Header
 regions[page_top] = Page top

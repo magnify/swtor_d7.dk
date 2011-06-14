@@ -89,7 +89,7 @@ li a.active {
 
 /*--- main-menu ---*/
 
-#main-menu li a {
+.nice-menu li a {
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
   text-decoration: none;
 }

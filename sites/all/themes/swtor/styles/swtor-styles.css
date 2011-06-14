@@ -21,35 +21,63 @@ body {
   top: 25px;
 }
 
-/*--- Main menu ---*/
+/*--- Nice menus ---*/
 
-#main-menu {
-  background-color: #050505;
-  bottom: 0;
-  overflow: auto;
-  position: absolute;
+#header .block-nice-menus {
+  position: inherit;
 }
 
-#main-menu li.first {
+/*--- Main menu ---*/
+
+#header .nice-menu li a {
+  display: block;
+  padding: 8px 30px;
+}
+
+#header .nice-menu {
+  background-color: #050505;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#header .nice-menu li.first a {
   -webkit-border-radius: 8px 0 0 8px;
   -moz-border-radius: 8px 0 0 8px;
   border-radius: 4px 0 0 4px;
 }
 
-#main-menu li {
+#header .nice-menu li a.active,
+#header .nice-menu li a.active:hover {
+  background-color: #2a2a2a;
+}
+
+#header .nice-menu li a:hover {
+  background-color: #1e1e1e;
+}
+
+#header .nice-menu li {
   border-right: 1px solid #2d2d2e;
   border-top: 1px solid #1f1f20;
   float: left;
 }
 
-#main-menu li.active {
-  background-color: #2a2a2a;
+#header .nice-menu ul {
+  position: absolute;
 }
 
-#main-menu li:hover {
-  background-color: #1e1e1e;
+#header .nice-menu ul li {
+  border-right: 0;
+  border-top: 1px solid #1f1f20;
+  min-width: 140px;
 }
-#main-menu li a {
-  display: block;
-  padding: 8px 30px;
+
+#header .nice-menu ul li.first a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius:0;
+}
+
+#header .nice-menu ul li a {
+  background-color: #000;
 }
