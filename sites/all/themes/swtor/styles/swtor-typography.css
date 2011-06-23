@@ -87,7 +87,20 @@ li a.active {
     color: #fff;
 }
 
-/*--- main-menu ---*/
+/*--- Item list ---*/
+
+.item-list ul li a,
+.item-list ul li a:link {
+  color: #9a9a9a;
+  font-size: 90%;
+  text-decoration: none;
+}
+
+.item-list ul li a:hover {
+  color: #ffba00;
+}
+
+/*--- Main-menu ---*/
 
 .nice-menu li a {
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
@@ -112,4 +125,12 @@ li a.active {
 .node .content a:active {
   border: none;
   margin-bottom: 0;
+}
+
+/*--- Sidebar second ---*/
+
+#sidebar-second h2 {
+  color: #aaa;
+  font-family: "TitilliumText22LRegular", Arial, sans-serif;
+  font-size: 140%;
 }

@@ -81,3 +81,42 @@ body {
 #header .nice-menu ul li a {
   background-color: #000;
 }
+
+/*--- Misc stuff ---*/
+
+.more-link {
+  margin: 5px 0 10px;
+}
+
+/*--- Item list ---*/
+
+.item-list ul li {
+  background: url('../images/common-arrow.png') no-repeat 7px 7px;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+/*--- Main ---*/
+
+#main {
+  margin: 20px 0 0;
+}
+
+/*--- Sidebar second ---*/
+
+#sidebar-second {
+  background: url('../images/common-pattern-vert.png') repeat-y;
+}
+
+#sidebar-second h2 {
+  background: url('../images/common-pattern.png');
+  padding: 6px 10px;
+}
+
+#sidebar-second .region {
+  padding: 0 0 0 20px;
+}
+
+#sidebar-second .content {
+  margin: 10px 0 0 7px;
+}

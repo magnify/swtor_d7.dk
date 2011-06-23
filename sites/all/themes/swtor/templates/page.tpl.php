@@ -105,12 +105,12 @@
     <?php endif; ?>
 
     <?php if ($page['sidebar_first']): ?>
-      <div id="sidebar-first" class="column sidebar"><div class="section">
+      <div id="sidebar-first" class="column sidebar grid-4"><div class="section">
         <?php print render($page['sidebar_first']); ?>
       </div></div> <!-- /.section, /#sidebar-first -->
     <?php endif; ?>
 
-    <div id="content" class="column"><div class="section">
+    <div id="content" class="column grid-8"><div class="section">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -136,7 +136,7 @@
     </div></div> <!-- /.section, /#content -->
 
     <?php if ($page['sidebar_second']): ?>
-      <div id="sidebar-second" class="column sidebar"><div class="section">
+      <div id="sidebar-second" class="column sidebar grid-4"><div class="section">
         <?php print render($page['sidebar_second']); ?>
       </div></div> <!-- /.section, /#sidebar-second -->
     <?php endif; ?>
