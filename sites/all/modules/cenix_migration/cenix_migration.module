@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * This is the file description for Cenix Migration module.
+ *
+ * In this more verbose, multi-line description, you can specify what this
+ * file does exactly. Make sure to wrap your documentation in column 78 so
+ * that the file can be displayed nicely in default-sized consoles.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function cenix_migration_menu() {
+  $items = array();
+
+  // Type '$item ⇥' to create a new menu item.
+
+  return $items;
+}
+
+function cenix_migration_ctools_plugin_api($module = '', $api = '') {
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    // The current API version is 1.
+    return array("version" => 1);
+  }
+}
+?>
