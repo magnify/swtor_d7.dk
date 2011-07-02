@@ -100,6 +100,32 @@ li a.active {
   color: #ffba00;
 }
 
+/*--- User login ---*/
+
+#block-user-login label {
+  font-size: 90%;
+  font-weight: normal;
+}
+
+#block-user-login label a,
+#block-user-login label a:hover {
+  text-decoration: none;
+}
+
+#block-user-login .new-user {
+  font-size: 125%;
+  font-weight: bold;
+}
+
+#block-user-login .new-user a {
+  text-decoration: none;
+}
+
+#block-user-login .new-user a:hover {
+  color: #ffba00;
+  text-decoration: underline;
+}
+
 /*--- Main-menu ---*/
 
 .nice-menu li a {

@@ -1,14 +1,15 @@
 html {
-  background: #191919 url('../images/repeat-bg.png') repeat-x top center;
+  background: #191919 url('../images/repeat-bg.png') repeat-x center top;
   height: 100%; /* Important for 100% body height*/
 }
 
 body {
-  background: url('../images/background.jpg') no-repeat top center;
+  background: url('../images/background.jpg') no-repeat center top;
   min-height: 100%;
 }
 
 #header {
+  background: url('../images/header-bg.jpg') no-repeat center top;
   position: relative;
   min-height: 188px;
 }
@@ -19,6 +20,56 @@ body {
   overflow: auto;
   position: absolute;
   top: 25px;
+}
+
+/*--- User login ---*/
+
+#block-user-login {
+  position: absolute;
+  right: 10px;
+  top: 44px;
+}
+
+#block-user-login #user-login-form {
+  width: 411px;
+}
+
+#block-user-login label {
+  margin: 0 0 2px;
+  padding: 0 0 0 5px;
+}
+
+#block-user-login .form-item-name,
+#block-user-login .form-type-password {
+  float: left;
+}
+
+#block-user-login .form-item-name {
+  margin: 0 5px 0 0;
+}
+
+#block-user-login .form-type-password {
+  margin: 0;
+}
+
+#block-user-login input[type=text],
+#block-user-login input[type=password] {
+  width: 163px;
+}
+
+#block-user-login #edit-actions {
+  float: right;
+  margin: 20px 0 0;
+}
+
+#block-user-login .new-user {
+  clear: both;
+  padding: 15px 0 0;
+  text-align: right;
+}
+
+#block-user-login .new-user span {
+  margin: 0 10px 0 0;
 }
 
 /*--- Nice menus ---*/
@@ -119,4 +170,66 @@ body {
 
 #sidebar-second .content {
   margin: 10px 0 0 7px;
+}
+
+/*--- Forms ---*/
+
+label {
+  color: #9d9d9d;
+}
+
+textarea,
+input[type=text],
+input[type=password] {
+  background-color: #1d1e1d;
+  border: 1px solid #404240;
+  -moz-border-radius: 4px;
+  -web-kit-border-radius: 4px;
+  border-radius: 4px;
+  color: #9d9d9d;
+  padding: 4px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  float: left;
+  margin: 2px 3px 0 0;
+}
+
+input[type=submit] {
+  background-color: #444444;
+  border: 1px solid #787878;
+  -moz-border-radius: 4px;
+  -web-kit-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 3px 7px;
+}
+
+/*--- Social icons ---*/
+
+.header-social-icons {
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.header-social-icons a {
+  background: url('../images/social-icons.png') no-repeat;
+  display: block;
+  float: left;
+  height: 23px;
+  margin: 0 10px 0 0;
+  overflow: hidden;
+  text-indent: -10000px;
+  width: 22px;
+}
+
+.header-social-icons .header-social-icons-twitter {
+  background-position: 0 -23px;
+}
+
+.header-social-icons .header-social-icons-rss {
+  background-position: 0 -45px;
 }
