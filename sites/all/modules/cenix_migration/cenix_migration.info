@@ -1,0 +1,9 @@
+name = Cenix Migration
+description = "SWTOR.DK migration preparation scripts"
+core = 7.x
+package = SWTOR
+
+
+; Loadable code files
+files[] = cenix_migration.module
+files[] = cenix_migration.install
