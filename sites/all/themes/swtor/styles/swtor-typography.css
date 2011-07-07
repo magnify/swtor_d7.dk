@@ -129,8 +129,13 @@ li a.active {
 /*--- Main-menu ---*/
 
 .nice-menu li a {
+  color: #fff;
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
   text-decoration: none;
+}
+
+.nice-menu li a:hover {
+  color: #ffba00;
 }
 
 .node .content a {
@@ -140,7 +145,7 @@ li a.active {
 }
 
 .node .content a:link {
-    border-bottom: 1px dotted #ffba00;
+  border-bottom: 1px dotted #ffba00;
 }
 
 .node .content a:visited {
