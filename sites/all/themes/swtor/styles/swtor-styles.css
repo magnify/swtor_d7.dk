@@ -1,15 +1,16 @@
 html {
-  background: #191919 url('../images/repeat-bg.png') repeat-x center top;
+  background: #191919 url('../images/repeat-bg.png') repeat-x fixed center top;
   height: 100%; /* Important for 100% body height*/
 }
 
 body {
-  background: url('../images/background.jpg') no-repeat center top;
+  background: url('../images/background.jpg') no-repeat fixed center top;
+  background
   min-height: 100%;
 }
 
 #header {
-  background: url('../images/header-bg.jpg') no-repeat center top;
+  background: url('../images/menu-line.jpg') no-repeat center 152px;
   position: relative;
   min-height: 188px;
 }
@@ -114,7 +115,9 @@ body {
 }
 
 #header .nice-menu ul {
+  margin: 1px 0 0;
   position: absolute;
+  z-index: 99;
 }
 
 #header .nice-menu ul li {
@@ -181,7 +184,7 @@ body {
 }
 
 #sidebar-second .block {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 
 #sidebar-second .content {
