@@ -218,7 +218,7 @@ input[type=radio] {
 }
 
 input[type=submit] {
-  background-color: #444444;
+  background-color: #444;
   border: 1px solid #787878;
   -moz-border-radius: 4px;
   -web-kit-border-radius: 4px;
@@ -226,6 +226,11 @@ input[type=submit] {
   color: #fff;
   cursor: pointer;
   padding: 3px 7px;
+}
+
+input[type=submit]:hover {
+  background-color: #333;
+  border: 1px solid #4b4b4b;
 }
 
 /*--- Social icons ---*/

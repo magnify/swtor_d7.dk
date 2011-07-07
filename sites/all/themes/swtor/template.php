@@ -24,7 +24,7 @@ function swtor_form_user_login_block_alter(&$form) {
   // Render password
   $form['pass'] = array(
     '#type' => 'password',
-    '#title' => t('Password') . ' (<a href="/user/password" title="' . t('Forgot it?') .'">' . t('Forgot it?') . '</a>)',
+    '#title' => t('Password') . ' (<a href="/user/password" title="' . t('Forgot it?') .'" tabindex="3">' . t('Forgot it?') . '</a>)',
     '#maxlength' => 60,
     '#size' => 15,
     '#required' => 1,
