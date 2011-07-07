@@ -165,3 +165,17 @@ li a.active {
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
   font-size: 140%;
 }
+
+/*--- Pager ---*/
+
+.item-list .pager {
+  color: #fff;
+}
+
+.item-list .pager li.pager-current {
+  font-weight: normal;
+}
+
+.item-list .pager a {
+  color: #ffba00;
+}
