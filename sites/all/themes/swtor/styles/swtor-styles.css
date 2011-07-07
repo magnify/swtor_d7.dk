@@ -314,8 +314,21 @@ input[type=submit]:hover {
 }
 
 /*--- Slideshow ---*/
-.view-slideshow .views-slideshow-pager-field-item {
+
+.view-slideshow {
+  position: relative;
+}
+
+.view-slideshow .views-slideshow-pager-fields-render {
+  bottom: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.view-slideshow .views-slideshow-pager-field-item a {
   background-color: #fff;
+  display: block;
+  float: left;
   height: 10px;
   overflow: hidden;
   text-indent: -10000px;
