@@ -312,3 +312,12 @@ input[type=submit]:hover {
 .item-list .pager a:hover {
   background-color: #333;
 }
+
+/*--- Slideshow ---*/
+.view-slideshow .views_slideshow_pager_field {
+  background-color: #fff;
+  height: 10px;
+  overflow: hidden;
+  text-indent: -10000px;
+  width: 10px;
+}
