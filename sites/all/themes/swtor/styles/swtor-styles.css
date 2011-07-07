@@ -139,6 +139,18 @@ body {
   margin: 5px 0 10px;
 }
 
+.more-link a {
+  background: url('../images/common-arrow.png') no-repeat 7px 5px;
+  font-size: 105%;
+  padding: 0 0 0 15px;
+  text-decoration: none;
+}
+
+.more-link a:hover {
+  text-decoration: underline;
+}
+
+
 /*--- Item list ---*/
 
 .item-list ul li {
@@ -168,9 +180,15 @@ body {
   padding: 0 0 0 20px;
 }
 
+#sidebar-second .block {
+  margin: 0 0 10px;
+}
+
 #sidebar-second .content {
   margin: 10px 0 0 7px;
 }
+
+
 
 /*--- Forms ---*/
 
