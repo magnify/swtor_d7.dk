@@ -314,7 +314,7 @@ input[type=submit]:hover {
 }
 
 /*--- Slideshow ---*/
-.view-slideshow .views_slideshow_pager_field {
+.view-slideshow .views-slideshow-pager-field-item {
   background-color: #fff;
   height: 10px;
   overflow: hidden;
