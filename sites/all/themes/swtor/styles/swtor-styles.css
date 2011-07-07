@@ -83,7 +83,7 @@ body {
 
 #header .nice-menu li a {
   display: block;
-  padding: 8px 30px;
+  padding: 8px 25px;
 }
 
 #header .nice-menu {
@@ -104,7 +104,8 @@ body {
   background-color: #2a2a2a;
 }
 
-#header .nice-menu li a:hover {
+#header .nice-menu li a:hover,
+#header .nice-menu li.menuparent a:hover {
   background-color: #1e1e1e;
 }
 
@@ -114,6 +115,12 @@ body {
   float: left;
 }
 
+#header .nice-menu li.menuparent a {
+  background: url('../images/menu-arrow-down.png') no-repeat center right;
+  padding: 8px 30px;
+}
+
+/*--- Main menu second level ---*/
 #header .nice-menu ul {
   margin: 1px 0 0;
   position: absolute;
@@ -121,9 +128,14 @@ body {
 }
 
 #header .nice-menu ul li {
+  background-color: #050505;
   border-right: 0;
   border-top: 1px solid #1f1f20;
   min-width: 140px;
+}
+
+#header .nice-menu ul li:hover {
+  background-color: #1e1e1e;
 }
 
 #header .nice-menu ul li.first a {
@@ -132,8 +144,9 @@ body {
   border-radius:0;
 }
 
-#header .nice-menu ul li a {
-  background-color: #000;
+#header .nice-menu ul li a,
+#header .nice-menu li.menuparent ul li a {
+  background: #000;
 }
 
 /*--- Misc stuff ---*/
@@ -218,7 +231,7 @@ input[type=radio] {
 }
 
 input[type=submit] {
-  background-color: #444444;
+  background-color: #444;
   border: 1px solid #787878;
   -moz-border-radius: 4px;
   -web-kit-border-radius: 4px;
@@ -226,6 +239,11 @@ input[type=submit] {
   color: #fff;
   cursor: pointer;
   padding: 3px 7px;
+}
+
+input[type=submit]:hover {
+  background-color: #333;
+  border: 1px solid #4b4b4b;
 }
 
 /*--- Social icons ---*/
