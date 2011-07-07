@@ -169,7 +169,7 @@ body {
 
 /*--- Item list ---*/
 
-.item-list ul li {
+.item-list ul:not(.pager) li {
   background: url('../images/common-arrow.png') no-repeat 7px 7px;
   margin: 0;
   padding: 0 0 0 15px;
@@ -271,4 +271,44 @@ input[type=submit]:hover {
 
 .header-social-icons .header-social-icons-rss {
   background-position: 0 -45px;
+}
+
+/*--- Pager ---*/
+
+.item-list .pager {
+  display: block;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.item-list .pager li {
+  background-color: #1d1e1d;
+  border: 1px solid #404240;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 0 0 0 5px;
+}
+
+.item-list .pager li.pager-current {
+  background-color: #333;
+  margin: -2px 0 0;
+  padding: 2px 9px;
+}
+
+.item-list .pager li.pager-ellipsis {
+  background: none;
+  border: 0;
+  margin: 0 7px;
+}
+.item-list .pager a {
+  padding: 3px 7px;
+  text-decoration: none;
+}
+
+.item-list .pager a:hover {
+  background-color: #333;
 }
