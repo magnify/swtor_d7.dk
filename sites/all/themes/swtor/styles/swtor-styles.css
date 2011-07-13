@@ -201,6 +201,7 @@ body {
 }
 
 #sidebar-second .content {
+  overflow: hidden;
   margin: 10px 0 0 7px;
 }
 
