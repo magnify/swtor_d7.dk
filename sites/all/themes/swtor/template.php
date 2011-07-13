@@ -7,6 +7,8 @@ function swtor_form_user_login_block_alter(&$form) {
   unset($form['pass']);
   unset($form['links']);
   unset($form['actions']['submit']);
+  unset($form['openid_links']);
+
 
   // Set a weight for form actions so other elements can be placed
   // beneath them.
