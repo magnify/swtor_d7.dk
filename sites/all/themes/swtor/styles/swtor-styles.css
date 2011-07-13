@@ -316,13 +316,21 @@ input[type=submit]:hover {
 /*--- Slideshow ---*/
 
 .view-slideshow {
+  border: 3px solid #fff;
   position: relative;
+  margin: 0 0 20px;
+  min-height: 200px;
 }
 
 .view-slideshow .views-slideshow-pager-fields-render {
   bottom: 10px;
   position: absolute;
   right: 0;
+}
+
+.view-slideshow .views-slideshow-pager-field-item {
+  display: block;
+  float: left;
 }
 
 .view-slideshow .views-slideshow-pager-field-item a {
@@ -333,4 +341,8 @@ input[type=submit]:hover {
   overflow: hidden;
   text-indent: -10000px;
   width: 10px;
+}
+
+.view-slideshow .views-slideshow-pager-field-item.views_slideshow_active_pager_field_item a {
+  background-color: #ffba00;
 }
