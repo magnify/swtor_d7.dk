@@ -1,5 +1,10 @@
 <?php
 
+// Auto-rebuild the theme registry during theme development.
+if (theme_get_setting('swtor_rebuild_registry')) {
+  system_rebuild_theme_data();
+}
+
 function swtor_form_user_login_block_alter(&$form) {
 
   // Unset elements
