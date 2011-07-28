@@ -160,7 +160,7 @@ li a.active {
 
 /*--- Sidebar second ---*/
 
-#sidebar-second h2 {
+.sidebar-second h2 {
   color: #aaa;
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
   font-size: 140%;
