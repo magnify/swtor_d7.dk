@@ -14,7 +14,7 @@
     </div>
 </div>
 <div class="center-wrapper panel-wrapper">
-    <div class="center-left grid-8">
+    <div class="center-left">
       <?php print $content['center_left']; ?>
     </div>
     <div class="center-right sidebar-second grid-4">
