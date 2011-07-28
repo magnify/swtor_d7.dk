@@ -181,6 +181,17 @@ body {
   margin: 20px 0 0;
 }
 
+/*--- Content ---*/
+
+#content {
+  background-color: #131313;
+  -moz-border-radius: 12px 12px 0 0;
+  -webkit-border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 0 0;
+  margin: 0 0 20px;
+  padding: 10px 0 20px;
+}
+
 /*--- Sidebar second ---*/
 
 .sidebar-second {
@@ -210,6 +221,30 @@ body {
 .panel-wrapper {
   background: url('../images/common-pattern-vert.png') repeat-y 650px 0;
   overflow: hidden;
+  margin: 0 0 20px;
+}
+
+/*--- Panels frontpage ---*/
+
+.center-wrapper {
+  background: #0b0b0b;
+  padding: 10px 0 0;
+}
+
+.center-wrapper .center-right.sidebar-second {
+  background: none;
+}
+
+.center-wrapper .center-right .content {
+  margin: 0;
+}
+
+.center-wrapper .center-right .region {
+  padding: 0;
+}
+
+.bottom-wrapper {
+  margin: 0;
 }
 
 /*--- Forms ---*/
