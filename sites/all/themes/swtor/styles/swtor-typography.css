@@ -34,16 +34,17 @@ strong, bold {
 
 /* ----- / Headings ----- */
 h1, h2, h3, h4, h5 {
+  font-family: "TitilliumText22LRegular", Arial, sans-serif;
   margin: 0 0 10px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   font-weight: bold;
   line-height: 30px;
   margin: 0 0 15px;
-  color: #222;
+  color: #aaa;
 }
 
 h2 {
@@ -67,6 +68,7 @@ h3 {
 }
 
 /* ----- / Links ----- */
+
 a,
 a:link {
   color: #ffba00;
@@ -164,6 +166,31 @@ li a.active {
   color: #aaa;
   font-family: "TitilliumText22LRegular", Arial, sans-serif;
   font-size: 140%;
+}
+
+/*--- Articles ---*/
+
+#content .content .articles .article h2 {
+  font-size: 30px;
+  margin: 5px 0 15px;
+}
+
+#content .content .articles .article h2 a,
+#content .content .articles .article h2 a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#content .content .articles .article h2 a:visited,
+#content .content .articles .article h2 a:hover,
+#content .content .articles .article h2 a:focus,
+#content .content .articles .article h2 a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#content .content .articles .article .tags a {
+  text-decoration: underline;
 }
 
 /*--- Pager ---*/

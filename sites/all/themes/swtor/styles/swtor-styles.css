@@ -184,12 +184,17 @@ body {
 /*--- Content ---*/
 
 #content {
-  background-color: #131313;
+  background-color: rgba(0, 0, 0, .75);
   -moz-border-radius: 12px 12px 0 0;
   -webkit-border-radius: 12px 12px 0 0;
   border-radius: 12px 12px 0 0;
   margin: 0 0 20px;
   padding: 10px 0 20px;
+}
+
+#content .content h1 {
+  background: url('../images/common-pattern.png');
+  padding: 6px 10px;
 }
 
 /*--- Sidebar second ---*/
@@ -386,4 +391,60 @@ input[type=submit]:hover {
 
 .view-slideshow .views-slideshow-pager-field-item.views_slideshow_active_pager_field_item a {
   background-color: #ffba00;
+}
+
+/*--- Articles ---*/
+
+#content .content .articles .article {
+  background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;
+  clear: both;
+  margin: 0 0 25px;
+  overflow: hidden;
+  padding: 0 0 37px;
+}
+
+#content .content .articles .views-row-last.article {
+  background: none;
+  margin: 0;
+}
+
+#content .content .articles .article .image a {
+  border: 3px solid #343434;
+  float: right;
+  overflow: hidden;
+}
+
+#content .content .articles .article .image img {
+  border: 1px solid #564c4a;
+  float: right;
+}
+
+/* ----- / Tabs ----- */
+
+.tabs {
+  padding: 0 0 0 10px;
+}
+
+ul.tabs.primary {
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 1px 0 0;
+}
+
+ul.primary li a {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+}
+
+ul.primary li.active a {
+  background: rgba(255,255,255,.75);
+  border: 0;
+  padding: 5px 10px 6px;
+}
+
+ul.tabs.secondary {
+  background: rgba(255,255,255,.75);
+  margin: 0;
 }
