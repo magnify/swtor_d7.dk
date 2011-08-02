@@ -190,7 +190,12 @@ li a.active {
 }
 
 #content .content .articles .article .tags a {
-  text-decoration: underline;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#content .content .articles .article .date {
+  color: #8b8b8b;
 }
 
 /*--- Pager ---*/

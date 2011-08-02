@@ -184,7 +184,7 @@ body {
 /*--- Content ---*/
 
 #content {
-  background-color: rgba(0, 0, 0, .75);
+  background: rgba(0, 0, 0, .5);
   -moz-border-radius: 12px 12px 0 0;
   -webkit-border-radius: 12px 12px 0 0;
   border-radius: 12px 12px 0 0;
@@ -417,6 +417,15 @@ input[type=submit]:hover {
 #content .content .articles .article .image img {
   border: 1px solid #564c4a;
   float: right;
+}
+
+#content .content .articles .article .title {
+  line-height: 100%;
+}
+
+#content .content .articles .article .teaser {
+  overflow: hidden;
+  margin: 0 10px 0 0;
 }
 
 /* ----- / Tabs ----- */
