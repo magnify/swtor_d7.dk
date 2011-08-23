@@ -81,7 +81,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: #ffffff;
+  color: #fff;
 }
 
 li a,
@@ -209,5 +209,4 @@ li a.active {
 }
 
 .item-list .pager a {
-  color: #ffba00;
 }
