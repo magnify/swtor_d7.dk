@@ -457,3 +457,34 @@ ul.tabs.secondary {
   background: rgba(255,255,255,.75);
   margin: 0;
 }
+
+/* !----- / Rotating banner ----- */
+
+.rotating-banner {
+  margin: 0 0 20px;
+}
+  
+.rotating-banner .layout-wrapper {
+  background: rgba(0,0,0,.75);  
+  bottom: 0;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;
+  top: auto;
+  width: 100%;
+}
+
+.rotating-banner .layout-wrapper div {
+  margin: 0 0 0 10px;
+}
+
+.rotating-banner .controls.buttons a.activeSlide {
+  background: #fff;
+}
+
+.rotating-banner .controls {
+  bottom: 26px;
+  position: absolute;
+  right: 10px;
+  z-index: 99;
+}
