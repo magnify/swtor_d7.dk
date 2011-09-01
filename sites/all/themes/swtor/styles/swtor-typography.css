@@ -173,6 +173,10 @@ li a.active {
 
 /*--- Articles ---*/
 
+#content .content .articles .article {
+  color: #8b8b8b;
+}
+
 #content .content .articles .article h2 {
   font-size: 30px;
   margin: 5px 0 15px;

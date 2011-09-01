@@ -428,6 +428,11 @@ input[type=submit]:hover {
   padding: 0 10px 0 0;
 }
 
+#content .content .articles .article .comments,
+#content .content .articles .article .author {
+  margin: 10px 0 0;
+}
+
 /* !----- / Rotating banner ----- */
 
 .rotating-banner {
@@ -451,6 +456,11 @@ input[type=submit]:hover {
 /*  Make sure the wrapper is a fixed height so we can position the text at the bottom*/
 .rotating-banner .rb-slide {
   height: 250px;
+}
+
+.rotating-banner .rb-slide .rb-textbox-type-header {
+  font-size: 225%;
+  margin: 0 0 10px;
 }
 
 .rotating-banner .controls.buttons a {
