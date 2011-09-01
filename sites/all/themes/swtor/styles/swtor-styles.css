@@ -450,7 +450,6 @@ input[type=submit]:hover {
 }
 
 .rotating-banner .layout-wrapper div {
-  margin: 0 0 0 10px;
 }
 
 /*  Make sure the wrapper is a fixed height so we can position the text at the bottom*/
@@ -458,9 +457,21 @@ input[type=submit]:hover {
   height: 250px;
 }
 
+.rotating-banner .rb-slide .rb-textbox-type-header,
+.rotating-banner .rb-slide .rb-textbox-type-text {
+  margin: 0 20px;
+}
+
 .rotating-banner .rb-slide .rb-textbox-type-header {
   font-size: 225%;
-  margin: 0 0 10px;
+}
+
+.rotating-banner .rb-slide .rb-textbox-type-header a {
+  margin: 5px 0 15px -2px;
+}
+
+.rotating-banner .rb-slide .rb-textbox {
+  margin: 0;
 }
 
 .rotating-banner .controls.buttons a {
