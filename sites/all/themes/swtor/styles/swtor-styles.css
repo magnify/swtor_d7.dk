@@ -449,9 +449,6 @@ input[type=submit]:hover {
   width: 100%;
 }
 
-.rotating-banner .layout-wrapper div {
-}
-
 /*  Make sure the wrapper is a fixed height so we can position the text at the bottom*/
 .rotating-banner .rb-slide {
   height: 250px;

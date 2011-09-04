@@ -1,0 +1,19 @@
+name = fb_social
+description = fb_social
+dependencies[] = "ctools"
+package = "Facebook Social Plugins"
+core =7.x
+
+configure = admin/config/fb_social
+
+files[] = fb_social.admin.inc
+files[] = fb_social.install
+files[] = fb_social.module
+files[] = plugins/export_ui/fb_social_ctools_export_ui.inc
+
+; Information added by drupal.org packaging script on 2011-08-29
+version = "7.x-2.0-alpha2"
+core = "7.x"
+project = "fb_social"
+datestamp = "1314638217"
+
