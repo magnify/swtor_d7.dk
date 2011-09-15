@@ -500,7 +500,7 @@ input[type=submit]:hover {
   z-index: 99;
 }
 
-/* --------------- System Tabs  --------------- */
+/* !----- / System Tabs  ----- */
 
 .tabs {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -592,12 +592,12 @@ ul.action-links {
   -khtml-border-radius: 5px;
   border-radius: 5px;
   list-style: none;
-  margin: 0 0 25px;
+  margin: 0 0 15px;
   padding: 10px 15px;
 }
 
 .front ul.action-links {
-  margin: 0 10px 25px;
+  margin: 0 10px 15px;
 }
 
 ul.action-links li {
@@ -606,4 +606,14 @@ ul.action-links li {
 
 ul.action-links li a {
   margin: 0 10px 0 0;
+}
+
+/* !----- / Workbench  ----- */
+
+div.workbench-info-block {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  margin: 5px 10px 15px;
 }
