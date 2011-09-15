@@ -22,10 +22,6 @@
     <?php print $admin_links; ?>
   <?php endif; ?>
 
-  <?php if ($title): ?>
-    <h2 class="title"><?php print $title; ?></h2>
-  <?php endif; ?>
-
   <?php if ($feeds): ?>
     <div class="feed">
       <?php print $feeds; ?>
