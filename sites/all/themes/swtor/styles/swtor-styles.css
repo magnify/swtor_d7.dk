@@ -135,6 +135,7 @@ body {
   background-color: #050505;
   border-right: 0;
   border-top: 1px solid #1f1f20;
+  clear: both;
   min-width: 140px;
 }
 
