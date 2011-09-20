@@ -100,13 +100,7 @@
 
   <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
 
-    <?php if ($page['sidebar_first']): ?>
-      <div class="column sidebar-first grid-4"><div class="section">
-        <?php print render($page['sidebar_first']); ?>
-      </div></div> <!-- /.section, /#sidebar-first -->
-    <?php endif; ?>
-
-    <div id="content" class="column <?php if ($page['sidebar_first'] || $page['sidebar_second']) print 'grid-8' ?>"><div class="section">
+    <div id="content" class="grid-12 alpha omega"><div class="section">
 
       <?php if ($tabs): ?>
         <div class="tabs">
@@ -124,23 +118,31 @@
         <div id="breadcrumb"><?php print $breadcrumb; ?></div>
       <?php endif; ?>
 
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
+      <?php if ($page['sidebar_first']): ?>
+        <div id="sidebar-first" class="grid-4"><div class="section">
+          <?php print render($page['sidebar_first']); ?>
+        </div></div> <!-- /.section, /#sidebar-first -->
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print render($page['content']); ?>
+
+      <div class="<?php if ($page['sidebar_first'] || $page['sidebar_second']) print 'grid-8 ' ?>alpha omega">
+        <a id="main-content"></a>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php print render($page['content']); ?>
+      </div>
+      <?php if ($page['sidebar_second']): ?>
+        <div id="sidebar-second" class="grid-4">
+          <div class="section">
+            <?php print render($page['sidebar_second']); ?>
+          </div>
+        </div> <!-- /.section, /#sidebar-second -->
+      <?php endif; ?>
 
     </div></div> <!-- /.section, /#content -->
-
-    <?php if ($page['sidebar_second']): ?>
-      <div class="column sidebar-second grid-4"><div class="section">
-        <?php print render($page['sidebar_second']); ?>
-      </div></div> <!-- /.section, /#sidebar-second -->
-    <?php endif; ?>
 
   </div></div> <!-- /#main, /#main-wrapper -->
 
