@@ -15,13 +15,13 @@
  * - $more: A link to view more, if any
  * - $admin_links: A rendered list of administrative links
  * - $admin_links_raw: A list of administrative links suitable for theme('links')
+ * - $forum_description: Forum description
  *
  * @ingroup views_templates
  */
-
 ?>
 
-<div id="forum" class="view view-<?php print $css_name; ?> view-id-<?php print $name; ?> view-display-id-<?php print $display_id; ?> view-dom-id-<?php print $dom_id; ?>">
+<div class="<?php print $classes; ?>">
   <?php if (!empty($admin_links)): ?>
     <div class="views-admin-links views-hide">
       <?php print $admin_links; ?>
@@ -47,10 +47,6 @@
 
   <?php if ($pager): ?>
     <div class="forum-pager" id="forum-pager-top"><?php print $pager; ?></div>
-  <?php endif; ?>
-
-  <?php if ($search): ?>
-    <div id="search-single-forum" class="clearfix"><?php print $search; ?></div>
   <?php endif; ?>
 
   <?php if ($rows): ?>

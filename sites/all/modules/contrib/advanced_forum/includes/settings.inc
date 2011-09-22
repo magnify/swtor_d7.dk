@@ -70,7 +70,7 @@ function advanced_forum_settings_page() {
     '#type' => 'checkbox',
     '#title' => t('Style all comments like forum replies.'),
     '#default_value' => variable_get('advanced_forum_style_all_comments', 0),
-    '#description' => t('If checked, every comment will be styled as if it were a forum reply. This only works on comments from the core comment module. Nodecomments can be selected in the node type selection.'),
+    '#description' => t('If checked, every comment will be styled as if it were a forum reply.'),
   );
 
   $form['advanced_forum_general']['advanced_forum_add_local_task'] = array(
@@ -106,7 +106,7 @@ function advanced_forum_settings_page() {
   $form['advanced_forum_general']['advanced_forum_collapsible_containers'] = array(
     '#type' => 'select',
     '#title' => t('Collapsible forum containers'),
-    '#options' => array (
+    '#options' => array(
       'none' => t("None"),
       'toggle' => t("Toggle"),
       'fade' => t("Fade"),
@@ -116,14 +116,63 @@ function advanced_forum_settings_page() {
     '#default_value' => variable_get('advanced_forum_collapsible_containers', 'toggle'),
   );
 
-  // Taxonomy image on forum list
-  if (function_exists('taxonomy_image_display')) {
-     $form['advanced_forum_lists']['advanced_forum_use_taxonomy_image'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Use taxonomy image in forum listing'),
-      '#default_value' => variable_get('advanced_forum_use_taxonomy_image', TRUE),
-      '#description' => t('If this is checked, Advanced Forum will add a new column to the forum listing for the image associated with the forum term.'),
+  if (module_exists('image')) {
+
+    /* Forum image settings */
+    $form['advanced_forum_forum_image'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Forum image settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
     );
+
+    $forum_vocabulary = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', 0));
+    $field_info = field_info_instances('taxonomy_term', $forum_vocabulary->machine_name);
+    $image_fields = array();
+    foreach ($field_info as $bundle => $field) {
+      if ($field['widget']['type'] == 'image_image') {
+        $image_fields[$bundle] = $bundle;
+      }
+    }
+    $form['advanced_forum_forum_image']['advanced_forum_forum_image_field'] = array(
+      '#title' => t('Image field'),
+      '#description' => t('The image field to use to display forum images.'),
+      '#type' => 'select',
+      '#default_value' => variable_get('advanced_forum_forum_image_field', ''),
+      '#empty_option' => t('None'),
+      '#options' => $image_fields,
+    );
+
+    $form['advanced_forum_forum_image']['advanced_forum_forum_image_preset'] = array(
+      '#title' => t('Forum image style'),
+      '#description' => t('The image style to apply to the images.'),
+      '#type' => 'select',
+      '#default_value' => variable_get('advanced_forum_forum_image_preset', ''),
+      '#empty_option' => t('None (original image)'),
+      '#options' => image_style_options(FALSE),
+    );
+  }
+  else {
+    variable_set('advanced_forum_forum_image_field', '');
+  }
+  // Picture preset
+  if (module_exists('image') && module_exists('author_pane')) {
+    $options = array('' => '');
+    $styles = image_styles();
+    foreach ($styles AS $style) {
+      $options[$style['name']] = $style['name'];
+    }
+
+    $form['advanced_forum_general']['advanced_forum_user_picture_preset'] = array(
+      '#type' => 'select',
+      '#title' => t('User picture preset'),
+      '#options' => $options,
+      '#description' => t('Image preset to use for forum avatars. Leave blank to not use this feature.'),
+      '#default_value' => variable_get('advanced_forum_user_picture_preset', ''),
+    );
+  }
+  else {
+    variable_set('advanced_forum_user_picture_preset', '');
   }
 
   // Retrieve new comments on forum listing
@@ -142,30 +191,6 @@ function advanced_forum_settings_page() {
     '#description' => t('Used on main forum page. Enter 0 to use the full title.'),
     '#default_value' => variable_get('advanced_forum_topic_title_length', 20),
   );
-
-  /* Topic settings */
-  $form['advanced_forum_topics'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Topics'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  if (module_exists('image')) {
-    $options = array('' => '');
-    $styles = image_styles();
-    foreach ($styles AS $style) {
-      $options[$style['name']] = $style['name'];
-    }
-
-    $form['advanced_forum_topics']['advanced_forum_user_picture_preset'] = array(
-      '#type' => 'select',
-      '#title' => t('User picture preset'),
-      '#options' => $options,
-      '#description' => t('Image preset to use for forum avatars. Leave blank to not use this feature.'),
-      '#default_value' => variable_get('advanced_forum_user_picture_preset', ''),
-    );
-  }
 
   // Send our form to Drupal to make a settings page
   return system_settings_form($form);

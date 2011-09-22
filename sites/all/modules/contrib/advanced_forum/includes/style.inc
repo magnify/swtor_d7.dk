@@ -62,6 +62,10 @@ function advanced_forum_style_lineage($style = NULL) {
     // Get an array with information from all styles.
     $all_styles = advanced_forum_get_all_styles();
 
+    // Fallback
+    if (empty($all_styles[$style]))
+      $style = "silver_bells";
+
     // Add the current style to the lineage first
     $lineage[$style] = $all_styles[$style]['path'];
 
@@ -228,14 +232,8 @@ function advanced_forum_is_styled($content, $teaser = FALSE, $type = 'node') {
     // If no other modules made a decision on this, we look at it.
     switch ($type) {
       case 'node':
-        if (!empty($content->comment_target_nid) && $content->comment_target_nid == $master_topic_id) {
-          // This nodecomment is attached to a node we already know is styled.
-          $topic_id = $master_topic_id;
-        }
-        else {
-          // See if the node should be styled.
-          $topic_id = advanced_forum_node_is_styled($content, $teaser);
-        }
+        // See if the node should be styled.
+        $topic_id = advanced_forum_node_is_styled($content, $teaser);
         break;
 
       case 'comment':
@@ -376,11 +374,14 @@ function advanced_forum_path_to_theme() {
  * as the default.
  */
 function advanced_forum_add_template_suggestions($template, &$variables) {
+  // adjust template name
+  $template = strtr($template, '-', '_');
+  if (strpos($template, 'advanced_forum') === FALSE) {
+    $template = "advanced_forum_" . $template;
+  }
   // Set AF template as most significant suggestion
-  $variables['theme_hook_suggestion'] = "advanced_forum_" . strtr($template, '-', '_');
-  // Add requested (default?) suggestion
-  //$variables['theme_hook_suggestions'][] = $template;
-  $variables['theme_hook_suggestions'][] = "advanced_forum_" . strtr($template, '-', '_');
+  $variables['theme_hook_suggestion'] = $template;
+  $variables['theme_hook_suggestions'][] = $template;
   return;
 }
 
