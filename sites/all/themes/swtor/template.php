@@ -53,3 +53,15 @@ function swtor_form_user_login_block_alter(&$form) {
   }
 
 }
+
+/**
+ * Helper function that creates views preprocess functions foreach view.
+ */
+function swtor_preprocess_views_view(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = 'swtor_preprocess_views_view__'.$vars['view']->name; 
+    if (function_exists($function)) {
+     $function($vars);
+    }
+  }
+}
