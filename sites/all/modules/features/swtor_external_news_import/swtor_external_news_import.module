@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the External news import feature.
+ */
+
+include_once('swtor_external_news_import.features.inc');
