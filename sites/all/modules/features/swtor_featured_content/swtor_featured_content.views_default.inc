@@ -7,7 +7,7 @@
 /**
  * Implements hook_views_default_views().
  */
-function swtor_basic_views_views_default_views() {
+function swtor_featured_content_views_default_views() {
   $export = array();
 
   $view = new view;
