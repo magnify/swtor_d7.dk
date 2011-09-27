@@ -182,6 +182,21 @@ function swtor_external_news_import_views_default_views() {
 
   /* Display: Extenal news block */
   $handler = $view->new_display('block', 'Extenal news block', 'block');
+
+  /* Display: External news pane */
+  $handler = $view->new_display('panel_pane', 'External news pane', 'external_news_pane');
+  $handler->display->display_options['pane_title'] = 'External news';
+  $handler->display->display_options['pane_category']['name'] = 'News panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['external_news'] = $view;
 
   return $export;
