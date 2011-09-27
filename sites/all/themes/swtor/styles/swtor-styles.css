@@ -390,39 +390,73 @@ input[type=submit]:hover {
   background-color: #333;
 }
 
-/*--- Slideshow ---*/
+/*--- Featured content ---*/
 
-.view-slideshow {
-  border: 3px solid #fff;
+.view-featured-content {
+  border: 1px dashed red;
   position: relative;
   margin: 0 0 20px;
-  min-height: 200px;
+  height: 250px;
 }
 
-.view-slideshow .views-slideshow-pager-fields-render {
+.view-featured-content .views-row {
+  background-color: rgba(0,0,0,.75);
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+  z-index: 12;
+}
+
+.view-featured-content .views-field-title span {
+  border: 1px dashed red;
+  display: block;  
+}
+
+.view-featured-content .views-field-title span a {
+  display: block;
+  z-index: 12;
+}
+
+.view-featured-content .views-field-field-image {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.view-featured-content .views-slideshow-controls-bottom .views-slideshow-pager-fields {
   bottom: 10px;
   position: absolute;
-  right: 0;
+  right: 10px;
+  width: 140px;
+  z-index: 12;
 }
 
-.view-slideshow .views-slideshow-pager-field-item {
+.view-featured-content .field-item .pager {
   display: block;
   float: left;
 }
 
-.view-slideshow .views-slideshow-pager-field-item a {
-  background-color: #fff;
+.view-featured-content .pager .pager-item {
+  background-color: #8a8a8a;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   display: block;
+  cursor: pointer;
   float: left;
   height: 10px;
+  margin: 0 2px;
   overflow: hidden;
   text-indent: -10000px;
   width: 10px;
 }
 
-.view-slideshow .views-slideshow-pager-field-item.views_slideshow_active_pager_field_item a {
-  background-color: #ffba00;
+.view-featured-content .active .pager .pager-item {
+  background-color: #f5f19d;
 }
+
+
 
 /*--- Articles ---*/
 
@@ -462,60 +496,6 @@ input[type=submit]:hover {
 #content .content .articles .article .comments,
 #content .content .articles .article .author {
   margin: 10px 0 0;
-}
-
-/* !----- / Rotating banner ----- */
-
-.rotating-banner {
-  margin: 0 0 20px;
-  position: relative;
-}
-  
-.rotating-banner .layout-wrapper {
-  background: rgba(0,0,0,.75);  
-  bottom: 0;
-  margin: 0;
-  padding: 10px 0;
-  position: absolute;
-  top: auto;
-  width: 100%;
-}
-
-/*  Make sure the wrapper is a fixed height so we can position the text at the bottom*/
-.rotating-banner .rb-slide {
-  height: 250px;
-}
-
-.rotating-banner .rb-slide .rb-textbox-type-header,
-.rotating-banner .rb-slide .rb-textbox-type-text {
-  margin: 0 20px;
-}
-
-.rotating-banner .rb-slide .rb-textbox-type-header {
-  font-size: 225%;
-}
-
-.rotating-banner .rb-slide .rb-textbox-type-header a {
-  margin: 5px 0 15px -2px;
-}
-
-.rotating-banner .rb-slide .rb-textbox {
-  margin: 0;
-}
-
-.rotating-banner .controls.buttons a {
-  background: #8a8a8a;
-}
-
-.rotating-banner .controls.buttons a.activeSlide {
-  background: #f5f19c;
-}
-
-.rotating-banner .controls {
-  bottom: 6px;
-  position: absolute;
-  right: 10px;
-  z-index: 99;
 }
 
 /* !----- / System Tabs  ----- */
