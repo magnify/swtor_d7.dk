@@ -71,12 +71,12 @@ function swtor_external_news_import_feeds_importer_default() {
         'input_format' => 'plain_text',
       ),
     ),
-    'content_type' => '',
+    'content_type' => 'news_importer',
     'update' => 0,
-    'import_period' => 1800,
+    'import_period' => '1800',
     'expire_period' => 3600,
-    'import_on_create' => TRUE,
-    'process_in_background' => FALSE,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
   );
   $export['external_news_importer'] = $feeds_importer;
 
