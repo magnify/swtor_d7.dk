@@ -21,7 +21,7 @@ function swtor_external_news_import_feeds_plugins() {
       'parent' => 'FeedsParser',
       'class' => 'NewsParser',
       'file' => 'news_parser.class.inc',
-      'path' => drupal_get_path('module', 'swtor_featured_content'),
+      'path' => drupal_get_path('module', 'swtor_external_news_import'),
     ),
   );
   return $info;
