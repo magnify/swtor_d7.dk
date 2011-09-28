@@ -26,7 +26,7 @@ function swtor_external_news_import_feeds_importer_default() {
       ),
     ),
     'parser' => array(
-      'plugin_key' => 'FeedsSyndicationParser',
+      'plugin_key' => 'NewsParser',
       'config' => array(),
     ),
     'processor' => array(
@@ -37,9 +37,9 @@ function swtor_external_news_import_feeds_importer_default() {
         'author' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'guid',
+            'source' => 'id',
             'target' => 'guid',
-            'unique' => 0,
+            'unique' => 1,
           ),
           1 => array(
             'source' => 'title',
@@ -47,21 +47,26 @@ function swtor_external_news_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           2 => array(
-            'source' => 'author_name',
-            'target' => 'field_news_author',
-            'unique' => FALSE,
-          ),
-          3 => array(
-            'source' => 'description',
-            'target' => 'field_news_teaser',
-            'unique' => FALSE,
-          ),
-          4 => array(
-            'source' => 'timestamp',
+            'source' => 'updated',
             'target' => 'created',
             'unique' => FALSE,
           ),
+          3 => array(
+            'source' => 'author',
+            'target' => 'field_news_author',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'summary',
+            'target' => 'field_news_teaser',
+            'unique' => FALSE,
+          ),
           5 => array(
+            'source' => 'image',
+            'target' => 'field_image_url',
+            'unique' => FALSE,
+          ),
+          6 => array(
             'source' => 'url',
             'target' => 'field_source_url:url',
             'unique' => FALSE,

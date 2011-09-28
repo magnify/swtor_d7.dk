@@ -58,36 +58,32 @@ function swtor_external_news_import_views_default_views() {
   $handler->display->display_options['fields']['field_source_url']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_source_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_source_url']['field_api_classes'] = 0;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_news_image']['id'] = 'field_news_image';
-  $handler->display->display_options['fields']['field_news_image']['table'] = 'field_data_field_news_image';
-  $handler->display->display_options['fields']['field_news_image']['field'] = 'field_news_image';
-  $handler->display->display_options['fields']['field_news_image']['label'] = '';
-  $handler->display->display_options['fields']['field_news_image']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['make_link'] = 1;
-  $handler->display->display_options['fields']['field_news_image']['alter']['path'] = '[field_source_url]';
-  $handler->display->display_options['fields']['field_news_image']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['external'] = 1;
-  $handler->display->display_options['fields']['field_news_image']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['rel'] = 'external';
-  $handler->display->display_options['fields']['field_news_image']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_news_image']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_news_image']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_image']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_news_image']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_news_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_news_image']['field_api_classes'] = 0;
+  /* Field: Content: Image URL */
+  $handler->display->display_options['fields']['field_image_url']['id'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['table'] = 'field_data_field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['field'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['label'] = '';
+  $handler->display->display_options['fields']['field_image_url']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['alter']['text'] = '<img src="[field_image_url]" />';
+  $handler->display->display_options['fields']['field_image_url']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['alter']['path'] = '[field_source_url]';
+  $handler->display->display_options['fields']['field_image_url']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['external'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['rel'] = 'external';
+  $handler->display->display_options['fields']['field_image_url']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_url']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_image_url']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_image_url']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
