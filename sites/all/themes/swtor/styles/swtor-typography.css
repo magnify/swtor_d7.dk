@@ -230,6 +230,28 @@ li a.active {
   color: #8b8b8b;
 }
 
+/*--- Featured content ---*/
+
+.view-featured-content .content-wrapper a.title,
+.view-featured-content .content-wrapper a.teaser {
+  color: #fff;
+  line-height: 125%;
+}
+
+.view-featured-content .content-wrapper a.title {
+  font-size: 250%;  
+}
+
+.view-featured-content .content-wrapper a.teaser {
+  font-size: 100%;
+}
+
+.view-featured-content .content-wrapper a:visited,
+.view-featured-content .content-wrapper a:hover,
+.view-featured-content .content-wrapper a:active {
+  text-decoration: none;
+}
+
 /*--- Pager ---*/
 
 .item-list .pager {

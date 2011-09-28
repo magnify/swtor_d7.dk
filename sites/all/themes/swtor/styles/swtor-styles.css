@@ -393,43 +393,56 @@ input[type=submit]:hover {
 /*--- Featured content ---*/
 
 .view-featured-content {
-  border: 1px dashed red;
   position: relative;
   margin: 0 0 20px;
   height: 250px;
 }
 
-.view-featured-content .views-row {
-  background-color: rgba(0,0,0,.75);
+/*
+  Text.
+*/
+
+.view-featured-content .content-wrapper {
+  background-color: rgba(0,0,0,0.75);
+  bottom: 5px;
   left: 0;
   position: absolute;
-  top: 1px;
   width: 100%;
-  z-index: 12;
+  z-index: 8;
 }
 
-.view-featured-content .views-field-title span {
-  border: 1px dashed red;
-  display: block;  
-}
-
-.view-featured-content .views-field-title span a {
+.view-featured-content .content-wrapper a.title,
+.view-featured-content .content-wrapper a.teaser {
   display: block;
-  z-index: 12;
+  padding: 10px 0 5px 10px;
 }
+
+.view-featured-content .content-wrapper a.teaser {
+  margin: 0 100px 0 0;
+  padding: 0 0 10px 12px;
+}
+
+/*
+  Image.
+*/
 
 .view-featured-content .views-field-field-image {
-  left: 0;
-  position: absolute;
-  top: 0;
+  z-index: 5;
 }
 
-.view-featured-content .views-slideshow-controls-bottom .views-slideshow-pager-fields {
+/*
+  Controls.
+*/
+
+.view-featured-content .views-slideshow-controls-bottom {
   bottom: 10px;
   position: absolute;
   right: 10px;
-  width: 140px;
   z-index: 12;
+}
+
+.view-featured-content .views-slideshow-controls-bottom .field-item {
+  float: left;
 }
 
 .view-featured-content .field-item .pager {
@@ -455,7 +468,6 @@ input[type=submit]:hover {
 .view-featured-content .active .pager .pager-item {
   background-color: #f5f19d;
 }
-
 
 
 /*--- Articles ---*/
