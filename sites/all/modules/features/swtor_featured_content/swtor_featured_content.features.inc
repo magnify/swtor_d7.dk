@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * swtor_basic_views.features.inc
+ * swtor_featured_content.features.inc
  */
 
 /**
