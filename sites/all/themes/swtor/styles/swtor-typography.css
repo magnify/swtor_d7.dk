@@ -280,3 +280,9 @@ li a.active {
 .view-external-news .views-field-created {
   color: #555555;
 }
+
+/*--- Infinite scroll ---*/
+
+#views_infinite_scroll_ajax_load_link a:hover {
+  text-decoration: none;
+}

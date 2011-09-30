@@ -643,3 +643,18 @@ div.workbench-info-block {
 .view-external-news .views-field-field-image-url {
   float: left;
 }
+
+/*--- Infinite scroll ---*/
+
+#views_infinite_scroll_ajax_load_link {
+  margin: 15px 0;
+}
+
+#views_infinite_scroll_ajax_load_link a {
+  background: url('../images/arrow-down.png') no-repeat right 7px;
+  padding: 0 15px 0 0;
+}
+
+#views_infinite_scroll_ajax_load_link a:hover {
+  background-image: url('../images/arrow-down-dark.png');
+}
