@@ -121,10 +121,11 @@ function swtor_external_news_import_views_default_views() {
   $handler->display->display_options['fields']['field_news_teaser']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['field_news_teaser']['alter']['trim_whitespace'] = 0;
   $handler->display->display_options['fields']['field_news_teaser']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_news_teaser']['alter']['max_length'] = '35';
   $handler->display->display_options['fields']['field_news_teaser']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_news_teaser']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_news_teaser']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_news_teaser']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_news_teaser']['alter']['trim'] = 1;
   $handler->display->display_options['fields']['field_news_teaser']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_news_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_teaser']['element_default_classes'] = 1;
@@ -190,7 +191,7 @@ function swtor_external_news_import_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $export['external_news'] = $view;

@@ -627,3 +627,19 @@ div.workbench-info-block {
   border-radius: 5px;
   margin: 5px 10px 15px;
 }
+
+/*--- External news view ---*/
+
+.view-external-news .item-list ul li {
+  background: none;
+  margin: 0 0 15px 55px;
+}
+
+.view-external-news img {
+  margin: 5px 0 0 -55px;
+  width: 45px;
+}
+
+.view-external-news .views-field-field-image-url {
+  float: left;
+}

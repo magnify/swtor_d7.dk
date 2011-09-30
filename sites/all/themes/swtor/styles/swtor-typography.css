@@ -264,3 +264,19 @@ li a.active {
 
 .item-list .pager a {
 }
+
+/*--- External news view ---*/
+
+.view-external-news .item-list .views-field-title a {
+  color: #ffb800;
+}
+
+.view-external-news .views-field-field-news-teaser,
+.view-external-news .views-field-created {
+  color: #9a9a9a;
+  font-size: 90%;
+}
+  
+.view-external-news .views-field-created {
+  color: #555555;
+}
