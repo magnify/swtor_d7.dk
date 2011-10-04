@@ -218,7 +218,8 @@ body {
   background: url('../images/common-pattern-vert.png') repeat-y;
 }
 
-#sidebar-second h2 {
+#sidebar-second h2,
+.sidebar-second h2 {
   background: url('../images/common-pattern.png');
   margin: 0 0 15px;
   padding: 10px 10px 6px;
