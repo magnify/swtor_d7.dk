@@ -70,8 +70,13 @@ function swtor_preprocess_views_view(&$vars) {
  * Implementation of hook_preprocess_panels_pane().
  *
  * This function create templets suggestions for panels panes. e.g
- * panels-pane--featured-content.tpl.php.
+ * panels-pane--featured-content.tpl.php or at panel level
+ * panels-pane--top-right.tpl.php.
  */
 function swtor_preprocess_panels_pane(&$vars) {
+  // Suggestions base on sub-type.
   $vars['theme_hook_suggestions'][] = 'panels_pane__' . str_replace('-', '__', $vars['pane']->subtype);
+
+  // Suggestions on panel level
+  $vars['theme_hook_suggestions'][] = 'panels_pane__' . $vars['pane']->panel;
 }

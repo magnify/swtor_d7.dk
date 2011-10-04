@@ -17,7 +17,7 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<div class="<?php print $classes; ?>" <?php print $id; ?>>
+<div class="region <?php print $classes; ?>" <?php print $id; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
@@ -32,7 +32,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="pane-content">
+  <div class="content">
     <?php print render($content); ?>
   </div>
 
