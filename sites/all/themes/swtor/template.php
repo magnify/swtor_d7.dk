@@ -73,6 +73,5 @@ function swtor_preprocess_views_view(&$vars) {
  * panels-pane--featured-content.tpl.php.
  */
 function swtor_preprocess_panels_pane(&$vars) {
-  echo 'panels_pane__' . str_replace('-', '__', $vars['pane']->subtype), '<br/>';
   $vars['theme_hook_suggestions'][] = 'panels_pane__' . str_replace('-', '__', $vars['pane']->subtype);
 }
