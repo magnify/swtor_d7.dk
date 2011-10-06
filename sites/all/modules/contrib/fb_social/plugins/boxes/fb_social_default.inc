@@ -12,7 +12,7 @@ abstract class fb_social_default extends boxes_box {
   /**
    * Implementation of boxes_content::options_form().
    */
-  public function options_form(&$form_state){
+  public function options_form(&$form_state) {
     $fieldset =  array(
         '#type' => 'fieldset', 
         '#title' => t('Facebook plugin attributes'), 

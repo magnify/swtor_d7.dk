@@ -20,7 +20,7 @@ class fb_social_recommendations extends fb_social_default {
    * Implementation of boxes_content::options_form().
    */
   public function options_form(&$form_state){
-    return parent::options_form();
+    return parent::options_form($form_state);
   }
 
   /**
