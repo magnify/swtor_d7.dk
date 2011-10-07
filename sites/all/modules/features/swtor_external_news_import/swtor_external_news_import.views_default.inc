@@ -22,7 +22,7 @@ function swtor_external_news_import_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Nyheder fra SWTOR.COM';
+  $handler->display->display_options['title'] = 'External news';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -182,6 +182,8 @@ function swtor_external_news_import_views_default_views() {
 
   /* Display: External news pane */
   $handler = $view->new_display('panel_pane', 'External news pane', 'external_news_pane');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Nyheder fra SWTOR.COM';
   $handler->display->display_options['pane_title'] = 'External news';
   $handler->display->display_options['pane_category']['name'] = 'News panes';
   $handler->display->display_options['pane_category']['weight'] = '0';

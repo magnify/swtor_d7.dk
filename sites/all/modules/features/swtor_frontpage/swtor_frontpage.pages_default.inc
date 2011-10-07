@@ -468,6 +468,8 @@ function swtor_frontpage_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'items_per_page' => '5',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
