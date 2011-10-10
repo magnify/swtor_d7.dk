@@ -80,3 +80,26 @@ function swtor_preprocess_panels_pane(&$vars) {
   // Suggestions on panel level
   $vars['theme_hook_suggestions'][] = 'panels_pane__' . $vars['pane']->panel;
 }
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ * We use this hook to implement facebook like buttons in views lists on the
+ * front page of the site.
+ */
+function swtor_preprocess_views_view_field(&$vars) {
+  $view = $vars['view'];
+  $field = $vars['field'];
+  // In the media_detail view, replace nid field with a fb like button
+  if (module_exists('fb_social') && ($view->name == 'frontpage') && $field->field == 'nid') {
+    // Create a "pseudo-node" object to send to fb_social_like_link
+    $row = $vars['row'];
+    $pnode = new stdClass();
+    $pnode->status = 1;
+    $pnode->type = $row->node_type;
+    $pnode->nid = $row->nid;
+    fb_social_fb_plugin_load('like');
+    $preset = fb_social_preset_load('swtor_like');
+    $link = fb_social_like_link($preset, 'node', $pnode);
+    $vars['output'] = $link['fb_social_like_swtor_like']['title'];
+  }
+}

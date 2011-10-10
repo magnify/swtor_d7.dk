@@ -21,3 +21,5 @@ regions[footer] = Footer
 
 ;Panels layouts
 plugins[panels][layouts] = plugins/layouts
+
+scripts[] = js/social.js
