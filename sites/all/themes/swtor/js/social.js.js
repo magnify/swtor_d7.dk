@@ -4,7 +4,9 @@
 (function ($) {
   Drupal.behaviors.swtor = {
     attach: function (context, settings) {
-      FB.XFBML.parse();
+      try {
+        FB.XFBML.parse();
+      } catch (ex) {}
     }
   };
 })(jQuery);
