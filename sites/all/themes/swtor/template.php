@@ -81,6 +81,19 @@ function swtor_preprocess_panels_pane(&$vars) {
   $vars['theme_hook_suggestions'][] = 'panels_pane__' . $vars['pane']->panel;
 }
 
+function swtor_build_tweet_button($nid, $title, $name, $type) {
+  drupal_add_js('http://platform.twitter.com/widgets.js');
+
+  $token_replacements = array(
+    '!title'        => $title,
+    '!author_name'  => $name,
+    '!node_type'    => $type,
+    '!node_url'     => url('node/'.$nid, array('absolute' => TRUE)),
+  );
+
+  return theme('tweetbutton_display', array('tokens' => $token_replacements));
+}
+
 /**
  * Implements hook_preprocess_views_view_field().
  * We use this hook to implement facebook like buttons in views lists on the
@@ -101,5 +114,8 @@ function swtor_preprocess_views_view_field(&$vars) {
     $preset = fb_social_preset_load('swtor_like');
     $link = fb_social_like_link($preset, 'node', $pnode);
     $vars['output'] = $link['fb_social_like_swtor_like']['title'];
+
+    // Add tweet button.
+    $vars['output'] .= swtor_build_tweet_button($row->nid, $row->node_title, 'swtordk', $row->node_type);
   }
 }
