@@ -81,6 +81,9 @@ function swtor_preprocess_panels_pane(&$vars) {
   $vars['theme_hook_suggestions'][] = 'panels_pane__' . $vars['pane']->panel;
 }
 
+/**
+ * Helper function that builds the HTML for twitter buttons in views lists.
+ */
 function swtor_build_tweet_button($nid, $title, $name, $type) {
   drupal_add_js('http://platform.twitter.com/widgets.js');
 
