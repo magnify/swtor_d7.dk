@@ -7,7 +7,9 @@
       try {
         FB.XFBML.parse();
       } catch (ex) {}
+
+      // Updated tweet buttons.
+      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
     }
   };
 })(jQuery);
-
