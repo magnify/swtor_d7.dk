@@ -36,8 +36,10 @@ function swtor_frontpage_views_default_views() {
   $handler->display->display_options['row_options']['inline'] = array(
     'field_tags' => 'field_tags',
     'created' => 'created',
+    'nid' => 'nid',
   );
   $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 0;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -221,10 +223,11 @@ function swtor_frontpage_views_default_views() {
     'trim_length' => '600',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Content: Nid */
+  /* Field: Share */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['ui_name'] = 'Share';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = 0;
@@ -238,8 +241,10 @@ function swtor_frontpage_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['nid']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nid']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nid']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nid']['element_class'] = 'share';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['nid']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid']['hide_alter_empty'] = 0;
@@ -255,6 +260,7 @@ function swtor_frontpage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['comment_count']['alter']['external'] = 0;
   $handler->display->display_options['fields']['comment_count']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['comment_count']['alter']['trim_whitespace'] = 0;
   $handler->display->display_options['fields']['comment_count']['alter']['alt'] = '[comment_count]';
   $handler->display->display_options['fields']['comment_count']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['comment_count']['alter']['word_boundary'] = 1;
@@ -263,12 +269,13 @@ function swtor_frontpage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['comment_count']['alter']['html'] = 0;
   $handler->display->display_options['fields']['comment_count']['element_type'] = 'span';
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comments';
+  $handler->display->display_options['fields']['comment_count']['element_class'] = 'comments';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['comment_count']['hide_empty'] = 0;
   $handler->display->display_options['fields']['comment_count']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['comment_count']['separator'] = '';
   $handler->display->display_options['fields']['comment_count']['format_plural'] = 1;
   $handler->display->display_options['fields']['comment_count']['suffix'] = ' comments';
   /* Field: User: Name */
