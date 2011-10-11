@@ -481,7 +481,6 @@ input[type=submit]:hover {
   background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;
   clear: both;
   margin: 0 0 25px;
-  overflow: hidden;
   padding: 10px 10px 37px;
 }
 
@@ -510,9 +509,37 @@ input[type=submit]:hover {
   padding: 0 10px 0 0;
 }
 
-#content .content .articles .article .comments,
 #content .content .articles .article .author {
-  margin: 10px 0 0;
+  clear: both;
+  padding: 10px 0 0;
+}
+
+#content .content .articles .article .comments {
+  float: left;
+  margin: 5px 0 0;
+}
+
+/* Twitter and Facebook button */
+
+.article .share {
+  float: left;
+  width: 245px;
+}
+
+.fb-social-like-plugin,
+.tweetbutton {
+  float: left;
+  margin: 5px 0 0 0;
+  width: 110px;
+}
+
+.fb-social-like-plugin {
+  width: 135px;
+}
+
+/* Find the setting for width in the module */
+.fb-social-like-plugin iframe {
+  width: 130px !important;
 }
 
 /* !----- / System Tabs  ----- */
