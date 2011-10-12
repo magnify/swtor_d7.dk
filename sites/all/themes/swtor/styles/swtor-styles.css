@@ -516,20 +516,24 @@ input[type=submit]:hover {
 
 #content .content .articles .article .comments {
   float: left;
-  margin: 5px 0 0;
+  margin: 7px 0 0;
 }
 
 /* Twitter and Facebook button */
 
 .article .share {
   float: left;
-  width: 245px;
 }
 
 .fb-social-like-plugin,
 .tweetbutton {
   float: left;
-  margin: 5px 0 0 0;
+  margin: 5px 0 0;
+  width: 105px;
+}
+
+.tweetbutton {
+  margin: 5px 0 0 5px;
 }
 
 /* !----- / System Tabs  ----- */
