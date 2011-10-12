@@ -536,8 +536,8 @@ input[type=submit]:hover {
   width: 100px !important;
 }
 
-.fb-social-like-plugin .fb_iframe_widget iframe {
-  width: 350px;
+.fb-social-like-plugin span.fb_iframe_widget iframe {
+  width: 401px !important;
 }
 
 .tweetbutton {
