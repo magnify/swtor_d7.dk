@@ -533,15 +533,6 @@ input[type=submit]:hover {
   width: 110px;
 }
 
-.fb-social-like-plugin {
-  width: 135px;
-}
-
-/* Find the setting for width in the module */
-.fb-social-like-plugin iframe {
-  width: 130px !important;
-}
-
 /* !----- / System Tabs  ----- */
 
 .tabs {
