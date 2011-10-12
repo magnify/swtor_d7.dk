@@ -532,6 +532,14 @@ input[type=submit]:hover {
   width: 105px;
 }
 
+.fb-social-like-plugin iframe {
+  width: 100px !important;
+}
+
+.fb-social-like-plugin .fb_iframe_widget iframe {
+  width: 350px;
+}
+
 .tweetbutton {
   margin: 5px 0 0 5px;
 }
