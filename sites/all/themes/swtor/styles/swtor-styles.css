@@ -664,17 +664,18 @@ div.workbench-info-block {
 
 /*--- External news view ---*/
 
-.view-external-news .item-list ul li {
+.view .item-list ul li {
   background: none;
   margin: 0 0 10px 45px;
 }
 
-.view-external-news img {
+.view img {
   margin: 5px 0 0 -55px;
   width: 45px;
 }
 
-.view-external-news .views-field-field-image-url {
+.view .views-field-field-image-url,
+.view .views-field-picture {
   float: left;
 }
 

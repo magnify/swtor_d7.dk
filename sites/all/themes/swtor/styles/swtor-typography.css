@@ -266,17 +266,17 @@ li a.active {
 
 /*--- External news view ---*/
 
-.view-external-news .item-list .views-field-title a {
+.view .item-list .views-field-title a {
   color: #ffb800;
 }
 
-.view-external-news .views-field-field-news-teaser,
-.view-external-news .views-field-created {
+.view .views-field-field-news-teaser,
+.view .views-field-created {
   color: #9a9a9a;
   font-size: 90%;
 }
   
-.view-external-news .views-field-created {
+.view .views-field-created {
   color: #555555;
 }
 
