@@ -662,20 +662,20 @@ div.workbench-info-block {
   margin: 5px 10px 15px;
 }
 
-/*--- External news view ---*/
+/*--- Sidebar second view ---*/
 
-.view .item-list ul li {
+.sidebar-second .view .item-list ul li {
   background: none;
   margin: 0 0 10px 45px;
 }
 
-.view img {
+.sidebar-second .view img {
   margin: 5px 0 0 -55px;
   width: 45px;
 }
 
-.view .views-field-field-image-url,
-.view .views-field-picture {
+.sidebar-second .view .views-field-field-image-url,
+.sidebar-second .view .views-field-picture {
   float: left;
 }
 

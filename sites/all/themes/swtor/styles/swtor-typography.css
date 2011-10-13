@@ -264,19 +264,19 @@ li a.active {
 .item-list .pager a {
 }
 
-/*--- External news view ---*/
+/*--- Sidebar second view ---*/
 
-.view .item-list .views-field-title a {
+.sidebar-second .view .item-list .views-field-title a {
   color: #ffb800;
 }
 
-.view .views-field-field-news-teaser,
-.view .views-field-created {
+.sidebar-second .view .views-field-field-news-teaser,
+.sidebar-second .view .views-field-created {
   color: #9a9a9a;
   font-size: 90%;
 }
   
-.view .views-field-created {
+.sidebar-second .view .views-field-created {
   color: #555555;
 }
 
