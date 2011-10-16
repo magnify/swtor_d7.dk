@@ -462,6 +462,38 @@ function swtor_frontpage_default_page_manager_handlers() {
     $pane = new stdClass;
     $pane->pid = 'new-9';
     $pane->panel = 'top_right';
+    $pane->type = 'views';
+    $pane->subtype = 'front_page_comments';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => 'Seneste kommentar',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $display->content['new-9'] = $pane;
+    $display->panels['top_right'][1] = 'new-9';
+    $pane = new stdClass;
+    $pane->pid = 'new-10';
+    $pane->panel = 'top_right';
     $pane->type = 'views_panes';
     $pane->subtype = 'external_news-external_news_pane';
     $pane->shown = TRUE;
@@ -477,9 +509,9 @@ function swtor_frontpage_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $display->content['new-9'] = $pane;
-    $display->panels['top_right'][1] = 'new-9';
+    $pane->position = 2;
+    $display->content['new-10'] = $pane;
+    $display->panels['top_right'][2] = 'new-10';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
