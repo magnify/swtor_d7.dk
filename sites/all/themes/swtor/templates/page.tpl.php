@@ -87,12 +87,11 @@
   <?php endif; ?>
 
   <?php print render($page['header']); ?>
-  <?php print render($page['pagetop']); ?>
  
 </div></div> <!-- /.section, /#header -->
 
 <?php if ($page['pagetop']): ?>
-  <div class="region clearfix"><?php print render($page['pagetop']); ?></div>
+  <div class="region container-12 clearfix"><?php print render($page['pagetop']); ?></div>
 <?php endif ?>
 
 <div id="page-wrapper"><div id="page" class="container-12">

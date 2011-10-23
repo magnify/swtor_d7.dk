@@ -22,6 +22,17 @@ body {
   top: 12px;
 }
 
+/*--- AdSense ---*/
+
+.region-pagetop {
+  margin: 20px 0 0;
+}
+
+.region-pagetop .block-adsense-managed {
+  margin: auto;
+  width: 728px;
+}
+
 /*--- User login ---*/
 
 #block-user-login {
