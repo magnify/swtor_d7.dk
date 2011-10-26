@@ -704,3 +704,7 @@ div.workbench-info-block {
 #views_infinite_scroll_ajax_load_link a:hover {
   background-image: url('../images/arrow-down-dark.png');
 }
+
+div#views_infinite_scroll-ajax-loader {
+  margin: 15px 0;
+}
