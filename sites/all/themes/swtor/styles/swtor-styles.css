@@ -33,6 +33,10 @@ body {
   width: 728px;
 }
 
+.sidebar-second .region.panel-pane .adsense {
+  margin: 0 0 20px;
+}
+
 /*--- User login ---*/
 
 #block-user-login {
@@ -253,12 +257,18 @@ body {
   padding: 0 0 0 20px;
 }
 
-#sidebar-second .advertisement,
-.sidebar-second .advertisement {
+#sidebar-second .adsense,
+#sidebar-second .region.adsense,
+#sidebar-second .region.panel-pane.adsense,
+#sidebar-second .region.pane-block.adsense,
+.sidebar-second .adsense,
+.sidebar-second .region.adsense,
+.sidebar-second .region.panel-pane.adsense,
+.sidebar-second .region.pane-block.adsense {
   background-color: #000;
   left: -21px;
   margin: 0;
-  padding: 0 0 20px;
+  padding: 20px 0 20px 20px;
   position: relative;
   width: 300px;
 }
