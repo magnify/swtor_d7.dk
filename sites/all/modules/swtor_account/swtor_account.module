@@ -53,13 +53,13 @@ function swtor_account_theme() {
 }
 
 /**
- * Implements hook_preprocess_swtor_account(),
+ * Implements hook_preprocess_swtor_account().
  */
 function swtor_account_preprocess_swtor_account(&$vars) {
   // Headline
   $vars['username'] = $vars['user']->name;
   
-  // Build links
+  // Build account links.
   $links = array(
     'attributes' => array(
        'class' => 'swtor-account-links'
@@ -75,7 +75,10 @@ function swtor_account_preprocess_swtor_account(&$vars) {
        ),
      ),
   );
+  $vars['links_raw'] = $links;
+  $vars['links'] = theme('links', $links);
 
+  // Build message count link (unread messages).
   $messages = array(
     'attributes' => array(
       'class' => 'swtor-account-messages'
@@ -87,7 +90,6 @@ function swtor_account_preprocess_swtor_account(&$vars) {
       ),
     ),
   );
-
-  $vars['messages'] = theme('links', $messages);
-  $vars['links'] = theme('links', $links);
+  $vars['message_raw'] = $messages;
+  $vars['messages'] = theme('links', $messages);  
 }
