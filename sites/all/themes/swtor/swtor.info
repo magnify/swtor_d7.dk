@@ -17,6 +17,13 @@ regions[pagetop] = Page top
 regions[content] = Content
 regions[sidebar_first] = Sidebar first
 regions[sidebar_second] = Sidebar second
+regions[column_three_one] = 3 column 1
+regions[column_three_two] = 3 column 2
+regions[column_three_three] = 3 column 3
+regions[column_four_one] = 4 column 1
+regions[column_four_two] = 4 column 2
+regions[column_four_three] = 4 column 3
+regions[column_four_four] = 4 column 4
 regions[footer] = Footer
 
 ;Panels layouts
