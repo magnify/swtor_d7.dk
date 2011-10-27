@@ -8,6 +8,10 @@ body {
   min-height: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 #header {
   background: url('../images/menu-line.jpg') no-repeat center 152px;
   position: relative;
