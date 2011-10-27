@@ -145,9 +145,6 @@
           </div>
         </div> <!-- /.section, /#sidebar-second -->
       <?php endif; ?>
-
-    </div></div> <!-- /.section, /#content -->
-    <div id="page-columns" class="region page-columns container-12">
       <div id="columns-three" class="columns-three grid-12 alpha omega">
         <div id="columns-three-one" class="column columns-three-one grid-4 omega"><?php print render($page['column_three_one']); ?></div>
         <div id="columns-three-two" class="column columns-three-two grid-4 omega"><?php print render($page['column_three_two']); ?></div>
@@ -159,7 +156,7 @@
         <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_three']); ?></div>
         <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_four']); ?></div>
       </div>
-    </div>
+    </div></div> <!-- /.section, /#content -->
 
   </div></div> <!-- /#main, /#main-wrapper -->
 
