@@ -16,6 +16,6 @@
   <div class="content">
     <?php print $links ?>
     <?php print $messages ?>
-    <a href="/logout">Logout</a>
+    <a href="/user/logout">Logout</a>
   </div>
 </div>
