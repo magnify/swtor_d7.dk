@@ -499,7 +499,6 @@ input[type=submit]:hover {
   background-color: #f5f19d;
 }
 
-
 /*--- Articles ---*/
 
 #content .content .articles .article {
@@ -720,4 +719,9 @@ div.workbench-info-block {
 
 div#views_infinite_scroll-ajax-loader {
   margin: 15px 0;
+}
+
+/*--- Submenu ---*/
+
+.sidebar-first .block-menu-block h2 {
 }
