@@ -285,3 +285,15 @@ li a.active {
 #views_infinite_scroll_ajax_load_link a:hover {
   text-decoration: none;
 }
+
+/*--- Submenu ---*/
+
+#sidebar-first .block-menu-block {
+  font-size: 90%;
+}
+
+#sidebar-first .block-menu-block h2 a {
+  color: #fff;
+  font-size: 50%;
+  font-weight: normal;
+}

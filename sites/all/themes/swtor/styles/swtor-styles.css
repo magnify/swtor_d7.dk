@@ -723,5 +723,45 @@ div#views_infinite_scroll-ajax-loader {
 
 /*--- Submenu ---*/
 
-.sidebar-first .block-menu-block h2 {
+#sidebar-first .block-menu-block {
+  margin: 0 10px 0 -10px;
+}
+
+#sidebar-first .block-menu-block h2 {
+  background: url('../images/common-arrow-down.png') no-repeat left 19px;
+  border-bottom: 1px solid #333;
+  line-height: 125%;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+#sidebar-first .block-menu-block li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*--- Default and level 1 ---*/
+#sidebar-first .block-menu-block li a {
+  background: url('../images/common-arrow.png') no-repeat 10px 11px;
+  border-bottom: 1px solid #333;
+  display: block;
+  line-height: 225%;
+  padding: 2px 0 0 25px;
+}
+
+/*--- Level 2 ---*/
+#sidebar-first .block-menu-block li li a {
+  background-position: 20px 12px;
+  padding-left: 35px;
+}
+
+/*--- Level 3 ---*/
+#sidebar-first .block-menu-block li li li a {
+  background-position: 30px 12px;
+  padding-left: 45px;
+}
+
+#sidebar-first .block-menu-block li a.active-trail {
+  background-image: url('../images/common-arrow-down.png');
 }
