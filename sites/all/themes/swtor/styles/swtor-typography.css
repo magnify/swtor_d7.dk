@@ -297,3 +297,35 @@ li a.active {
   font-size: 50%;
   font-weight: normal;
 }
+
+/*--- Spotbox ---*/
+
+.block-nodespotbox {
+  font-size: 85%;
+}
+
+.block-nodespotbox h2 {
+  font-size: 175%;
+  font-weight: normal;
+}
+
+.block-nodespotbox h2 a,
+.block-nodespotbox {
+  color: #acacac;
+}
+
+.block-nodespotbox h2 a:hover {
+  text-decoration: none;
+}
+
+.block-nodespotbox .view .content,
+.block-nodespotbox .view .link {
+  
+}
+
+/*--- Column regions ---*/
+
+.columns-three,
+.columns-four {
+  margin: 30px 0 0;
+}
