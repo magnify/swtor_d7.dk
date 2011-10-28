@@ -765,3 +765,8 @@ div#views_infinite_scroll-ajax-loader {
 #sidebar-first .block-menu-block li a.active-trail {
   background-image: url('../images/common-arrow-down.png');
 }
+
+/*--- Active trail no children ---*/
+#sidebar-first .block-menu-block li.leaf a.active-trail {
+  background-image: url('../images/common-arrow.png');
+}
