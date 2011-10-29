@@ -8,6 +8,10 @@ body {
   min-height: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 #header {
   background: url('../images/menu-line.jpg') no-repeat center 152px;
   position: relative;
@@ -495,7 +499,6 @@ input[type=submit]:hover {
   background-color: #f5f19d;
 }
 
-
 /*--- Articles ---*/
 
 #content .content .articles .article {
@@ -716,4 +719,84 @@ div.workbench-info-block {
 
 div#views_infinite_scroll-ajax-loader {
   margin: 15px 0;
+}
+
+/*--- Submenu ---*/
+
+#sidebar-first .block-menu-block {
+  margin: 0 10px 0 -10px;
+}
+
+#sidebar-first .block-menu-block h2 {
+  background: url('../images/common-arrow-down.png') no-repeat left 19px;
+  border-bottom: 1px solid #333;
+  line-height: 125%;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+#sidebar-first .block-menu-block li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*--- Default and level 1 ---*/
+#sidebar-first .block-menu-block li a {
+  background: url('../images/common-arrow.png') no-repeat 10px 11px;
+  border-bottom: 1px solid #333;
+  display: block;
+  line-height: 225%;
+  padding: 2px 0 0 25px;
+}
+
+/*--- Level 2 ---*/
+#sidebar-first .block-menu-block li li a {
+  background-position: 20px 12px;
+  padding-left: 35px;
+}
+
+/*--- Level 3 ---*/
+#sidebar-first .block-menu-block li li li a {
+  background-position: 30px 12px;
+  padding-left: 45px;
+}
+
+#sidebar-first .block-menu-block li a.active-trail {
+  background-image: url('../images/common-arrow-down.png');
+}
+
+/*--- Active trail no children ---*/
+#sidebar-first .block-menu-block li.leaf a.active-trail {
+  background-image: url('../images/common-arrow.png');
+}
+
+/*--- Spotbox ---*/
+
+.block-nodespotbox .image {
+  line-height: 100%;
+}
+
+.block-nodespotbox h2,
+.block-nodespotbox .view .content,
+.block-nodespotbox .link {
+  background-color: #1d1d1d;
+  margin: 0;
+  padding: 20px 20px 0px;
+}
+
+.block-nodespotbox .view .content {
+  padding: 10px 20px 20px;
+}
+
+.block-nodespotbox .link {
+  display: block;
+  margin: -20px 0 0;
+  padding: 10px 20px 20px;
+  text-align: right;
+}
+
+.block-nodespotbox .link a {
+  background: url('../images/common-arrow.png') no-repeat left 4px;
+  padding: 0 0 0 10px;
 }

@@ -123,12 +123,12 @@
       <?php endif; ?>
 
       <?php if ($page['sidebar_first']): ?>
-        <div id="sidebar-first" class="grid-4"><div class="section">
+        <div id="sidebar-first" class="grid-3"><div class="section">
           <?php print render($page['sidebar_first']); ?>
         </div></div> <!-- /.section, /#sidebar-first -->
       <?php endif; ?>
 
-      <div class="<?php if ($page['sidebar_first'] || $page['sidebar_second']) print 'grid-8 ' ?>alpha omega">
+      <div class="<?php if ($page['sidebar_first']) print 'grid-9 ' ?><?php if($page['sidebar_second']) print 'grid-8 ' ?>alpha omega">
         <a id="main-content"></a>
         <?php if ($title): ?>
           <h1 class="title" id="page-title">
