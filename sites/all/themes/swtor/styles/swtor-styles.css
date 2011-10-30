@@ -694,6 +694,7 @@ div.workbench-info-block {
 
 .sidebar-second .view img {
   margin: 5px 0 0 -55px;
+  max-width: 45px;
   width: 45px;
 }
 
@@ -788,7 +789,7 @@ div#views_infinite_scroll-ajax-loader {
 .block-nodespotbox .view .content {
   padding: 10px 20px 20px;
 }
-
+©
 .block-nodespotbox .link {
   display: block;
   margin: -20px 0 0;

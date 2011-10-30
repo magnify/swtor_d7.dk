@@ -91,5 +91,9 @@ function swtor_account_preprocess_swtor_account(&$vars) {
     ),
   );
   $vars['message_raw'] = $messages;
-  $vars['messages'] = theme('links', $messages);  
+  $vars['messages'] = theme('links', $messages);
+
+  // Add style and js
+  drupal_add_css(drupal_get_path('module', 'swtor_account') . '/css/swtor_account.css');
+  drupal_add_js(drupal_get_path('module', 'swtor_account') . '/js/swtor_account.js');
 }
