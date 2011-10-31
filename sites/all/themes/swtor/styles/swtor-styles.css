@@ -789,7 +789,7 @@ div#views_infinite_scroll-ajax-loader {
 .block-nodespotbox .view .content {
   padding: 10px 20px 20px;
 }
-©
+
 .block-nodespotbox .link {
   display: block;
   margin: -20px 0 0;
@@ -800,4 +800,19 @@ div#views_infinite_scroll-ajax-loader {
 .block-nodespotbox .link a {
   background: url('../images/common-arrow.png') no-repeat left 4px;
   padding: 0 0 0 10px;
+}
+
+/*--- User account ---*/
+
+#swtor-account .account-name .username {
+  background: url('../images/arrow-large-down.png') no-repeat right 10px;
+}
+
+#swtor-account .swtor-account-messages li a {
+  background: url('../images/sprites.png') 0 1px no-repeat;
+  padding: 0 0 0 23px;
+}
+
+#swtor-account .swtor-account-messages li a:hover {
+  background-position: -26px -19px;
 }

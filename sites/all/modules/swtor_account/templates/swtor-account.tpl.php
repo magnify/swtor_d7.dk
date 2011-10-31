@@ -11,13 +11,15 @@
  *
  */
 ?>
-<div id="swtor-account">
-  <a class="account-name" href="/user/"><?php print t('Welcome') . ' ' . $username ?></a>
+<div id="swtor-account" class="swtor-account">
+  <a class="account-name" href="/user/"><?php print t('Welcome') . '<span class="username">' . $username ?></span></a>
   <div class="content">
     <div class="item-list">
       <?php print $links ?>
     </div>
-    <?php print $messages ?>
-    <a class="logout" href="/user/logout">Logout</a>
+    <div class="bottom-wrapper">
+      <?php print $messages ?>
+      <a class="logout" href="/user/logout">Logout</a>
+    </div>
   </div>
 </div>

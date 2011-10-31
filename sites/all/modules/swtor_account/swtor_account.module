@@ -86,7 +86,7 @@ function swtor_account_preprocess_swtor_account(&$vars) {
     'links' => array(
       'msg-account' => array(
         'title' => t('Messages (!count)', array('!count' => privatemsg_unread_count())),
-        'href' => 'massages/list',
+        'href' => 'messages/list',
       ),
     ),
   );
@@ -94,6 +94,6 @@ function swtor_account_preprocess_swtor_account(&$vars) {
   $vars['messages'] = theme('links', $messages);
 
   // Add style and js
-  drupal_add_css(drupal_get_path('module', 'swtor_account') . '/css/swtor_account.css');
-  drupal_add_js(drupal_get_path('module', 'swtor_account') . '/js/swtor_account.js');
+  drupal_add_css(drupal_get_path('module', 'swtor_account') . '/css/swtor-account.css');
+  drupal_add_js(drupal_get_path('module', 'swtor_account') . '/js/swtor-account.js');
 }
