@@ -757,6 +757,12 @@ div#views_infinite_scroll-ajax-loader {
   padding: 2px 0 0 25px;
 }
 
+#sidebar-first .block-menu-block h2 a:hover,
+#sidebar-first .block-menu-block li a:hover {
+  color: #d69f09;
+  text-decoration: none;
+}
+
 /*--- Level 2 ---*/
 #sidebar-first .block-menu-block li li a {
   background-position: 20px 12px;
