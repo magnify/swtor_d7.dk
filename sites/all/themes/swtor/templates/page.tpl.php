@@ -145,17 +145,21 @@
           </div>
         </div> <!-- /.section, /#sidebar-second -->
       <?php endif; ?>
-      <div id="columns-three" class="columns-three grid-12 alpha omega">
-        <div id="columns-three-one" class="column columns-three-one grid-4 omega"><?php print render($page['column_three_one']); ?></div>
-        <div id="columns-three-two" class="column columns-three-two grid-4 omega"><?php print render($page['column_three_two']); ?></div>
-        <div id="columns-three-three" class="column columns-three-three grid-4 omega"><?php print render($page['column_three_three']); ?></div>
-      </div>
-      <div id="columns-four" class="region columns-four container-12">
-        <div id="columns-three-one" class="column columns-four-one grid-3"><?php print render($page['column_four_one']); ?></div>
-        <div id="columns-three-two" class="column columns-three-two grid-3"><?php print render($page['column_four_two']); ?></div>
-        <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_three']); ?></div>
-        <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_four']); ?></div>
-      </div>
+      <?php if ($page['column_three_one'] || $page['column_three_two'] || $page['column_three_three']): ?>
+        <div id="columns-three" class="columns-three grid-12 alpha omega">
+          <div id="columns-three-one" class="column columns-three-one grid-4 alpha"><?php print render($page['column_three_one']); ?></div>
+          <div id="columns-three-two" class="column columns-three-two grid-4"><?php print render($page['column_three_two']); ?></div>
+          <div id="columns-three-three" class="column columns-three-three grid-4 omega"><?php print render($page['column_three_three']); ?></div>
+        </div>
+      <?php endif; ?>
+      <?php if ($page['column_four_one'] || $page['column_four_two'] || $page['column_four_three'] || $page['column_four_four']): ?>
+        <div id="columns-four" class="region columns-four container-12">
+          <div id="columns-three-one" class="column columns-four-one grid-3"><?php print render($page['column_four_one']); ?></div>
+          <div id="columns-three-two" class="column columns-three-two grid-3"><?php print render($page['column_four_two']); ?></div>
+          <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_three']); ?></div>
+          <div id="columns-three-three" class="column columns-four-three grid-3"><?php print render($page['column_four_four']); ?></div>
+        </div>
+      <?php endif; ?>
     </div></div> <!-- /.section, /#content -->
 
   </div></div> <!-- /#main, /#main-wrapper -->

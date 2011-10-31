@@ -322,10 +322,3 @@ li a.active {
 .block-nodespotbox .view .link {
   
 }
-
-/*--- Column regions ---*/
-
-.columns-three,
-.columns-four {
-  margin: 30px 0 0;
-}

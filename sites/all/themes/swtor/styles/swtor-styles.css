@@ -26,6 +26,12 @@ img {
   top: 12px;
 }
 
+/* !----- / Block  ----- */
+
+.block h2 {
+  margin: 0;
+}
+
 /*--- AdSense ---*/
 
 .region-pagetop {
@@ -778,6 +784,15 @@ div#views_infinite_scroll-ajax-loader {
   line-height: 100%;
 }
 
+.block-nodespotbox .image a {
+  display: block;
+  overflow: hidden;
+}
+
+.block-nodespotbox .image a img {
+  float: left;
+}
+
 .block-nodespotbox h2,
 .block-nodespotbox .view .content,
 .block-nodespotbox .link {
@@ -787,6 +802,7 @@ div#views_infinite_scroll-ajax-loader {
 }
 
 .block-nodespotbox .view .content {
+  min-height: 36px;
   padding: 10px 20px 20px;
 }
 
@@ -815,4 +831,14 @@ div#views_infinite_scroll-ajax-loader {
 
 #swtor-account .swtor-account-messages li a:hover {
   background-position: -26px -19px;
+}
+
+/*--- Column regions ---*/
+
+.columns-three,
+.columns-four {
+  background: url('../images/common-pattern-hori-small.png') no-repeat;
+  clear: both;
+  margin: 30px 0 20px;
+  padding: 45px 0 0;
 }
