@@ -827,7 +827,7 @@ div#views_infinite_scroll-ajax-loader {
 /*--- User account ---*/
 
 #swtor-account .account-name .username {
-  background: url('../images/arrow-large-down.png') no-repeat right 10px;
+  background: url('../images/arrow-large-down.png') no-repeat right center;
 }
 
 #swtor-account .swtor-account-messages li a {
