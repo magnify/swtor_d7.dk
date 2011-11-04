@@ -166,10 +166,25 @@
 
   <div id="footer-wrapper"><div class="section">
 
-    <?php if ($page['footer']): ?>
+    <?php if ($page['footer'] || $page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
       <div id="footer" class="clearfix">
         <?php print render($page['footer']); ?>
-      </div> <!-- /#footer -->
+        <?php if ($page['footer_first']): ?>
+          <div id="footer-first" class="footer-column footer-first grid-3">
+            <?php print render($page['footer_first']); ?>
+          </div>
+        <?php endif; ?>      
+        <?php if ($page['footer_second']): ?>
+          <div id="footer-first" class="footer-column footer-second grid-3">
+            <?php print render($page['footer_second']); ?>
+          </div>
+        <?php endif; ?>      
+        <?php if ($page['footer_third']): ?>
+          <div id="footer-first" class="footer-column footer-third grid-3">
+            <?php print render($page['footer_third']); ?>
+          </div>
+        <?php endif; ?>        
+      </div>
     <?php endif; ?>
 
   </div></div> <!-- /.section, /#footer-wrapper -->
