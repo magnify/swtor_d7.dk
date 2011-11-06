@@ -18,7 +18,7 @@ function swtor_basic_content_types_node_info() {
       'help' => '',
     ),
     'page' => array(
-      'name' => t('Basic page'),
+      'name' => t('Page'),
       'base' => 'node_content',
       'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
       'has_title' => '1',

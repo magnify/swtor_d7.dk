@@ -173,7 +173,7 @@ function swtor_featured_content_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 0;
-  /* Field: Content: Teaser */
+  /* Field: Content: Spotbox teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
