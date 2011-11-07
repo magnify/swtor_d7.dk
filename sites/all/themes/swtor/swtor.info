@@ -12,6 +12,7 @@ stylesheets[all][] = font-kits/titillium/titillium.css
 stylesheets[all][] = font-kits/droid-sans/droid-sans.css
 stylesheets[all][] = styles/nice_menus.css
 stylesheets[all][] = styles/nice_menus_default.css
+stylesheets[all][] = styles/forum.css
 
 regions[header] = Header
 regions[pagetop] = Page top
