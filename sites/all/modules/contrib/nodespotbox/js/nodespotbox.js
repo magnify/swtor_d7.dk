@@ -1,6 +1,6 @@
 (function ($) {
   $(document).ready(function() {
-    var context = $('#nodespotbox-view-settings');
+    var context = $('.nodespotbox-view-settings');
     if (context.size()) {
       // Set views display list, based on selection
       _nodespotbox_change_display(false);

@@ -59,6 +59,7 @@ function nodespotbox_form_node_type_form_alter(&$form, &$form_state, $form_id) {
     '#type' => 'fieldset',
     '#title' => t('Node spotbox settings'),
     '#group' => 'additional_settings',
+    '#attributes' => array('class' => array('nodespotbox-view-settings')),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#tree' => TRUE,
@@ -163,12 +164,15 @@ function nodespotbox_form_alter(&$form, $form_state, $form_id) {
     // Check if node spotbox is enabled for the current node type.
     $settings = nodespotbox_is_enabled($node->type);
     if ($settings) {
-      $form['nodespotbox'] = array(
-        '#type' => 'fieldset',
-        '#title' => t('Spotbox options'),
-        '#group' => 'additional_settings',
-        '#tree' => TRUE,
-      );
+      // Only display the fieldset, if options are avaliable.
+      if (!$settings['always'] || $settings['views']['user']) {
+        $form['nodespotbox'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Spotbox options'),
+          '#group' => 'additional_settings',
+          '#tree' => TRUE,
+        );
+      }
 
       // If node spotbox always enabled, do not give the user the option to
       // disable the spotbox.
@@ -218,7 +222,11 @@ function nodespotbox_node_load($nodes, $types) {
       $display_id = FALSE;
 
       // Load spotbox settings this node values.
-      $result = db_query('SELECT nid, display_id FROM {nodespotbox} WHERE nid=:nid', array(':nid' => $node->nid))->fetchAssoc();
+      $result = db_select('nodespotbox', 'spot')
+                ->fields('spot', array('nid', 'display_id'))
+                ->condition('nid', $node->nid)
+                ->execute()
+                ->fetchAssoc();
 
       // Check if it's optional to create spotboxes for this content type.
       if (!$settings['always'] && !empty($result)) {
@@ -262,7 +270,7 @@ function nodespotbox_node_update($node) {
 function nodespotbox_node_delete($node) {
   $settings = nodespotbox_is_enabled($node);
   if ($settings) {
-    db_query('DELETE FROM {nodespotbox} WHERE nid=:nid', array(':nid' => $node->nid));
+    db_delete('nodespotbox')->condition('nid', $node->nid)->execute();
     nodespotbox_flush_caches();
   }
 }
@@ -276,8 +284,7 @@ function nodespotbox_save($node) {
   $settings = nodespotbox_is_enabled($node);
   if ($settings) {
     // Save spotbox avalibility, if not set to aways provide spotbox in settings.
-
-    if ($node->nodespotbox['enable']) {
+    if (isset($node->nodespotbox) && $node->nodespotbox['enable']) {
       $display_id = $settings['views']['display_id'];
       if ($settings['views']['user']) {
         $display_id = $node->nodespotbox['display_id'];
@@ -285,7 +292,11 @@ function nodespotbox_save($node) {
 
       // Check if record exists, if it do... update the record else insert
       // new record.
-      $result = db_query('SELECT nid FROM {nodespotbox} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAssoc();
+      $result = db_select('nodespotbox', 'spot')
+                ->fields('spot', array('nid'))
+                ->condition('nid', $node->nid)
+                ->execute()
+                ->fetchField();
       if ($result) {
         db_update('nodespotbox')
           ->fields(array('display_id' => $display_id))
@@ -296,7 +307,7 @@ function nodespotbox_save($node) {
         db_insert('nodespotbox')
         ->fields(array('nid' => $node->nid,
                        'type' => $node->type,
-                       'display_id' => $node->nodespotbox['display_id']))
+                       'display_id' => $display_id))
         ->execute();
       }
     }
@@ -325,11 +336,14 @@ function nodespotbox_block_info() {
     if ($settings) {
       if ($settings['always']) {
         // As spotbox setting, says that all nodes of this type should be spotboxes.. load all.
-        $result = db_query("SELECT nid, title
-                              FROM {node}
-                             WHERE type = ':type'
-                              AND (nid = tnid OR tnid = 0)", array(':type' => $type->type));
-        foreach ($result as $row) {
+        $query = db_select('node', 'n')
+                 ->fields('n', array('nid', 'title'))
+                 ->condition('type', $type->type)
+                 ->condition(db_or()
+                             ->condition('nid', 'tid')
+                             ->condition('tnid', 0))
+                 ->execute();
+        while ($row = $query->fetchObject()) {
           $blocks[$row->nid] = array(
             'info' => $row->title . ' (Node spotbox)'
           );
@@ -337,14 +351,19 @@ function nodespotbox_block_info() {
       }
       else {
         // Load spotbox information for the ones selected by users.
-        $result = db_query('SELECT nid, title
-                              FROM {node} n
-                             WHERE type = :type
-                               AND nid in (SELECT nid
-                                             FROM {nodespotbox}
-                                            WHERE type = n.type)
-                               AND (nid = tnid OR tnid = 0)', array(':type' => $type->type));
-        foreach ($result as $row) {
+        $sub_query = db_select('nodespotbox', 'spot')
+                     ->fields('spot', array('nid'))
+                     ->condition('type', $type->type)
+                     ->condition(db_or()
+                                ->condition('nid', 'tid')
+                                ->condition('tnid', 0));
+        $query = db_select('node', 'n')
+                 ->fields('n', array('nid', 'title'))
+                 ->condition('type', $type->type)
+                 ->condition('nid', $sub_query, 'in')
+                 ->execute();
+
+        while ($row = $query->fetchObject()) {
           $blocks[$row->nid] = array(
             'info' => $row->title . ' (Node spotbox)'
           );
@@ -363,19 +382,23 @@ function nodespotbox_block_info() {
  */
 function nodespotbox_block_configure($delta) {
   // Get spotbox settings for a given content type.
-  $type = db_query('SELECT type
-                      FROM {node}
-                     WHERE nid = :nid', array(':nid' => $delta))->fetchField();
+  $type = db_select('node', 'n')
+          ->fields('n', array('type'))
+          ->condition('nid', $delta)
+          ->execute()
+          ->fetchField();
   $settings = nodespotbox_is_enabled($type);
 
   // Get settings for the current node spotbox.
-  $display_id = db_query('SELECT display_id
-                            FROM {nodespotbox}
-                           WHERE nid = :nid', array(':nid' => $delta))->fetchField();
+  $display_id = db_select('nodespotbox', 'spot')
+                ->fields('spot', array('display_id'))
+                ->condition('nid', $delta)
+                ->execute()
+                ->fetchField();
 
   // Create view display settings form (don't should option to create block, it will not make sens).
+  $form = array();
   if ($settings['views']['user']) {
-    $form = array();
     $form['nodespotbox'] = array(
       '#type' => 'fieldset',
       '#title' => t('Node spotbox settings'),
@@ -402,9 +425,10 @@ function nodespotbox_block_configure($delta) {
  */
 function nodespotbox_block_save($delta = '', $edit = array()) {
   if (isset($edit['display_id'])) {
-    db_query('UPDATE {nodespotbox}
-                 SET display_id = :display_id
-               WHERE nid = :nid', array(':display_id' => $edit['display_id'], ':nid' => $delta));
+    db_update('nodespotbox')
+    ->fields(array('display_id' => $edit['display_id']))
+    ->condition('nid', $delta)
+    ->execute();
   }
 }
 
@@ -416,9 +440,11 @@ function nodespotbox_block_save($delta = '', $edit = array()) {
  */
 function nodespotbox_block_view($delta) {
   // Get the node type based on the delta (nid) and get spotbox settings.
-  $node_info = db_query('SELECT tnid, title, type, language
-                           FROM {node}
-                          WHERE nid = :nid', array(':nid' => $delta))->fetchObject();
+  $node_info = db_select('node', 'n')
+               ->fields('n', array('tnid', 'title', 'type', 'language'))
+               ->condition('nid', $delta)
+               ->execute()
+               ->fetchObject();
 
   // Get spotbox settings.
   $settings = nodespotbox_is_enabled($node_info->type);
@@ -452,13 +478,13 @@ function nodespotbox_block_view($delta) {
  *
  */
 function nodespotbox_flush_caches() {
-  // Clear context modules cache (or it will not be available in the drop down).
-  if (function_exists('context_flush_caches')) {
-    context_flush_caches();
+  // Clear context block cache (or it will not be available in the drop down).
+  if (function_exists('context_cache_get')) {
+    context_cache_set('block_info', array());
   }
 
-  // Rebuild blocks provied by modules
-  _block_rehash();
+  // Rebuild blocks provied by modules (for the default theme)
+  _block_rehash(variable_get('theme_default', 'bartik'));
 }
 
 /**
@@ -471,9 +497,12 @@ function nodespotbox_flush_caches() {
 function _nodespotbox_render_view($settings) {
   // Check if the user, has supplied a another display to use.
   if ($settings['views']['user']) {
-    $settings['views']['display_id'] = db_query('SELECT display_id
-                                                   FROM {nodespotbox}
-                                                  WHERE nid = :nid', array(':nid' => $settings['nid']))->fetchField();
+    $display_id = db_select('nodespotbox', 'spot')
+                  ->fields('spot', array('display_id'))
+                  ->condition('nid', $settings['nid'])
+                  ->execute()
+                  ->fetchField();
+    $settings['views']['display_id'] = $display_id ? $display_id :$settings['views']['display_id'];
   }
 
   // Build view based on selected view and display.
