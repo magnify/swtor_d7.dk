@@ -170,17 +170,13 @@ li a.active {
 }
 
 .node .content a {
-  border-bottom: 1px dotted #ffba00;
-  margin-bottom: -1px;
   text-decoration: none;
 }
 
 .node .content a:link {
-  border-bottom: 1px dotted #ffba00;
 }
 
 .node .content a:visited {
-  border-bottom: 1px dotted #ecc459;
 }
 
 .node .content a:hover,
@@ -328,4 +324,13 @@ li a.active {
 .block-nodespotbox .view .content,
 .block-nodespotbox .view .link {
   
+}
+
+/*--- Gallery ---*/
+
+.field-name-field-page-gallery .field-label {
+  font-family: "TitilliumText22LRegular", Arial, sans-serif;
+  color: #acacac;
+  font-size: 1.5em;
+  font-weight: normal;
 }

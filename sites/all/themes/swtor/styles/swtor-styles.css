@@ -573,6 +573,11 @@ input[type=submit]:hover {
   margin: 5px 0 0 5px;
 }
 
+.node .content .tweetbutton {
+  clear: both;
+  margin-left: 0;
+}
+
 /* !----- / System Tabs  ----- */
 
 .tabs {
@@ -847,4 +852,49 @@ div#views_infinite_scroll-ajax-loader {
   clear: both;
   margin: 30px 0 20px;
   padding: 45px 0 0;
+}
+
+/*--- Content ---*/
+
+.content {
+  overflow: hidden;
+}
+
+.content .field-name-field-image {
+  margin: 0 0 1.5em;
+}
+
+.content .links.inline {
+} 
+
+/*--- Gallery ---*/
+
+.field-name-field-page-gallery {
+  margin: 2em 0;
+}
+
+.field-name-field-page-gallery .field-label {
+  background: url('../images/common-pattern.png');
+  display: block;
+  margin: 0 0 1em;
+  padding: 10px;
+}
+
+.field-name-field-page-gallery .field-items .field-item {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.field-name-field-page-gallery .field-items a {
+  border: 3px solid #505050;
+  float: left;
+}
+
+.node .field-name-field-page-gallery .field-items a:hover {
+  border: 3px solid #7e7e7e;
+  margin: 0;
+}
+
+.field-name-field-page-gallery .field-items a img {
+  float: left;
 }
