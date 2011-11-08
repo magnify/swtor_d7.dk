@@ -9,6 +9,13 @@ p {
   margin: 0 0 10px;
 }
 
+blockquote {
+  background: url('../images/sprites.png') no-repeat -920px -37px;
+  font-style: italic;
+  margin: 2.5em;
+  padding-left: 40px;
+}
+
 .node ul, 
 .node ol {
   margin-bottom: 0.5em;

@@ -831,12 +831,12 @@ div#views_infinite_scroll-ajax-loader {
 }
 
 #swtor-account .swtor-account-messages li a {
-  background: url('../images/sprites.png') 0 1px no-repeat;
+  background: url('../images/sprites.png') no-repeat -958px -20px;
   padding: 0 0 0 23px;
 }
 
 #swtor-account .swtor-account-messages li a:hover {
-  background-position: -26px -19px;
+  background-position: -984 0;
 }
 
 /*--- Column regions ---*/
