@@ -13,7 +13,7 @@ img {
 }
 
 #header {
-  background: url('../images/menu-line.jpg') no-repeat center 152px;
+  background: url('../images/menu-line.png') no-repeat center 153px;
   position: relative;
   min-height: 188px;
 }
@@ -116,15 +116,18 @@ img {
 
 #header .nice-menu {
   background-color: #050505;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;  
   bottom: 0;
   position: absolute;
   width: 100%;
 }
 
 #header .nice-menu li.first a {
-  -webkit-border-radius: 8px 0 0 8px;
-  -moz-border-radius: 8px 0 0 8px;
-  border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  border-radius: 6px 0 0 6px;
 }
 
 #header .nice-menu li a.active,
@@ -139,7 +142,6 @@ img {
 
 #header .nice-menu li {
   border-right: 1px solid #2d2d2e;
-  border-top: 1px solid #1f1f20;
   float: left;
 }
 
@@ -160,7 +162,7 @@ img {
   border-right: 0;
   border-top: 1px solid #1f1f20;
   clear: both;
-  min-width: 140px;
+  min-width: 175px;
 }
 
 #header .nice-menu ul li:hover {
