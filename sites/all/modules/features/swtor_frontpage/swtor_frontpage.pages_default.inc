@@ -426,7 +426,7 @@ function swtor_frontpage_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '3',
+      'items_per_page' => '4',
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -442,11 +442,23 @@ function swtor_frontpage_default_page_manager_handlers() {
     $pane = new stdClass;
     $pane->pid = 'new-8';
     $pane->panel = 'top_right';
-    $pane->type = 'block';
-    $pane->subtype = 'forum-active';
+    $pane->type = 'views';
+    $pane->subtype = 'front_page_forum_topics';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_1',
       'override_title' => 0,
       'override_title_text' => '',
     );
