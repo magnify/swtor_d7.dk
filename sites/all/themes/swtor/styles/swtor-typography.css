@@ -334,3 +334,23 @@ li a.active {
   font-size: 1.5em;
   font-weight: normal;
 }
+
+/*--- Footer ---*/
+
+#footer {
+}
+
+#footer h2 {
+  font-size: 1.33em;
+}
+
+#footer ul li a,
+#footer ul li a:link {
+  color: #9a9a9a;
+  font-size: 90%;
+  text-decoration: none;
+}
+
+#footer ul li a:hover {
+  color: #ffba00;
+}

@@ -225,7 +225,7 @@ img {
   -moz-border-radius: 12px 12px 0 0;
   -webkit-border-radius: 12px 12px 0 0;
   border-radius: 12px 12px 0 0;
-  margin: 0 0 20px;
+  margin: 0;
   padding: 20px;
 }
 
@@ -441,7 +441,7 @@ input[type=submit]:hover {
 */
 
 .view-featured-content .content-wrapper {
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0, 0, 0, .75);
   bottom: 5px;
   left: 0;
   position: absolute;
@@ -899,4 +899,30 @@ div#views_infinite_scroll-ajax-loader {
 
 .field-name-field-page-gallery .field-items a img {
   float: left;
+}
+
+/*--- Footer ---*/
+
+#footer-wrapper {
+  background: #000;
+  background: rgba(0, 0, 0, .2);
+}
+
+#footer {
+}
+
+#footer .footer-column {
+  margin: 2em 0 0 3.8em;
+  width: 28%;
+}
+
+#footer ul {
+  margin: 0 0 1em;
+}
+
+#footer ul li {
+  background: url('../images/common-arrow.png') no-repeat 1px 7px;
+  list-style: none;
+  margin: 0;
+  padding: 1px 0 0 12px;
 }

@@ -27,9 +27,11 @@ regions[column_four_two] = 4 column 2
 regions[column_four_three] = 4 column 3
 regions[column_four_four] = 4 column 4
 regions[footer] = Footer
+regions[footer_links] = Footer links
 regions[footer_first] = Footer first
 regions[footer_second] = Footer second
 regions[footer_third] = Footer third
+regions[footer_copyright] = Footer copyright
 
 ;Panels layouts
 plugins[panels][layouts] = plugins/layouts
