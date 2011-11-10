@@ -167,13 +167,13 @@
 </div></div> <!-- /#page, /#page-wrapper -->
 
 <div id="footer-wrapper"><div class="section">
-  <?php if ($page['footer_links']): ?>
-    <div id="footer_links" class="footer-links grid-12">
-      <?php print render($page['footer_links']); ?>
-    </div>
-  <?php endif; ?>
   <?php if ($page['footer'] || $page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
     <div id="footer" class="container-12 clearfix">
+      <?php if ($page['footer_links']): ?>
+        <div id="footer-links" class="footer-links grid-12">
+          <?php print render($page['footer_links']); ?>
+        </div>
+      <?php endif; ?>
       <?php print render($page['footer']); ?>
       <?php if ($page['footer_first']): ?>
         <div id="footer-first" class="footer-column footer-first grid-3 alpha omega">
@@ -189,12 +189,12 @@
         <div id="footer-third" class="footer-column footer-third grid-3 alpha omega">
           <?php print render($page['footer_third']); ?>
         </div>
-      <?php endif; ?>        
-    </div>
-  <?php endif; ?>
-  <?php if ($page['footer_copyright']): ?>
-    <div id="footer_copyright" class="footer-copyright grid-12">
-      <?php print render($page['footer_copyright']); ?>
+      <?php endif; ?>
+      <?php if ($page['footer_copyright']): ?>
+        <div id="footer-copyright" class="footer-copyright grid-12">
+          <?php print render($page['footer_copyright']); ?>
+        </div>
+      <?php endif; ?>      
     </div>
   <?php endif; ?>    
 </div></div> <!-- /.section, /#footer-wrapper -->

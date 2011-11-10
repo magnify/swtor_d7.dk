@@ -318,7 +318,7 @@ img {
 }
 
 .bottom-wrapper {
-  margin: 0;
+  margin: 0 0 2em;
 }
 
 /*--- Forms ---*/
@@ -904,15 +904,19 @@ div#views_infinite_scroll-ajax-loader {
 /*--- Footer ---*/
 
 #footer-wrapper {
-  background: #000;
-  background: rgba(0, 0, 0, .2);
+  background-color: #000;
+}
+
+#footer-links {
+  padding: 1.5em;
 }
 
 #footer {
+  background: url('../images/footer-background.jpg') no-repeat 0 52px;
 }
 
 #footer .footer-column {
-  margin: 2em 0 0 3.8em;
+  margin: 2em 0 2em 3.8em;
   width: 28%;
 }
 
@@ -925,4 +929,10 @@ div#views_infinite_scroll-ajax-loader {
   list-style: none;
   margin: 0;
   padding: 1px 0 0 12px;
+}
+
+#footer-copyright {
+  border-top: 1px solid #1f1f1f;
+  padding: 2em 0;
+  text-align: center;
 }

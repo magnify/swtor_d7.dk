@@ -337,9 +337,6 @@ li a.active {
 
 /*--- Footer ---*/
 
-#footer {
-}
-
 #footer h2 {
   font-size: 1.33em;
 }
@@ -354,3 +351,13 @@ li a.active {
 #footer ul li a:hover {
   color: #ffba00;
 }
+
+#footer-links,
+#footer-copyright {
+  font-size: .9em;
+}
+
+#footer-copyright {
+  color: #545454;
+}
+  
