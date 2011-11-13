@@ -7,14 +7,17 @@ if (theme_get_setting('swtor_rebuild_registry')) {
 
 function swtor_form_user_login_block_alter(&$form) {
 
+  
+  
   // Unset elements
   unset($form['name']);
   unset($form['pass']);
   unset($form['links']);
   unset($form['actions']['submit']);
   unset($form['openid_links']);
-
-
+  unset($form['openid_identifier']);
+  unset($form['openid.return_to']);
+  
   // Set a weight for form actions so other elements can be placed
   // beneath them.
   $form['actions']['#weight'] = 5;
@@ -37,11 +40,9 @@ function swtor_form_user_login_block_alter(&$form) {
     '#required' => 1,
     '#required' => 1,
   );
-
-  // Render submit
+  
   $form['actions']['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Log in'),
+    '#markup' => '<input name="submit" value="' . t('Log in') . '" type="submit" class="button-yellow" />', 
   );
 
   // New user
