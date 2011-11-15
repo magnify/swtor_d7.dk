@@ -58,10 +58,8 @@ Colors used:
 /* Table name and description on forum list and table header on topic list */
 .forum-table-wrap .forum-table-superheader,
 .forum-table-topics thead tr  {
-  border: 1px solid #C1C1C1;
-  background: #DDDDDD;
-  background: -webkit-gradient(linear, left top, left bottom, from(#393939), to(#DDDDDD));
-  background: -moz-linear-gradient(top, #393939, #DDDDDD);
+  border: 0;
+  background: url('../images/common-pattern.png');
   color: #333333;
 }
 
@@ -140,7 +138,7 @@ td.forum-list-icon {
 
 /*** Sticky topics ***/
 .forum-table tr.forum-last-sticky {
-  border-bottom: 10px solid #C1C1C1;
+  border-bottom: 10px solid #1b1b1b;
 }
 
 .forum-table .sticky-label {
