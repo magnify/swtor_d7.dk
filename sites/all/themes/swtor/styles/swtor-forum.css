@@ -21,7 +21,9 @@ Colors used:
 
 .forum-pager .pager a,
 #forum-comments .pager a {
-  font-weight: bold;
+  display: block;
+  font-weight: normal;
+  padding: 1px 7px 0;
 }
 
 .forum-pager .pager a:link,
@@ -29,10 +31,8 @@ Colors used:
 #forum-comments .pager a:link,
 #forum-comments .pager a:visited {
   text-decoration: none;
-  border: 1px solid #C1C1C1;
-  background: #EFEFEF;
-  background: -webkit-gradient(linear, left top, left bottom, from(#393939), to(#EFEFEF));
-  background: -moz-linear-gradient(top, #393939, #EFEFEF);
+  border: 0;
+  background: #1d1e1d;  
 }
 
 .forum-pager .pager-current,
@@ -53,6 +53,7 @@ Colors used:
 /* Forum list and topic list tables */
 .forum-table {
   border: 0;
+  width: 100%;
 }
 
 /* Table name and description on forum list and table header on topic list */
@@ -116,7 +117,7 @@ Colors used:
 /* Individual cells on both tables */
 .forum-table td {
   border: 1px solid #0e0e0e;
-  padding: 0 15px;
+  padding: 10px;
 }
 
 td.forum-list-icon {
@@ -274,7 +275,7 @@ div.forum-post {
 #forum a:focus,
 #forum a:active {
   color: #d69f09;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Forum icons */
