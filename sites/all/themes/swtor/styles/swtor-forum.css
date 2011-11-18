@@ -48,6 +48,11 @@ Colors used:
   color: #333333;
 }
 
+.forum-pager .pager,
+.forum-comment-wrapper .pager {
+  width: auto;
+}
+
 /*** FORUM & TOPIC LISTS ******************************************************/
 
 /* Forum list and topic list tables */
