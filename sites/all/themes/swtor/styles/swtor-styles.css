@@ -357,7 +357,8 @@ input[type=radio] {
   margin: 2px 3px 0 0;
 }
 
-input[type=submit] {
+input[type=submit],
+.button {
   background: #d3981c;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#909090');
   background: -webkit-gradient(linear, left top, left bottom, from(#b3b3b3), to(#909090));
@@ -373,6 +374,19 @@ input[type=submit] {
   padding: 6px 7px 5px;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);
+}
+
+.button:link,
+#forum .button:link,
+.button:visited,
+#forum .button:visited,
+.button:hover,
+#forum .button:hover,
+.button:focus,
+#forum .button:focus,
+.button:active,
+#forum .button:active {
+  color: #3e3e3e;
 }
 
 input[type=submit].button-yellow {
@@ -407,7 +421,13 @@ input[type=submit].button-red {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, .25);
 }
 
-input[type=submit].button-green {
+.button-green,
+#forum .button-green,
+#forum .button-green:link,
+#forum .button-green:visited,
+#forum .button-green:hover,
+#forum .button-green:focus,
+#forum .button-green:active {
   background: #d3981c;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cae187', endColorstr='#a1c959');
   background: -webkit-gradient(linear, left top, left bottom, from(#cae187), to(#a1c959));
