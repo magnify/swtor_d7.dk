@@ -80,7 +80,7 @@ function activityfeed_fb_settings($options){
   
   $form['recommendations'] = array(
       '#type' => 'checkbox', 
-      '#title' => t('Show the widget header'), 
+      '#title' => t('Recommendations'), 
       '#description' => t('Show the header in the recommendations widget') 
   );
   $defaults = activityfeed_defaults();

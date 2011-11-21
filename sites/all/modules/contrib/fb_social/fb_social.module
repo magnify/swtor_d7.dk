@@ -1,5 +1,7 @@
 <?php
 
+// facebook developers site
+define('FB_REF_BASE_URL', 'http://developers.facebook.com/docs/reference/plugins/');
 
 /**
  * @todo Please document this function.
@@ -282,12 +284,20 @@ function fb_social_fb_plugin_defaults($type){
 function fb_social_fb_plugin_fb_settings_form($type, $options){
   $form = array();
   $plugin = fb_social_fb_plugin_load($type);
+  
+  $url = FB_REF_BASE_URL . $plugin['html tag name'];
+  $l = l("facebook documentation page", $url, array('attributes' => array('target' => '_blank' )));
+  $desc = t("For more information about this plugin and its attributes please check out the !facebookdoc" , array('!facebookdoc' => $l));
 
+  $form['help'] = array(
+    '#value' => "<div>" . $desc . "</div>",
+  );
+  
   $function = ctools_plugin_get_function($plugin, 'fb plugin form');
-  if ($function){
-    $form = $function($options);
+  if ($function) {
+    $form += $function($options);
   }
-
+  
   return $form;
 }
 
@@ -666,17 +676,17 @@ function fb_social_custom_channel_url() {
 /**
  * Implementation of hook_fb_social_event_subscribe
  */
-function fb_social_like_fb_social_event_subscribe() {
+function fb_social_fb_social_event_subscribe() {
   // integration with google analytics
-  if (module_exists('googleanalytics')) {
+  //if (module_exists('googleanalytics')) {
     global $user;
     $id = variable_get('googleanalytics_account', '');
-    if (!empty($id) && _googleanalytics_visibility_pages() && _googleanalytics_visibility_user($user)) {		
+    //if (!empty($id) && _googleanalytics_visibility_pages() && _googleanalytics_visibility_user($user)) {		
       return array('FB.Event.subscribe("edge.create", function(href, widget) {',
         '_gaq.push(["_trackEvent", "Facebook like", "Drupal", href]);',
       '});');
-    }
-  }
+    //}
+  //}
 }
 
 
