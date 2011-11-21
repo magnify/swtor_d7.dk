@@ -3,9 +3,9 @@ description = Enables filtering of context selection options
 package = "Context"
 core = 7.x
 files[] = context_filter.module
-; Information added by drupal.org packaging script on 2011-11-01
+; Information added by drupal.org packaging script on 2011-11-16
 version = "7.x-1.x-dev"
 core = "7.x"
 project = "context_filter"
-datestamp = "1320105923"
+datestamp = "1321402373"
 

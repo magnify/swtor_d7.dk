@@ -15,6 +15,9 @@ function context_filter_permission() {
     'administer context filter names' => array(
       'title' => t('Administer Context filter names.'),
     ),
+    'context filter toggle regions' => array(
+      'title' => t('Allow users to toggle empty regions in the toolbar.'),
+    ),
   );
 }
 
@@ -51,6 +54,15 @@ function context_filter_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 2,
   );
+
+  // Menu callback to toggle empty regions.
+  $items['context_filter/regions'] = array(
+    'title' => 'Toggle regions',
+    'page callback' => 'context_filter_toggle_empty_regions',
+    'access arguments' => array('context filter toggle regions'),
+    'type' => MENU_CALLBACK,
+  );
+
 
 //  $items['admin/structure/context/regions'] = array(
 //    'title' => 'Context filter regions',
@@ -228,4 +240,32 @@ function context_filter_preprocess_context_block_editable_region(&$vars) {
       }
     }
   }
+}
+
+
+/**
+ * Implements hook_page_build().
+ *
+ * Add show/hide regions link to the toolbar using javascript.
+ */
+function context_filter_page_build(&$page) {
+  if (function_exists('context_inline_editor_page_build') && user_access('context filter toggle regions')) {
+    drupal_add_js(array('context_filter' => variable_get('context_reaction_block_all_regions', FALSE)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'context_filter') . '/js/context_filter_show_regions.js', array('preprocess' => FALSE));
+    drupal_add_css(drupal_get_path('module', 'context_filter') . '/css/context_filter_show_regions.css', array('preprocess' => FALSE));
+  }
+}
+
+/**
+ * Menu callback that toggles contexts show/hide empty regions.
+ */
+function context_filter_toggle_empty_regions() {
+  $current = variable_get('context_reaction_block_all_regions', FALSE);
+  if ($current) {
+    $current = FALSE;
+  }
+  else {
+    $current = TRUE;
+  }
+  variable_set('context_reaction_block_all_regions', $current);
 }
