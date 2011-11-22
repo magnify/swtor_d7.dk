@@ -1026,3 +1026,15 @@ div#views_infinite_scroll-ajax-loader {
   padding: 2em 0;
   text-align: center;
 }
+
+/*--- CKEditor ---*/
+
+span.cke_skin_kama {
+  border: 0 !important;
+  padding: 0 !important;
+  width: 98% !important;
+}
+
+.cke_skin_kama .cke_wrapper {
+  background: #292929 !important;
+}
