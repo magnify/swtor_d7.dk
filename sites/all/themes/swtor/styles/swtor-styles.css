@@ -371,9 +371,16 @@ input[type=submit],
   cursor: pointer;
   font-size: .8em;
   font-weight: bold;
+  min-width: 50px;
   padding: 6px 7px 5px;
+  text-align: center;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);
+}
+
+a.button {  
+  line-height: 17px;
+  margin: 0;
 }
 
 .button:link,
@@ -387,6 +394,7 @@ input[type=submit],
 .button:active,
 #forum .button:active {
   color: #3e3e3e;
+  text-decoration: none;
 }
 
 input[type=submit].button-yellow {
