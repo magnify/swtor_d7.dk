@@ -29,11 +29,13 @@ class SwtorUsersMigration extends SwtorMigration {
         MigrateDestinationUser::getKeySchema()
     );
     $query = db_select($this->source_db . '.users', 'swuser')
-             ->fields('swuser', array('name', 'pass', 'mail', 'mode',
+             ->fields('swuser', array('uid', 'name', 'pass', 'mail', 'mode',
                                       'sort', 'threshold', 'theme', 'signature',
                                       'signature_format', 'created', 'access',
                                       'login', 'status', 'timezone', 'language',
-                                      'picture', 'init', 'data', 'timezone_name'));
+                                      'picture', 'init', 'data', 'timezone_name'))
+             ->condition('uid', 0, '!=')
+             ->condition('uid', 1, '!=');
     $this->source = new MigrateSourceSQL($query);
 
     $this->destination = new MigrateDestinationUser();
@@ -48,7 +50,10 @@ class SwtorUsersMigration extends SwtorMigration {
     $this->addSimpleMappings(array('pass', 'mail', 'theme', 'signature',
                                    'signature_format', 'created', 'access',
                                    'login', 'status', 'timezone', 'language',
-                                   'picture', 'init', 'data'));
+                                   'picture', 'init'));
+
+    // Map 'data'
+
 
     // Dedupe assures that value is unique. Use it when source data is non-unique.
     // Pass the Drupal table and column for determining uniqueness.
@@ -65,6 +70,13 @@ class SwtorUsersMigration extends SwtorMigration {
     // Unmapped source fields
     $this->addFieldMapping(NULL, 'mode')
          ->issueGroup(t('DNM'));
+    $this->addFieldMapping(NULL, 'sort')
+         ->issueGroup(t('DNM'));
+    $this->addFieldMapping(NULL, 'threshold')
+         ->issueGroup(t('DNM'));
+    $this->addFieldMapping(NULL, 'timezone_name')
+         ->issueGroup(t('DNM'));
+
 
     // Unmapped destination fields
 
