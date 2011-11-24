@@ -371,9 +371,16 @@ input[type=submit],
   cursor: pointer;
   font-size: .8em;
   font-weight: bold;
+  min-width: 50px;
   padding: 6px 7px 5px;
+  text-align: center;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);
+}
+
+a.button {  
+  line-height: 17px;
+  margin: 0;
 }
 
 .button:link,
@@ -387,6 +394,7 @@ input[type=submit],
 .button:active,
 #forum .button:active {
   color: #3e3e3e;
+  text-decoration: none;
 }
 
 input[type=submit].button-yellow {
@@ -1017,4 +1025,16 @@ div#views_infinite_scroll-ajax-loader {
   border-top: 1px solid #1f1f1f;
   padding: 2em 0;
   text-align: center;
+}
+
+/*--- CKEditor ---*/
+
+span.cke_skin_kama {
+  border: 0 !important;
+  padding: 0 !important;
+  width: 98% !important;
+}
+
+.cke_skin_kama .cke_wrapper {
+  background: #292929 !important;
 }
