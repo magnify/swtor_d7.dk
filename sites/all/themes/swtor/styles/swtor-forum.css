@@ -143,8 +143,11 @@ td.forum-list-icon {
 .forum-list-icon-wrapper {
   background: none;
   border: 0;
-  height: 46px;
-  width: 46px;
+  -moz-box-shadow: 0 0 0;
+  -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+  height: 50px;
+  width: 50px;
 }
 
 /* Placeholder when there are no topics in the list */
@@ -343,155 +346,199 @@ div.forum-post {
 
 /* Forum icons */
 
-/* Generelt */
+tr.even td.forum-list-icon-default .forum-list-icon-wrapper span {
+  background: url('../images/forum-icons-sprite.png') no-repeat -2100px -350px;
+}
+
+.forum-list-icon-wrapper span.new {
+  background-position: -2040px -410px;
+}
+
 #forum-6 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -167px -1038px;
+  background-position: -180px -2270px;
 }
 
 #forum-6 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat -112px -1093px;
+  background-position: -120px -2330px;
 }
 
 /* Off-topic */
 #forum-9 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -1500px -950px;
 }
 
 #forum-9 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -1440px -1010px;
 }
 
 /* SWTOR.dk */
 #forum-10 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-10 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
 #forum-13 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-13 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
-/* Nyheder */
 #forum-14 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -1260px -1190px;
 }
 
 #forum-14 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -1200px -1250px;
+}
+
+#forum-16 .forum-list-icon-wrapper span {
+  background-position: -660px -1790px;
+}
+
+#forum-16 .forum-list-icon-wrapper span.new {
+  background-position: -600px -1850px;
+}
+
+#forum-17 .forum-list-icon-wrapper span {
+  background-position: -1140px -1310px;
+}
+
+#forum-17 .forum-list-icon-wrapper span.new {
+  background-position: -1080px -1370px;
+}
+
+#forum-18 .forum-list-icon-wrapper span {
+  background-position: -1740px -710px;
+}
+
+#forum-18 .forum-list-icon-wrapper span.new {
+  background-position: -1680px -770px;
+}
+
+#forum-23 .forum-list-icon-wrapper span {
+  background-position: -1380px -1070px;
+}
+
+#forum-23 .forum-list-icon-wrapper span.new {
+  background-position: -1320px -1130px;
 }
 
 #forum-24 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-24 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
-/* Star Wars Generelt */
+#forum-26 .forum-list-icon-wrapper span,
+#forum-46 .forum-list-icon-wrapper span {
+  background-position: -420px -2030px;
+}
+
+#forum-26 .forum-list-icon-wrapper span.new,
+#forum-46 .forum-list-icon-wrapper span.new {
+  background-position: -360px -2090px;
+}
+
+#forum-27 .forum-list-icon-wrapper span,
+#forum-45 .forum-list-icon-wrapper span {
+  background-position: -540px -1910px;
+}
+
+#forum-27 .forum-list-icon-wrapper span.new,
+#forum-45 .forum-list-icon-wrapper span.new {
+  background-position: -480px -1970px;
+}
+
 #forum-28 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -180px -2270px;
 }
 
 #forum-28 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -120px -2330px;
 }
 
-/* INFOs */
 #forum-29 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -60px -2390px;
 }
 
 #forum-29 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -2450px;
 }
 
 #forum-30 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-30 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
-/* Guilds */
 #forum-31 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-31 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
-/* Konkurrencer */
 #forum-32 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -1620px -830px;
 }
 
 #forum-32 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -1560px -890px;
 }
 
 #forum-33 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -56px -1149px;
 }
 
 #forum-33 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: 0 -1204px;
 }
 
-#forum-34 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
-}
-
-#forum-34 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
-}
-
-#forum-35 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
-}
-
-#forum-35 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
-}
-
-#forum-36 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
-}
-
-#forum-36 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
-}
-
+#forum-34 .forum-list-icon-wrapper span,
+#forum-35 .forum-list-icon-wrapper span,
+#forum-36 .forum-list-icon-wrapper span,
 #forum-37 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -1860px -590px;
 }
 
+#forum-34 .forum-list-icon-wrapper span.new,
+#forum-35 .forum-list-icon-wrapper span.new,
+#forum-36 .forum-list-icon-wrapper span.new,
 #forum-37 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -1800px -650px;
 }
 
 #forum-38 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -56px -1149px;
+  background-position: -2217px -235px;
 }
 
 #forum-38 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat 0 -1204px;
+  background-position: -2159px -293px;
 }
 
 /* Ankomsthallen */
 #forum-40 .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -279px -926px;
+  background-position: -300px -2150px;
 }
 
 #forum-40 .forum-list-icon-wrapper span.new {
-  background: url('../images/forum-icons-sprite.png') no-repeat -223px -982px;
+  background-position: -240px -2210px;
+}
+
+#forum-47 .forum-list-icon-wrapper span {
+  background-position: -2100px -350px;
+}
+
+#forum-47 .forum-list-icon-wrapper span.new {
+  background-position: -2040px -410px;
 }
