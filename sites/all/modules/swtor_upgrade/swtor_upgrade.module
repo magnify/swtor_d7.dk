@@ -10,3 +10,11 @@ function swtor_upgrade_migrate_api() {
   );
   return $api;
 }
+
+abstract class SwtorMigration extends Migration {
+  protected $source_db = 'swtor_d6';
+
+  public function __construct() {
+    parent::__construct();
+  }
+}

@@ -1,20 +1,7 @@
 <?php
 
-/**
- * @file
- * A basic migration example.
- */
-abstract class SwtorMigration extends Migration {
-  protected $source_db = 'swtor_d6';
-
-  public function __construct() {
-    parent::__construct();
-  }
-}
-
 class SwtorUsersMigration extends SwtorMigration {
   public function __construct() {
-    // The basic setup is similar to BeerTermMigraiton
     parent::__construct();
 
     $this->description = t('Swtor users');

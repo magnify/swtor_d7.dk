@@ -11,3 +11,4 @@ dependencies[] = migrate
 files[] = swtor_migrate.module
 
 files[] = users.inc
+files[] = articles.inc
