@@ -13,8 +13,9 @@ function swtor_upgrade_migrate_api() {
 
 abstract class SwtorMigration extends Migration {
   protected $source_db = 'swtor_d6';
+  protected $source_path = '/home/cableman/source/off-work/swtor_d6';
 
   public function __construct() {
-    parent::__construct();
+    parent::__construct(MigrateGroup::getInstance('swtor'));
   }
 }

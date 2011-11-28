@@ -21,6 +21,7 @@ class SwtorUsersMigration extends SwtorMigration {
       'age' => t('The users age.'),
       'skype' => t('The users skype number.'),
       'wlm' => t('The user messagner ID.'),
+      'origin' => t('Origin title'),
     );
 
     $query = db_select($this->source_db . '.users', 'swuser')
@@ -75,7 +76,9 @@ class SwtorUsersMigration extends SwtorMigration {
          ->issueGroup(t('DNM'));
     $this->addFieldMapping(NULL, 'timezone_name')
          ->issueGroup(t('DNM'));
-  
+    $this->addFieldMapping(NULL, 'origin')
+         ->issueGroup(t('DNM'));
+
     // We may need to test if this is need.
     $this->addFieldMapping(NULL, 'data')
          ->issueGroup(t('DNM'));
@@ -131,6 +134,7 @@ class SwtorUsersMigration extends SwtorMigration {
     }
 
 //  (SELECT pv.value FROM profile_values pv WHERE pv.fid = 7 AND pv.uid = u.uid) as origin
+
     return TRUE;
   }
 }
