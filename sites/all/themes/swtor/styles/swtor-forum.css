@@ -415,11 +415,43 @@ tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
 }
 
 #forum-18 .forum-list-icon-wrapper span {
-  background-position: -1740px -710px;
+  background-position: -1741px -711px;
 }
 
 #forum-18 .forum-list-icon-wrapper span.new {
-  background-position: -1680px -770px;
+  background-position: -1681px -771px;
+}
+
+#forum-19 .forum-list-icon-wrapper span {
+  background-position: -1020px -1430px;
+}
+
+#forum-19 .forum-list-icon-wrapper span.new {
+  background-position: -961px -1491px;
+}
+
+#forum-20 .forum-list-icon-wrapper span {
+  background-position: -901px -1551px;
+}
+
+#forum-20 .forum-list-icon-wrapper span.new {
+  background-position: -841px -1611px;
+}
+
+#forum-21 .forum-list-icon-wrapper span {
+  background-position: -781px -1671px;
+}
+
+#forum-21 .forum-list-icon-wrapper span.new {
+  background-position: -721px -1731px;
+}
+
+#forum-22 .forum-list-icon-wrapper span {
+  background-position: -1981px -471px;
+}
+
+#forum-22 .forum-list-icon-wrapper span.new {
+  background-position: -1921px -531px;
 }
 
 #forum-23 .forum-list-icon-wrapper span {
@@ -533,14 +565,26 @@ tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
   background-position: -240px -2210px;
 }
 
-#subcontainer-45 .forum-list-icon-wrapper span,
-#subcontainer-46 .forum-list-icon-wrapper span,
+#subcontainer-45 .forum-list-icon-wrapper span {
+  background-position: -541px -1911px;
+}
+
+#subcontainer-45 .forum-list-icon-wrapper span.new {
+  background-position: -481px -1971px;
+}
+
+#subcontainer-46 .forum-list-icon-wrapper span {
+  background-position: -421px -2031px;
+}
+
 #forum-47 .forum-list-icon-wrapper span {
   background-position: -2100px -350px;
 }
 
-#subcontainer-45 .forum-list-icon-wrapper span.new,
-#subcontainer-46 .forum-list-icon-wrapper span.new,
+#subcontainer-46 .forum-list-icon-wrapper span.new {
+  background-position: -361px -2091px;
+}
+
 #forum-47 .forum-list-icon-wrapper span.new {
   background-position: -2040px -410px;
 }
