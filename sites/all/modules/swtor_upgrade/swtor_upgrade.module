@@ -19,3 +19,19 @@ abstract class SwtorMigration extends Migration {
     parent::__construct(MigrateGroup::getInstance('swtor'));
   }
 }
+
+/**
+ * Helper function that mappes a given uid to a source uid, so content can
+ * be upgrade with the correct user information.
+ *
+ * @param type $source_db
+ * @param type $uid
+ * @return type
+ */
+function swtor_upgrade_map_uid($source_db, $uid) {
+  $uid_query = db_select($source_db . '.users', 'su')
+               ->condition('su.uid', $uid);
+  $uid_query->join('users', 'u', 'su.name = u.name');
+  $uid_query->addField('u', 'uid');
+  return $uid_query->execute()->fetchField();
+}

@@ -76,35 +76,67 @@ class SwtorArticlesMigration extends SwtorMigration {
     $this->addFieldMapping(NULL, 'tnid');
     $this->addFieldMapping(NULL, 'translate');
 
-    // Unmapped fields
+    // Unmapped source fields
+    $this->addFieldMapping(NULL, 'field_video')
+         ->issueGroup(t('DNM'));
+
+    // Unmapped fields.
     $this->addFieldMapping('path')
          ->issueGroup(t('DNM'));
     $this->addFieldMapping('pathauto')
          ->issueGroup(t('DNM'));
+    $this->addFieldMapping('field_tags')
+         ->issueGroup(t('DNM'));
 
-    $this->addFieldMapping('field_teaser', 'teaser');
-
-    $body_arguments = MigrateTextFieldHandler::arguments(NULL, 'editor_html', NULL);
+    // Map body and summary.
+    $body_arguments = MigrateTextFieldHandler::arguments(array('source_field' => 'teaser'), 'editor_html', NULL);
     $this->addFieldMapping('body', 'body')
          ->arguments($body_arguments);
+    $this->addFieldMapping(NULL, 'teaser');
 
+    // Map title image files, the file is copied in the prepareRow method.
     $associated_file_arguments = MigrateFileFieldHandler::arguments(NULL, 'file_copy', FILE_EXISTS_RENAME);
     $this->addFieldMapping('field_image', 'title_image')
+         ->arguments($associated_file_arguments);
+
+    // Map gallery images
+    $associated_file_arguments = MigrateFileFieldHandler::arguments(NULL, 'file_copy', FILE_EXISTS_RENAME);
+    $this->addFieldMapping('field_articles_gallery', 'image_gallery')
          ->arguments($associated_file_arguments);
   }
 
   public function prepareRow($current_row) {
-    // Get more information about the title images
-    $title_image_query = db_select($this->source_db . '.content_type_article_with_image', 'cfi')
-                         ->fields('cfi')
-                         ->condition('cfi.nid', $current_row->nid);
-    $title_image_query->join($this->source_db . '.files', 'f', 'cfi.field_image_fid = f.fid');
-    $title_image_query->addField('f', 'filepath');
-    $results = $title_image_query->execute();
+    // Map the current node to the right user, base on user mapping.
+    $current_row->uid = swtor_upgrade_map_uid($this->source_db, $current_row->uid);
 
+    // Get more information about the title images
+    $image_query = db_select($this->source_db . '.content_type_article_with_image', 'cfi')
+                   ->condition('cfi.nid', $current_row->nid);
+    $image_query->join($this->source_db . '.files', 'f', 'cfi.field_image_fid = f.fid');
+    $image_query->addField('f', 'filepath');
+    $image_query->addField('cfi', 'field_image_data', 'data');
+    $results = $image_query->execute();
+    $current_row->title_image = $this->build_image_array($results);
+
+    // Get information about the articles galleries.
+    $image_query = db_select($this->source_db . '.content_field_image_gallery', 'cfig')
+                   ->condition('cfig.nid', $current_row->nid);
+    $image_query->join($this->source_db . '.files', 'f', 'cfig.field_image_gallery_fid = f.fid');
+    $image_query->addField('f', 'filepath');
+    $image_query->addField('cfig', 'field_image_gallery_data', 'data');
+    $results = $image_query->execute();
+    $current_row->image_gallery = $this->build_image_array($results);
+
+    return TRUE;
+  }
+
+  private function build_image_array($sql_results) {
     $images = array();
-    foreach ($results as $row) {
-      $image_data = unserialize($row->field_image_data);
+    foreach ($sql_results as $row) {
+      $image_data = array('alt' => '', 'title' => '');
+      if ($row->data) {
+        $image_data = unserialize($row->data);
+      }
       $current_image_data = array(
         'path' => $this->source_path .'/'. $row->filepath,
         'alt' => $image_data['alt'],
@@ -112,7 +144,7 @@ class SwtorArticlesMigration extends SwtorMigration {
       );
       $images[] = drupal_json_encode($current_image_data);
     }
-    $current_row->title_image = $images;
-    return TRUE;
+
+    return $images;
   }
 }
