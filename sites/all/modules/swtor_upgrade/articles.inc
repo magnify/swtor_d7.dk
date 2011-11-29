@@ -94,6 +94,9 @@ class SwtorArticlesMigration extends SwtorMigration {
   }
 
   public function prepareRow($current_row) {
+    // Map the current node to the right user, base on user mapping.
+    $current_row->uid = swtor_upgrade_map_uid($this->source_db, $current_row->uid);
+
     // Get more information about the title images
     $title_image_query = db_select($this->source_db . '.content_type_article_with_image', 'cfi')
                          ->fields('cfi')
