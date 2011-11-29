@@ -346,11 +346,13 @@ div.forum-post {
 
 /* Forum icons */
 
-tr.even td.forum-list-icon-default .forum-list-icon-wrapper span {
-  background: url('../images/forum-icons-sprite.png') no-repeat -2100px -350px;
+tr.even td.forum-list-icon-default .forum-list-icon-wrapper span,
+tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span {
+  background: url('../images/forum-icons-sprite.jpg') no-repeat -2100px -350px;
 }
 
-.forum-list-icon-wrapper span.new {
+tr.even td.forum-list-icon-default .forum-list-icon-wrapper span.new,
+tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
   background-position: -2040px -410px;
 }
 
@@ -436,32 +438,28 @@ tr.even td.forum-list-icon-default .forum-list-icon-wrapper span {
   background-position: 0 -1204px;
 }
 
-#forum-26 .forum-list-icon-wrapper span,
-#forum-46 .forum-list-icon-wrapper span {
+#forum-26 .forum-list-icon-wrapper span {
   background-position: -420px -2030px;
 }
 
-#forum-26 .forum-list-icon-wrapper span.new,
-#forum-46 .forum-list-icon-wrapper span.new {
+#forum-26 .forum-list-icon-wrapper span.new {
   background-position: -360px -2090px;
 }
 
-#forum-27 .forum-list-icon-wrapper span,
-#forum-45 .forum-list-icon-wrapper span {
+#forum-27 .forum-list-icon-wrapper span {
   background-position: -540px -1910px;
 }
 
-#forum-27 .forum-list-icon-wrapper span.new,
-#forum-45 .forum-list-icon-wrapper span.new {
+#forum-27 .forum-list-icon-wrapper span.new {
   background-position: -480px -1970px;
 }
 
 #forum-28 .forum-list-icon-wrapper span {
-  background-position: -180px -2270px;
+  background-position: -181px -2271px;
 }
 
 #forum-28 .forum-list-icon-wrapper span.new {
-  background-position: -120px -2330px;
+  background-position: -121px -2331px;
 }
 
 #forum-29 .forum-list-icon-wrapper span {
@@ -535,10 +533,14 @@ tr.even td.forum-list-icon-default .forum-list-icon-wrapper span {
   background-position: -240px -2210px;
 }
 
+#subcontainer-45 .forum-list-icon-wrapper span,
+#subcontainer-46 .forum-list-icon-wrapper span,
 #forum-47 .forum-list-icon-wrapper span {
   background-position: -2100px -350px;
 }
 
+#subcontainer-45 .forum-list-icon-wrapper span.new,
+#subcontainer-46 .forum-list-icon-wrapper span.new,
 #forum-47 .forum-list-icon-wrapper span.new {
   background-position: -2040px -410px;
 }
