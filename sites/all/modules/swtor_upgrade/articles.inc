@@ -55,7 +55,6 @@ class SwtorArticlesMigration extends SwtorMigration {
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('is_new')
           ->defaultValue(TRUE);
-    $this->addFieldMapping('uid', 'uid');
     $this->addFieldMapping('revision')
          ->defaultValue(TRUE);
     $this->addFieldMapping('revision_uid', 'uid');
@@ -75,6 +74,10 @@ class SwtorArticlesMigration extends SwtorMigration {
     $this->addFieldMapping(NULL, 'moderate');
     $this->addFieldMapping(NULL, 'tnid');
     $this->addFieldMapping(NULL, 'translate');
+
+    // Map uid base on user migration.
+    $this->addFieldMapping('uid', 'uid')
+         ->sourceMigration('SwtorUsers');
 
     // Unmapped source fields
     $this->addFieldMapping(NULL, 'field_video')
@@ -106,9 +109,6 @@ class SwtorArticlesMigration extends SwtorMigration {
   }
 
   public function prepareRow($current_row) {
-    // Map the current node to the right user, base on user mapping.
-    $current_row->uid = swtor_upgrade_map_uid($this->source_db, $current_row->name);
-
     // Get more information about the title images
     $image_query = db_select($this->source_db . '.content_type_article_with_image', 'cfi')
                    ->condition('cfi.nid', $current_row->nid);

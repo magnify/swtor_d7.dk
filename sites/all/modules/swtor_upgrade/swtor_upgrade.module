@@ -26,29 +26,6 @@ function swtor_upgrade_menu() {
 }
 
 /**
- * Helper function that mappes a given uid to a source uid, so content can
- * be upgrade with the correct user information.
- *
- * @param type $source_db
- * @param type $name
- * @return type
- */
-function swtor_upgrade_map_uid($source_db, $name) {
-  // He was user on maginfy the old system, but admin on the new system.
-  if ($name == 'magnify') {
-    return 1;
-  }
-
-  // We dont need to join... we have the name in
-  $uid = db_select('users', 'u')
-               ->fields('u', array('uid'))
-               ->condition('u.name', $name)
-               ->execute()
-               ->fetchField();
-  return $uid;
-}
-
-/**
  * Before runing the migration you will want to get rid of all the test data. So
  * run this function and 'drush mw aritcle', 'drush mw forum'
  *

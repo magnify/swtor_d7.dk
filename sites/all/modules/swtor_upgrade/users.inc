@@ -30,8 +30,7 @@ class SwtorUsersMigration extends SwtorMigration {
                                       'signature_format', 'created', 'access',
                                       'login', 'status', 'timezone', 'language',
                                       'picture', 'init', 'data', 'timezone_name'))
-             ->condition('uid', 0, '!=')
-             ->condition('uid', 1, '!=');
+             ->condition('uid', 0, '!=');
     $this->source = new MigrateSourceSQL($query, $source_fields);
 
     $this->destination = new MigrateDestinationUser(array('md5_passwords' => TRUE));
