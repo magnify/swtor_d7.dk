@@ -12,4 +12,5 @@ files[] = swtor_migrate.module
 
 files[] = users.inc
 files[] = articles.inc
+files[] = forum.inc
 ;files[] = comments.inc

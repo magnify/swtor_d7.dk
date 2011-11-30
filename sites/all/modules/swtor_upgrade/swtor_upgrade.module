@@ -30,15 +30,16 @@ function swtor_upgrade_menu() {
  * be upgrade with the correct user information.
  *
  * @param type $source_db
- * @param type $uid
+ * @param type $name
  * @return type
  */
-function swtor_upgrade_map_uid($source_db, $uid) {
-  $uid_query = db_select($source_db . '.users', 'su')
-               ->condition('su.uid', $uid);
-  $uid_query->join('users', 'u', 'su.name = u.name');
-  $uid_query->addField('u', 'uid');
-  return $uid_query->execute()->fetchField();
+function swtor_upgrade_map_uid($source_db, $name) {
+  // We dont need to join... we have the name in
+  return db_select($source_db . '.users', 'u')
+               ->fields('u', array('uid'))
+               ->condition('u.name', $name)
+               ->execute()
+               ->fetchField();
 }
 
 /**
