@@ -34,12 +34,18 @@ function swtor_upgrade_menu() {
  * @return type
  */
 function swtor_upgrade_map_uid($source_db, $name) {
+  // He was user on maginfy the old system, but admin on the new system.
+  if ($name == 'magnify') {
+    return 1;
+  }
+
   // We dont need to join... we have the name in
-  return db_select($source_db . '.users', 'u')
+  $uid = db_select('users', 'u')
                ->fields('u', array('uid'))
                ->condition('u.name', $name)
                ->execute()
                ->fetchField();
+  return $uid;
 }
 
 /**
