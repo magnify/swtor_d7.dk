@@ -130,6 +130,10 @@ class SwtorArticlesMigration extends SwtorMigration {
     return TRUE;
   }
 
+  /**
+   * Build image array that can be used to migrate image files. It makes
+   * assumptions about the data stucture of the $sql_results object.
+   */
   private function build_image_array($sql_results) {
     $images = array();
     foreach ($sql_results as $row) {
