@@ -51,7 +51,7 @@ class SwtorArticlesMigration extends SwtorMigration {
       MigrateDestinationNode::getKeySchema()
     );
 
-        // Make the mappings
+     // Make the mappings
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('is_new')
           ->defaultValue(TRUE);
