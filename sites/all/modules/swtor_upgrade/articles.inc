@@ -7,7 +7,7 @@ class SwtorArticlesMigration extends SwtorMigration {
     // Give the task a description.
     $this->description = t('Migrate article pages');
 
-    // We might need to migrate terms before articles.
+    // We need to migrate users before articles.
     $this->dependencies = array('SwtorUsers');
 
     $source_fields = array(
@@ -51,7 +51,7 @@ class SwtorArticlesMigration extends SwtorMigration {
       MigrateDestinationNode::getKeySchema()
     );
 
-        // Make the mappings
+     // Make the mappings
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('is_new')
           ->defaultValue(TRUE);
@@ -107,7 +107,7 @@ class SwtorArticlesMigration extends SwtorMigration {
 
   public function prepareRow($current_row) {
     // Map the current node to the right user, base on user mapping.
-    $current_row->uid = swtor_upgrade_map_uid($this->source_db, $current_row->uid);
+    $current_row->uid = swtor_upgrade_map_uid($this->source_db, $current_row->name);
 
     // Get more information about the title images
     $image_query = db_select($this->source_db . '.content_type_article_with_image', 'cfi')
@@ -130,6 +130,10 @@ class SwtorArticlesMigration extends SwtorMigration {
     return TRUE;
   }
 
+  /**
+   * Build image array that can be used to migrate image files. It makes
+   * assumptions about the data stucture of the $sql_results object.
+   */
   private function build_image_array($sql_results) {
     $images = array();
     foreach ($sql_results as $row) {
