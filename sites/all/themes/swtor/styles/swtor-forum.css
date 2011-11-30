@@ -344,6 +344,11 @@ div.forum-post {
   text-decoration: none;
 }
 
+td.forum-details .forum-subforums,
+td.forum-details .forum-subcontainers {
+  margin: 0;
+}
+
 /* Forum icons */
 
 tr.even td.forum-list-icon-default .forum-list-icon-wrapper span,
@@ -364,7 +369,6 @@ tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
   background-position: -120px -2330px;
 }
 
-/* Off-topic */
 #forum-9 .forum-list-icon-wrapper span {
   background-position: -1500px -950px;
 }
@@ -373,7 +377,6 @@ tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
   background-position: -1440px -1010px;
 }
 
-/* SWTOR.dk */
 #forum-10 .forum-list-icon-wrapper span {
   background-position: -56px -1149px;
 }
