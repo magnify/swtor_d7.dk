@@ -17,7 +17,7 @@ function swtor_frontpage_views_default_views() {
   $view->base_table = 'comment';
   $view->human_name = 'Front page comments';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -177,7 +177,7 @@ function swtor_frontpage_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'Front page';
   $view->core = 0;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -371,7 +371,7 @@ function swtor_frontpage_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['body']['alter']['trim'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['html'] = 1;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'teaser';

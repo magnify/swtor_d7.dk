@@ -5,21 +5,34 @@
  */
 
 /**
- * Implements hook_default_page_manager_handlers().
+ * Implements hook_default_page_manager_pages().
  */
-function swtor_frontpage_default_page_manager_handlers() {
-  $export = array();
-
+function swtor_frontpage_default_page_manager_pages() {
+  $page = new stdClass;
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'frontpage';
+  $page->task = 'page';
+  $page->admin_title = 'Frontpage';
+  $page->admin_description = '';
+  $page->path = 'front';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context';
-  $handler->task = 'node_view';
-  $handler->subtask = '';
+  $handler->name = 'page_frontpage_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'frontpage';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Frontpage',
+    'title' => 'frontpage',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -27,17 +40,7 @@ function swtor_frontpage_default_page_manager_handlers() {
     'contexts' => array(),
     'relationships' => array(),
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'node/1',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
@@ -550,15 +553,9 @@ function swtor_frontpage_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context'] = $handler;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['frontpage'] = $page;
 
-  return $export;
-}
-
-/**
- * Implements hook_default_page_manager_pages().
- */
-function swtor_frontpage_default_page_manager_pages() {
   $page = new stdClass;
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
