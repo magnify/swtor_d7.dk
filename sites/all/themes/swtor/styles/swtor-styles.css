@@ -40,6 +40,11 @@ img {
   margin-top: 0;
 }
 
+.element-spacing {
+  clear: both;
+  margin: 1.5em;
+}
+
 #header {
   background: url('../images/menu-line.png') no-repeat center 153px;
   position: relative;
