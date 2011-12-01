@@ -58,7 +58,7 @@ function swtor_upgrade_nuke() {
 }
 
 /**
- * Base class used be the migration objects. Used to setup some basic options.
+ * Base class used by the migration objects. Used to setup some basic options.
  */
 abstract class SwtorMigration extends Migration {
   protected $source_db = 'swtor_d6';
