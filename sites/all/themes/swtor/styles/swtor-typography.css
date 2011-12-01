@@ -5,6 +5,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*--- Editor ---*/
+.cke_show_borders {
+  color: #000;
+}
+
+.cke_show_borders li {
+  list-style: none;
+}
+
 /*--- Editor font styles ---*/
 .align-left {
   float: left;
