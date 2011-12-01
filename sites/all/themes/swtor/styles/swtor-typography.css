@@ -5,6 +5,39 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*--- Editor font styles ---*/
+.align-left {
+  float: left;
+  margin-right: 1em;
+}
+
+.align-left img {
+  margin-top: 0;
+}
+
+.align-center {
+  display: block;
+  text-align: center;
+}
+
+.align-center * {
+  margin: auto;
+}
+
+.align-right {
+  float: right;
+  margin-left: 1em;
+}
+
+.align-right img {
+  margin-top: 0;
+}
+
+.element-spacing {
+  clear: both;
+  padding: 1.5em 0;
+}
+
 p {
   margin: 0 0 10px;
 }
