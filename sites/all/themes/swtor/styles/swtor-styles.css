@@ -12,6 +12,34 @@ img {
   max-width: 100%;
 }
 
+/*--- Editor font styles ---*/
+.align-left {
+  float: left;
+  margin-right: 1em;
+}
+
+.align-left img {
+  margin-top: 0;
+}
+
+.align-center {
+  display: block;
+  text-align: center;
+}
+
+.align-center * {
+  margin: auto;
+}
+
+.align-right {
+  float: right;
+  margin-left: 1em;
+}
+
+.align-right img {
+  margin-top: 0;
+}
+
 #header {
   background: url('../images/menu-line.png') no-repeat center 153px;
   position: relative;
