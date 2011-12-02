@@ -640,6 +640,47 @@ input[type=submit]:hover {
   margin: 7px 0 0;
 }
 
+/*--- Article ---*/
+
+.node-article {
+  padding: 0 0 10em;
+}
+
+.node-article .submitted {
+  margin: 0 0 2em;
+}
+
+.node-article .field-name-body {
+  border-bottom: 1px dashed #404240;
+  margin: 0 0 2em;
+  padding: 0 0 .75em;
+}
+
+.node-article .share-links {
+  display: block;
+  text-align: right;
+}
+
+.node-article .links-wrapper {
+  clear: both;
+  padding: 0 0 2em;
+}
+
+.node-article .share-links .fb-social-like-plugin,
+.node-article .share-links .tweetbutton {
+  margin: auto .5em auto 0;
+  width: auto;
+}
+
+.node-article ul.links {
+  line-height: 1.75em;
+  margin: 0 0 0 -.5em;
+}
+
+.node-article ul.links li {
+  padding: 0;
+}
+
 /* Twitter and Facebook button */
 
 .article .share {

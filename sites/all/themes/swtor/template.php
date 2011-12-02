@@ -123,3 +123,9 @@ function swtor_preprocess_views_view_field(&$vars) {
     $vars['output'] .= swtor_build_tweet_button($row->nid, $row->node_title, 'swtordk', $row->node_type);
   }
 }
+
+/**
+ * Implements hook_page_alter().
+ */
+function swtor_page_alter(&$page) {
+}
