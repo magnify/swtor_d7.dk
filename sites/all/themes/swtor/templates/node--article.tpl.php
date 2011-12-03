@@ -85,14 +85,14 @@
     hide($content['tweetbutton']);
     
     hide($content['field_tags']);
-    // print_r($content['field_tags']);
   ?>
     
   <?php if ($display_submitted): ?>
     <div class="meta submitted">
-      <?php print $submitted; ?>
+      <?php if ($created): ?>
+        <?php print t('Posted by') . ' ' . $name . ' ' . format_date($created, $type = 'standard_da', $format = '', $timezone = NULL, $langcode = NULL); ?>
+      <?php endif; ?> 
       <?php
-        unset($content['field_tags']['label']);
         print render($content['field_tags'])
       ?>
     </div>

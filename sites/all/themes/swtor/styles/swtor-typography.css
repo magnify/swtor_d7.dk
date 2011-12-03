@@ -123,6 +123,15 @@ h6 {
   font-size: 18px;
 }
 
+.header-link,
+.header-link a:link,
+.header-link a:visited,
+.header-link a:hover,
+.header-link a:focus,
+.header-link a:active {
+  color: #fff;
+}
+
 /* ----- / Links ----- */
 
 a,

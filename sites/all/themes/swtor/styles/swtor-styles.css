@@ -1032,6 +1032,49 @@ div#views_infinite_scroll-ajax-loader {
   float: left;
 }
 
+/*--- Comments ---*/
+
+.comment {
+  background: #292929;
+  margin: 0 0 2em;
+  padding: 2em;
+}
+
+.comment-unpublished {
+  background: #292929;
+  border: 3px solid #ffb800;
+}
+
+.comment .date {
+}
+
+.comment h3 {
+  line-height: 100%;
+  margin: 0;
+  padding: .25em 0 0;
+}
+
+.comment .author-postfix {
+  color: #929292;
+}
+
+.comment .content {
+  padding: 1em 0 .75em .1em;
+}
+
+.comment .signature {
+  border-top: 1px dashed #404240;
+  display: block;
+  padding: 1.5em 0 .75em;
+}
+
+.comment ul.links {
+  border-top: 1px dashed #404240;
+  display: block;
+  margin: 0;
+  padding: .75em 0 0;
+}
+
 /*--- Footer ---*/
 
 #footer-wrapper {
