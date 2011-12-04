@@ -37,7 +37,7 @@ abstract class SwtorCommentMigration extends SwtorMigration {
     $this->addFieldMapping('uid', 'uid')
          ->sourceMigration('SwtorUsers');
 
-    $body_arguments = MigrateTextFieldHandler::arguments(NULL, filter_default_format(), NULL);
+    $body_arguments = MigrateTextFieldHandler::arguments(NULL, 'filtered_html', NULL);
     $this->addFieldMapping('comment_body', 'comment')
          ->arguments($body_arguments);
 
