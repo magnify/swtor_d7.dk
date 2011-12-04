@@ -597,7 +597,7 @@ input[type=submit]:hover {
   background-color: #f5f19d;
 }
 
-/*--- Articles ---*/
+/*--- Frontpage articles ---*/
 
 #content .content .articles .article {
   background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;
@@ -648,6 +648,10 @@ input[type=submit]:hover {
 
 .node-article .submitted {
   margin: 0 0 2em;
+}
+
+.node-article .article-tag {
+  text-transform: uppercase;
 }
 
 .node-article .field-name-body {
