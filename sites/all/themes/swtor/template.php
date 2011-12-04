@@ -142,10 +142,6 @@ function swtor_breadcrumb($variables) {
       $breadcrumb[] = l(t('Articles'), 'artikler');
     }
 
-    if (preg_match('/^artikler$/', $path)) {
-      $breadcrumb[] = '<span>' . t('Articles') . '</span>';
-    }
-
     // Add current page title to the end of the breadcrumb.
     if ($title = drupal_get_title()) {
       $breadcrumb[] = '<span>' . $title . '</span>';
