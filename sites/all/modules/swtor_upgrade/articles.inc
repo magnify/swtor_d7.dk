@@ -90,6 +90,8 @@ class SwtorArticlesMigration extends SwtorMigration {
          ->issueGroup(t('DNM'));
     $this->addFieldMapping('field_tags')
          ->issueGroup(t('DNM'));
+    $this->addFieldMapping('field_source')
+         ->issueGroup(t('DNM'));
 
     // Map body and summary.
     $body_arguments = MigrateTextFieldHandler::arguments(array('source_field' => 'teaser'), 'editor_html', NULL);
