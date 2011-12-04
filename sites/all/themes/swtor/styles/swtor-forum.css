@@ -243,6 +243,8 @@ div.forum-post {
 .forum-post-panel-main {
   background-color: #292929;
   border: 0;
+  margin-bottom: 1.9em;
+  padding-bottom: 1em;
 }
 
 .forum-post-panel-main .forum-post-content {
@@ -274,7 +276,9 @@ div.forum-post {
 
 /* Signature */
 .author-signature {
+  color: #666;
   font-size: .8em;
+  padding: 0 1.9em1.9em;
 }
 
 /* Post footer */
@@ -592,4 +596,10 @@ tr.odd td.forum-list-icon-default .forum-list-icon-wrapper span.new {
 
 #forum-47 .forum-list-icon-new-posts .forum-list-icon-wrapper span {
   background-position: -2040px -410px;
+}
+
+.forum-topic-header .topic-reply-link {
+  display: block;
+  float: none;
+  margin: 0 0 1.9em;
 }

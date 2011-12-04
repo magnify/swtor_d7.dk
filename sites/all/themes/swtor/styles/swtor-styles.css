@@ -1126,3 +1126,34 @@ span.cke_skin_kama {
 .cke_skin_kama .cke_wrapper {
   background: #292929 !important;
 }
+
+/*--- From Twitter bootstrap ---*/
+
+.label {
+  padding: 1px 3px 2px;
+  font-size: 9.75px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #bfbfbf;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.label.important {
+  background-color: #c43c35;
+}
+
+.label.warning {
+  background-color: #f89406;
+}
+
+.label.success {
+  background-color: #46a546;
+}
+
+.label.notice {
+  background-color: #62cffc;
+}
