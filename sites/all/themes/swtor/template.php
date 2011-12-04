@@ -142,20 +142,16 @@ function swtor_breadcrumb($variables) {
       $breadcrumb[] = l(t('Articles'), 'artikler');
     }
 
-    if (preg_match('/^artikler$/', $path)) {
-      $breadcrumb[] = '<span>' . t('Articles') . '</span>';
-    }
-
     // Add current page title to the end of the breadcrumb.
     if ($title = drupal_get_title()) {
       $breadcrumb[] = '<span>' . $title . '</span>';
     }
-  }
 
-  // Provide a navigational heading to give context for breadcrumb links to
-  // screen-reader users. Make the heading invisible with .element-invisible.
-  $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
-  $output .= '<nav class="breadcrumb">' . implode(' / ', $breadcrumb) .'</nav>';
+    // Provide a navigational heading to give context for breadcrumb links to
+    // screen-reader users. Make the heading invisible with .element-invisible.
+    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+    $output .= '<nav class="breadcrumb">' . implode(' / ', $breadcrumb) .'</nav>';
+  }
 
   return $output;
 }
