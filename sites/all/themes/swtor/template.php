@@ -125,7 +125,31 @@ function swtor_preprocess_views_view_field(&$vars) {
 }
 
 /**
- * Implements hook_page_alter().
+ * Implements hook_breadcrumb().
+ *
+ * Remove the current page title from the breadcrumb.
  */
-function swtor_page_alter(&$page) {
+function swtor_breadcrumb($variables) {
+  $output = '';
+  $breadcrumb = $variables['breadcrumb'];
+
+    // Build breadcrumb.
+  if (!empty($breadcrumb)) {
+    $path = drupal_get_path_alias();
+
+    // Add breadcrumb for news subjects.
+    if (preg_match('/^artikler/', $path)) {
+      $breadcrumb[] = l(t('Articles'), 'artikler');
+    }
+
+    // Add current page title to the end of the breadcrumb.
+    $breadcrumb[] = '<span>' . drupal_get_title() . '</span>';
+  }
+
+  // Provide a navigational heading to give context for breadcrumb links to
+  // screen-reader users. Make the heading invisible with .element-invisible.
+  $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+  $output .= '<nav class="breadcrumb">' . implode(' / ', $breadcrumb) .'</nav>';
+
+  return $output;
 }
