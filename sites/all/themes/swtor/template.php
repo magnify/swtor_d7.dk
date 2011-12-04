@@ -138,12 +138,18 @@ function swtor_breadcrumb($variables) {
     $path = drupal_get_path_alias();
 
     // Add breadcrumb for news subjects.
-    if (preg_match('/^artikler/', $path)) {
+    if (preg_match('/^artikler\/+/', $path)) {
       $breadcrumb[] = l(t('Articles'), 'artikler');
     }
 
+    if (preg_match('/^artikler$/', $path)) {
+      $breadcrumb[] = '<span>' . t('Articles') . '</span>';
+    }
+
     // Add current page title to the end of the breadcrumb.
-    $breadcrumb[] = '<span>' . drupal_get_title() . '</span>';
+    if ($title = drupal_get_title()) {
+      $breadcrumb[] = '<span>' . $title . '</span>';
+    }
   }
 
   // Provide a navigational heading to give context for breadcrumb links to
