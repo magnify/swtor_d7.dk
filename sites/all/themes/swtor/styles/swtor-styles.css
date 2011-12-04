@@ -230,7 +230,8 @@ img {
   padding: 20px;
 }
 
-.front #content {
+.front #content,
+.page-artikler #content {
   padding: 0;
   width: 100%;
 }
@@ -338,6 +339,12 @@ input[type=password] {
   border-radius: 6px;
   color: #9d9d9d;
   padding: 6px 4px;
+}
+
+.resizable textarea {
+  -moz-border-radius: 6px;
+  -web-kit-border-radius: 6px;
+  border-radius: 6px 6px 0 0; 
 }
 
 textarea:active,
@@ -1156,4 +1163,10 @@ span.cke_skin_kama {
 
 .label.notice {
   background-color: #62cffc;
+}
+
+/*--- Resize textarea ---*/
+.resizable-textarea .grippie {
+  background-color: #333;
+  border-color: #333;
 }
