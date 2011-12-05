@@ -43,10 +43,6 @@ img {
   width: 728px;
 }
 
-.sidebar-second .region.panel-pane .adsense {
-  margin: 0 0 20px;
-}
-
 /*--- User login ---*/
 
 #block-user-login {
@@ -280,9 +276,9 @@ img {
 .sidebar-second .region.panel-pane.adsense,
 .sidebar-second .region.pane-block.adsense {
   background-color: #000;
-  left: -20px;
+  left: 0;
   margin: 0;
-  padding: 0 0 20px 20px;
+  padding: 0 0 20px ;
   position: relative;
   width: 300px;
 }
