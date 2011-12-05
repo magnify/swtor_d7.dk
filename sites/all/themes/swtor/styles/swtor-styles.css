@@ -268,7 +268,7 @@ img {
 #sidebar-second .region,
 .sidebar-second .region.panel-pane,
 .sidebar-second .region.pane-block {
-  padding: 0 0 0 20px;
+  padding: 0 0 20px 20px;
 }
 
 #sidebar-second .adsense,
@@ -280,9 +280,9 @@ img {
 .sidebar-second .region.panel-pane.adsense,
 .sidebar-second .region.pane-block.adsense {
   background-color: #000;
-  left: -21px;
+  left: -20px;
   margin: 0;
-  padding: 20px 0 20px 20px;
+  padding: 0 0 20px 20px;
   position: relative;
   width: 300px;
 }
@@ -304,7 +304,7 @@ img {
 
 .center-wrapper {
   background: #0b0b0b;
-  padding: 10px 0 0;
+  padding: 20px 0;
 }
 
 .center-wrapper #sidebar-second {
