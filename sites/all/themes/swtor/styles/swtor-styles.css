@@ -527,11 +527,16 @@ input[type=submit]:hover {
 
 /*--- Featured content ---*/
 
+.region.pane-featured-content {
+  background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;  
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+}
+
 .view-featured-content {
-  background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;
   position: relative;
   margin: 0 0 20px;
-  height: 275px;
+  height: 250px;
 }
 
 /*
@@ -540,7 +545,7 @@ input[type=submit]:hover {
 
 .view-featured-content .content-wrapper {
   background-color: rgba(0, 0, 0, .75);
-  bottom: 30px;
+  bottom: 5px;
   left: 0;
   position: absolute;
   width: 100%;
