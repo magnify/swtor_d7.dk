@@ -528,9 +528,10 @@ input[type=submit]:hover {
 /*--- Featured content ---*/
 
 .view-featured-content {
+  background: url('../images/common-pattern-hori.png') no-repeat 0 bottom;
   position: relative;
   margin: 0 0 20px;
-  height: 250px;
+  height: 275px;
 }
 
 /*
@@ -539,7 +540,7 @@ input[type=submit]:hover {
 
 .view-featured-content .content-wrapper {
   background-color: rgba(0, 0, 0, .75);
-  bottom: 5px;
+  bottom: 30px;
   left: 0;
   position: absolute;
   width: 100%;
@@ -549,7 +550,7 @@ input[type=submit]:hover {
 .view-featured-content .content-wrapper a.title,
 .view-featured-content .content-wrapper a.teaser {
   display: block;
-  padding: 10px 0 5px 10px;
+  padding: 10px 90px 5px 10px;
 }
 
 .view-featured-content .content-wrapper a.teaser {
