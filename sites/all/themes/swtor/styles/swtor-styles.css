@@ -210,10 +210,28 @@ img {
 }
 
 /*--- Breadcrumb ---*/
-#breadcrumb,
-.breadcrumb {
+#breadcrumb {
   border-bottom: 1px solid #333;
   margin: 0 0 20px;
+}
+
+/*--- Articles page ---*/
+
+.page-artikler #breadcrumb {
+  margin: 10px 0 20px;
+}
+
+.page-artikler #content {
+  padding: 10px 20px;
+  width: 100%;  
+}
+
+.page-artikler .content {
+  margin: 0 0 0 -10px;
+}
+
+.page-artikler .center-wrapper {
+  background-color: transparent;
 }
 
 /*--- Content ---*/
@@ -227,8 +245,7 @@ img {
   padding: 20px;
 }
 
-.front #content,
-.page-artikler #content {
+.front #content {  
   padding: 0;
   width: 100%;
 }
