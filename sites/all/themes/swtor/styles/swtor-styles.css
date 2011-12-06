@@ -624,6 +624,33 @@ input[type=submit]:hover {
   background-color: #f5f19d;
 }
 
+/*--- Pagen node ---*/
+
+.page-node .share-links {
+  display: block;
+  text-align: right;
+}
+
+.page-node .links-wrapper {
+  clear: both;
+  padding: 2em 0;
+}
+
+.page-node .share-links .fb-social-like-plugin,
+.page-node .share-links .tweetbutton {
+  margin: auto .5em auto 0;
+  width: auto;
+}
+
+.page-node ul.links {
+  line-height: 1.75em;
+  margin: 0 0 0 -.5em;
+}
+
+.page-node ul.links li {
+  padding: 0;
+}
+
 /*--- Frontpage articles ---*/
 
 #content .content .articles .article {
@@ -685,31 +712,6 @@ input[type=submit]:hover {
   border-bottom: 1px dashed #404240;
   margin: 0 0 2em;
   padding: 0 0 .75em;
-}
-
-.node-article .share-links {
-  display: block;
-  text-align: right;
-}
-
-.node-article .links-wrapper {
-  clear: both;
-  padding: 0 0 2em;
-}
-
-.node-article .share-links .fb-social-like-plugin,
-.node-article .share-links .tweetbutton {
-  margin: auto .5em auto 0;
-  width: auto;
-}
-
-.node-article ul.links {
-  line-height: 1.75em;
-  margin: 0 0 0 -.5em;
-}
-
-.node-article ul.links li {
-  padding: 0;
 }
 
 /* Twitter and Facebook button */
