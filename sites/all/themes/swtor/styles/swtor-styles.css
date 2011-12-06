@@ -1036,33 +1036,33 @@ div#views_infinite_scroll-ajax-loader {
 
 /*--- Gallery ---*/
 
-.field-name-field-page-gallery {
+.node .content-gallery {
   margin: 2em 0;
 }
 
-.field-name-field-page-gallery .field-label {
+.node .content-gallery .field-label {
   background: url('../images/common-pattern.png');
   display: block;
   margin: 0 0 1em;
   padding: 10px;
 }
 
-.field-name-field-page-gallery .field-items .field-item {
+.node .content-gallery .field-items .field-item {
   float: left;
   margin: 0 1em 1em 0;
 }
 
-.field-name-field-page-gallery .field-items a {
+.node .content-gallery .field-items a {
   border: 3px solid #505050;
   float: left;
 }
 
-.node .field-name-field-page-gallery .field-items a:hover {
+.node .content-gallery .field-items a:hover {
   border: 3px solid #7e7e7e;
   margin: 0;
 }
 
-.field-name-field-page-gallery .field-items a img {
+.node .content-gallery .field-items a img {
   float: left;
 }
 
