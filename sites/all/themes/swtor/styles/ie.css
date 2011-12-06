@@ -13,5 +13,10 @@ input[type=submit],
 }
 
 .view-featured-content .content-wrapper {
-  width: 530px;
+  width: 620px;
+}
+
+.view-featured-content .content-wrapper a.title {
+  padding-right: 0;
+  width: 525px;
 }
