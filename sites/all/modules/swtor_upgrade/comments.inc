@@ -73,4 +73,23 @@ class SwtorForumCommentsMigration extends SwtorCommentMigration {
 
     $this->description = 'Comments in forum';
   }
+
+  public function postImport() {
+    parent::postImport();
+
+    $query = db_select('comment', 'c')
+             ->fields('c', array('nid'))
+             ->groupBy('nid');
+    $query->join('forum_index', 'fi', 'c.nid = fi.nid');
+    $query->addExpression('COUNT(1)', 'comment_count');
+
+    $result = $query->execute();
+
+    while ($row = $result->fetchObject()) {
+      db_update('forum_index')
+      ->fields(array('comment_count' => $row->comment_count))
+      ->condition('nid', $row->nid, '=')
+      ->execute();
+    }
+  }
 }
