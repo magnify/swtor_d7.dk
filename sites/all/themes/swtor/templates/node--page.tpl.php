@@ -107,10 +107,8 @@
   <div class="links-wrapper">
     <?php if($content['links']['fb_social_like'] || $content['tweetbutton']): ?>
       <div class="share-links">
-      <?php print $content['links']['fb_social_like']['#links']['fb_social_like_swtor_like']['title']; ?>
-        <?php
-          print render($content['tweetbutton']);      
-        ?>
+        <?php print render($content['links']['fb_social_like']['#links']['fb_social_like_swtor_like']['title']); ?>
+        <?php print render($content['tweetbutton']); ?>
       </div>
     <?php endif; ?>  
     <?php if ($content['links']): ?>
