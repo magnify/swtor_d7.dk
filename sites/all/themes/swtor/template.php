@@ -5,9 +5,12 @@ if (theme_get_setting('swtor_rebuild_registry')) {
   system_rebuild_theme_data();
 }
 
-function swtor_form_user_login_block_alter(&$form) {
+function swtor_preprocess_html(&$vars) {
+  // Add conditional CSS for IE9 and below.
+  drupal_add_css(path_to_theme() . '/styles/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE), 'weight' => 999, 'preprocess' => FALSE));
+}
 
-  
+function swtor_form_user_login_block_alter(&$form) { 
   
   // Unset elements
   unset($form['name']);
