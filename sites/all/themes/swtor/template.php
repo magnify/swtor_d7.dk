@@ -5,9 +5,12 @@ if (theme_get_setting('swtor_rebuild_registry')) {
   system_rebuild_theme_data();
 }
 
-function swtor_form_user_login_block_alter(&$form) {
+function swtor_preprocess_html(&$vars) {
+  // Add conditional CSS for IE9 and below.
+  drupal_add_css(path_to_theme() . '/styles/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE), 'weight' => 999, 'preprocess' => FALSE));
+}
 
-  
+function swtor_form_user_login_block_alter(&$form) { 
   
   // Unset elements
   unset($form['name']);
@@ -150,7 +153,7 @@ function swtor_breadcrumb($variables) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
-    $output .= '<nav class="breadcrumb">' . implode(' / ', $breadcrumb) .'</nav>';
+    $output .= implode(' / ', $breadcrumb);
   }
 
   return $output;

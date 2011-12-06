@@ -7,7 +7,7 @@ body {
 
 /*--- Editor ---*/
 .cke_show_borders {
-  color: #000;
+  background-color: #191919; 
 }
 
 /*--- Editor font styles ---*/
@@ -88,7 +88,7 @@ h1 {
   font-size: 30px;
   font-weight: bold;
   line-height: 30px;
-  line-height: 30px;
+  line-height: 40px;
   margin: 0 0 15px;
 }
 
@@ -102,13 +102,11 @@ h2 {
   font-weight: bold;
   line-height: 24px;
   line-height: 20px;
-  margin: 1.5em 0 0.2em;
 }
 
 h3 {
   font-size: 24px;
   font-weight: bold;
-  margin: 1em 0 0.2em;
 }
 
 h4 {
@@ -288,7 +286,7 @@ li a.active {
 }
 
 .view-featured-content .content-wrapper a.title {
-  font-size: 250%;  
+  font-size: 100%;  
 }
 
 .view-featured-content .content-wrapper a.teaser {
@@ -397,6 +395,11 @@ li a.active {
 
 #footer ul li a:hover {
   color: #ffba00;
+}
+
+#footer ul li span {
+  color: #555;
+  font-size: 90%;
 }
 
 #footer-links,
