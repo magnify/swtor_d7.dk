@@ -339,6 +339,7 @@ label {
 
 textarea,
 input[type=text],
+input[type=file],
 input[type=password] {
   background-color: #1d1e1d;
   border: 1px solid #404240;
@@ -357,6 +358,7 @@ input[type=password] {
 
 textarea:active,
 input[type=text]:active,
+input[type=file]:active,
 input[type=password]:active,
 textarea:focus,
 input[type=text]:focus,
