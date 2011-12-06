@@ -13,6 +13,7 @@ stylesheets[all][] = font-kits/droid-sans/droid-sans.css
 stylesheets[all][] = styles/nice_menus.css
 stylesheets[all][] = styles/nice_menus_default.css
 stylesheets[all][] = styles/swtor-forum.css
+stylesheets[all][if IE] = styles/ie.css
 
 regions[header] = Header
 regions[pagetop] = Page top
