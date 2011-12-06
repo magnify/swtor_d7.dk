@@ -30,8 +30,7 @@ function swtor_account_block_view($delta) {
   $block = array();
 
   if (user_access('swtor account')) {
-    global $user;
-    $block['content'] = theme('swtor_account', $user->uid);
+    $block['content'] = theme('swtor_account');
   }
 
   return $block;
@@ -44,7 +43,7 @@ function swtor_account_theme() {
   $theme = array();
 
   $theme['swtor_account'] = array(
-    'variables' => array('uid' => NULL),
+    'variables' => array(),
     'path' => drupal_get_path('module', 'swtor_account') . '/templates',
     'template' => 'swtor-account',
   );
@@ -57,6 +56,7 @@ function swtor_account_theme() {
  */
 function swtor_account_preprocess_swtor_account(&$vars) {
   // Headline
+  $uid = $vars['user']->uid;
   $vars['username'] = $vars['user']->name;
   
   // Build account links.
@@ -67,11 +67,11 @@ function swtor_account_preprocess_swtor_account(&$vars) {
     'links' => array(
        'my-account' => array(
          'title' => t('My profile'),
-         'href' => 'user/' . $vars['uid'],
+         'href' => 'user/' . $uid,
        ),
        'edit-account' => array(
          'title' => 'Edit account',
-         'href' => 'user/' . $vars['uid'] . '/edit',
+         'href' => 'user/' . $uid . '/edit',
        ),
      ),
   );
