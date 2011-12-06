@@ -868,7 +868,7 @@ div.workbench-info-block {
   margin: 0 0 10px 45px;
 }
 
-.sidebar-second .view img {
+.sidebar-second .view .item-list img {
   margin: 5px 0 0 -55px;
   max-width: 45px;
   width: 45px;
