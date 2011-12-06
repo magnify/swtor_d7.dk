@@ -26,11 +26,6 @@ img {
   top: 12px;
 }
 
-/* !----- / Block  ----- */
-
-.block h2 {
-}
-
 /*--- AdSense ---*/
 
 .region-pagetop {
@@ -1048,7 +1043,23 @@ div#views_infinite_scroll-ajax-loader {
 
 .node .content-gallery .field-items .field-item {
   float: left;
-  margin: 0 1em 1em 0;
+
+}
+
+.grid-8 .node .content-gallery .field-items .field-item {
+  margin: 0 1.8em 1em 0;
+}
+
+.grid-8 .node .content-gallery .field-items .field-item:nth-of-type(5n+5) {
+  margin-right: 0;
+}
+
+.grid-9 .node .content-gallery .field-items .field-item {
+  margin: 0 1.06em 1em 0;
+}
+
+.grid-9 .node .content-gallery .field-items .field-item:nth-of-type(6n+6) {
+  margin-right: 0;
 }
 
 .node .content-gallery .field-items a {
