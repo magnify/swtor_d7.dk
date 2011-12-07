@@ -200,7 +200,7 @@ function nodespotbox_form_alter(&$form, $form_state, $form_id) {
           '#title' => t('View display id'),
           '#default_value' => isset($node->nodespotbox['display_id']) ? $node->nodespotbox['display_id'] : $settings['views']['display_id'],
           '#description' => t('The view aboves display. If selected that users can choose, this will be the default display.'),
-          '#options' =>  _nodespotbox_load_views_info($settings['views']['name']),
+          '#options' => _nodespotbox_load_avaliable_displays($node->type, $settings['views']['name']),
         );
       }
     }
@@ -565,4 +565,30 @@ function _nodespotbox_load_views_info($name) {
     $displays[$id] = $display_name;
   }
   return $displays;
+}
+
+/**
+ * Helper function that findes the views displays that are made avaliable by
+ * the site administrator for the content type (spotbox type) as parameter. This
+ * is can be selected by using nodespotbox filter.
+ *
+ * @param string $type
+ *    The content type that should be filter on.
+ * @param string $name
+ *    The name of the view that the displays should belong to.
+ * @return array
+ */
+function _nodespotbox_load_avaliable_displays($type, $name) {
+  $avaliable = _nodespotbox_load_views_info($name);
+  $settings = variable_get('nodespotbox_' . $type . '_filter', FALSE);
+  if ($settings) {
+    foreach ($settings as $id => $conf) {
+      $avaliable[$id] = $conf['name'];
+      if (!$conf['enabled']) {
+        unset($avaliable[$id]);
+      }
+    }
+  }
+
+  return $avaliable;
 }
