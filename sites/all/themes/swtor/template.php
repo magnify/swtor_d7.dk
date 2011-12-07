@@ -5,48 +5,34 @@ if (theme_get_setting('swtor_rebuild_registry')) {
   system_rebuild_theme_data();
 }
 
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Add condication stylesheets for IE.
+ */
 function swtor_preprocess_html(&$vars) {
   // Add conditional CSS for IE9 and below.
   drupal_add_css(path_to_theme() . '/styles/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE), 'weight' => 999, 'preprocess' => FALSE));
 }
 
-function swtor_form_user_login_block_alter(&$form) { 
-  
-  // Unset elements
-  unset($form['name']);
-  unset($form['pass']);
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Remove openid form login block and style the reset.
+ */
+function swtor_form_user_login_block_alter(&$form, &$form_state, $form_id) {  
+  // Unset open-id elements and default links.
   unset($form['links']);
-  unset($form['actions']['submit']);
   unset($form['openid_links']);
   unset($form['openid_identifier']);
   unset($form['openid.return_to']);
   
-  // Set a weight for form actions so other elements can be placed
-  // beneath them.
+  // Add forgot password link to pass title.
+  $form['pass']['#title'] = t('Password') . ' (<a href="/user/password" title="' . t('Forgot it?') .'" tabindex="3">' . t('Forgot it?') . '</a>)';
+
+  // Add class to the login button and move actions into the right place.
+  $form['actions']['submit']['#attributes'] = array('class' => array('button-yellow'));
   $form['actions']['#weight'] = 5;
-
-  // Render username
-  $form['name'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Username'),
-    '#maxlength' => 60,
-    '#size' => 15,
-    '#required' => 1,
-  );
-
-  // Render password
-  $form['pass'] = array(
-    '#type' => 'password',
-    '#title' => t('Password') . ' (<a href="/user/password" title="' . t('Forgot it?') .'" tabindex="3">' . t('Forgot it?') . '</a>)',
-    '#maxlength' => 60,
-    '#size' => 15,
-    '#required' => 1,
-    '#required' => 1,
-  );
-  
-  $form['actions']['submit'] = array(
-    '#markup' => '<input name="submit" value="' . t('Log in') . '" type="submit" class="button-yellow" />', 
-  );
 
   // New user
   if (variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)) {
@@ -55,7 +41,6 @@ function swtor_form_user_login_block_alter(&$form) {
       '#weight' => 10,
     );
   }
-
 }
 
 /**
