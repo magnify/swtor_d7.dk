@@ -26,12 +26,6 @@ img {
   top: 12px;
 }
 
-/* !----- / Block  ----- */
-
-.block h2 {
-  margin: 0;
-}
-
 /*--- AdSense ---*/
 
 .region-pagetop {
@@ -237,6 +231,7 @@ img {
 /*--- Content ---*/
 
 #content {
+  background: url('../images/transparent-black-50.png');
   background: rgba(0, 0, 0, .5);
   -moz-border-radius: 12px 12px 0 0;
   -webkit-border-radius: 12px 12px 0 0;
@@ -246,7 +241,7 @@ img {
 }
 
 .front #content {  
-  padding: 0;
+  padding: 10px 10px 10px 0;
   width: 100%;
 }
 
@@ -283,6 +278,7 @@ img {
 .sidebar-second .region.panel-pane,
 .sidebar-second .region.pane-block {
   padding: 0 0 20px 20px;
+  margin: 0 -20px 0 0;
 }
 
 #sidebar-second .region.adsense,
@@ -294,7 +290,7 @@ img {
   background-color: #000;
   left: 0;
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 0 20px 10px;
   position: relative;
   width: 300px;
 }
@@ -342,7 +338,9 @@ label {
 }
 
 textarea,
+select,
 input[type=text],
+input[type=file],
 input[type=password] {
   background-color: #1d1e1d;
   border: 1px solid #404240;
@@ -360,10 +358,14 @@ input[type=password] {
 }
 
 textarea:active,
+select:active,
 input[type=text]:active,
+input[type=file]:active,
 input[type=password]:active,
 textarea:focus,
+select:focus,
 input[type=text]:focus,
+input[type=file]:focus,
 input[type=password]:focus {
   -moz-box-shadow: 0 0 10px rgba(223, 208, 108, .5);
   -webkit-box-shadow: 0 0 10px rgba(223, 208, 108, .5);
@@ -556,7 +558,8 @@ input[type=submit]:hover {
 */
 
 .view-featured-content .content-wrapper {
-  background-color: rgba(0, 0, 0, .75);
+  background: url('../images/transparent-black-50.png');
+  background: rgba(0, 0, 0, .75);
   bottom: 5px;
   left: 0;
   position: absolute;
@@ -622,6 +625,33 @@ input[type=submit]:hover {
   background-color: #f5f19d;
 }
 
+/*--- Pagen node ---*/
+
+.page-node .share-links {
+  display: block;
+  text-align: right;
+}
+
+.page-node .links-wrapper {
+  clear: both;
+  padding: 2em 0;
+}
+
+.page-node .share-links .fb-social-like-plugin,
+.page-node .share-links .tweetbutton {
+  margin: auto .5em auto 0;
+  width: auto;
+}
+
+.page-node ul.links {
+  line-height: 1.75em;
+  margin: 0 0 0 -.5em;
+}
+
+.page-node ul.links li {
+  padding: 0;
+}
+
 /*--- Frontpage articles ---*/
 
 #content .content .articles .article {
@@ -683,31 +713,6 @@ input[type=submit]:hover {
   border-bottom: 1px dashed #404240;
   margin: 0 0 2em;
   padding: 0 0 .75em;
-}
-
-.node-article .share-links {
-  display: block;
-  text-align: right;
-}
-
-.node-article .links-wrapper {
-  clear: both;
-  padding: 0 0 2em;
-}
-
-.node-article .share-links .fb-social-like-plugin,
-.node-article .share-links .tweetbutton {
-  margin: auto .5em auto 0;
-  width: auto;
-}
-
-.node-article ul.links {
-  line-height: 1.75em;
-  margin: 0 0 0 -.5em;
-}
-
-.node-article ul.links li {
-  padding: 0;
 }
 
 /* Twitter and Facebook button */
@@ -862,10 +867,11 @@ div.workbench-info-block {
 
 .sidebar-second .view .item-list ul li {
   background: none;
+  list-style: none;
   margin: 0 0 10px 45px;
 }
 
-.sidebar-second .view img {
+.sidebar-second .view .item-list img {
   margin: 5px 0 0 -55px;
   max-width: 45px;
   width: 45px;
@@ -1031,33 +1037,49 @@ div#views_infinite_scroll-ajax-loader {
 
 /*--- Gallery ---*/
 
-.field-name-field-page-gallery {
+.node .content-gallery {
   margin: 2em 0;
 }
 
-.field-name-field-page-gallery .field-label {
+.node .content-gallery .field-label {
   background: url('../images/common-pattern.png');
   display: block;
   margin: 0 0 1em;
   padding: 10px;
 }
 
-.field-name-field-page-gallery .field-items .field-item {
+.node .content-gallery .field-items .field-item {
   float: left;
-  margin: 0 1em 1em 0;
+
 }
 
-.field-name-field-page-gallery .field-items a {
+.grid-8 .node .content-gallery .field-items .field-item {
+  margin: 0 1.8em 1em 0;
+}
+
+.grid-8 .node .content-gallery .field-items .field-item:nth-of-type(5n+5) {
+  margin-right: 0;
+}
+
+.grid-9 .node .content-gallery .field-items .field-item {
+  margin: 0 1.06em 1em 0;
+}
+
+.grid-9 .node .content-gallery .field-items .field-item:nth-of-type(6n+6) {
+  margin-right: 0;
+}
+
+.node .content-gallery .field-items a {
   border: 3px solid #505050;
   float: left;
 }
 
-.node .field-name-field-page-gallery .field-items a:hover {
+.node .content-gallery .field-items a:hover {
   border: 3px solid #7e7e7e;
   margin: 0;
 }
 
-.field-name-field-page-gallery .field-items a img {
+.node .content-gallery .field-items a img {
   float: left;
 }
 

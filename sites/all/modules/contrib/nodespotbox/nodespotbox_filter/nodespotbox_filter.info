@@ -1,0 +1,15 @@
+name = Nodespotbox filter
+description = 
+package = Content
+core = 7.x
+dependencies[] = nodespotbox
+
+files[] = nodespotbox_filter.install
+files[] = nodespotbox_filter.module
+
+; Information added by drupal.org packaging script on 2011-11-29
+version = "7.x-1.4"
+core = "7.x"
+project = "nodespotbox"
+datestamp = "1322558159"
+

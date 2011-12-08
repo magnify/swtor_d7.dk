@@ -15,14 +15,14 @@ function swtor_upgrade_migrate_api() {
  * Implements hook_menu().
  */
 function swtor_upgrade_menu() {
-  $items['nuke'] = array(
-    'title' => 'Nuke the database',
-    'page callback'=> 'swtor_upgrade_nuke',
-    'access arguments' => array('administer site'),
-    'type'=> MENU_CALLBACK,
-  );
+//  $items['nuke'] = array(
+//    'title' => 'Nuke the database',
+//    'page callback'=> 'swtor_upgrade_nuke',
+//    'access arguments' => array('administer site'),
+//   'type'=> MENU_CALLBACK,
+//  );
 
-  return $items;
+//  return $items;
 }
 
 /**

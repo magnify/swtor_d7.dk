@@ -42,7 +42,8 @@ abstract class SwtorCommentMigration extends SwtorMigration {
          ->arguments($body_arguments);
 
     $this->addFieldMapping('created', 'timestamp');
-    $this->addFieldMapping('status', 'status')->defaultValue(COMMENT_PUBLISHED);
+    $this->addFieldMapping('status', 'status')
+         ->defaultValue(COMMENT_PUBLISHED);
 
      // Unmapped fields.
     $this->addFieldMapping(NULL, 'format')
@@ -51,8 +52,16 @@ abstract class SwtorCommentMigration extends SwtorMigration {
     // Unmapped destination fields
     $this->addUnmigratedDestinations(array('path','changed', 'language'));
   }
+
+  public function prepareRow($current_row) {
+    // Fix comment status as the meaning have be chagned from D6 to D7.
+    $current_row->status = $current_row->status ? 0 : 1;
+  }
 }
 
+/**
+ * Migrate article comments.
+ */
 class SwtorArticleCommentsMigration extends SwtorCommentMigration {
   public function __construct() {
     parent::__construct('comment_node_article', 'article_with_image', 'SwtorArticles');
@@ -64,6 +73,9 @@ class SwtorArticleCommentsMigration extends SwtorCommentMigration {
   }
 }
 
+/**
+ * Migrate forum comments.
+ */
 class SwtorForumCommentsMigration extends SwtorCommentMigration {
   public function __construct() {
     parent::__construct('comment_node_forum', 'forum', 'SwtorForum');
@@ -72,5 +84,23 @@ class SwtorForumCommentsMigration extends SwtorCommentMigration {
     $this->dependencies = array('SwtorUsers', 'SwtorForum');
 
     $this->description = 'Comments in forum';
+  }
+
+  public function postImport() {
+    parent::postImport();
+
+    // Fix the extra index that forum keeps on comments.
+    $query = db_select('comment', 'c')
+             ->fields('c', array('nid'))
+             ->groupBy('nid');
+    $query->join('forum_index', 'fi', 'c.nid = fi.nid');
+    $query->addExpression('COUNT(1)', 'comment_count');
+
+    $result = $query->execute();
+    while ($row = $result->fetchObject()) {
+      // Use the forums index updated function as it's some what complex
+      // process.
+      _forum_update_forum_index($row->nid);
+    }
   }
 }

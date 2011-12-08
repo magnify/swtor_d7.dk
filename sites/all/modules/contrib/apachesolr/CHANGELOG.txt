@@ -4,6 +4,27 @@ Apache Solr integration 7.x-1.x-xxxx, xxxx-xx-xx
 
 Apache Solr integration 7.x-1.0-xxxx, 2011-xx-xx
 ------------------------------
+
+Apache Solr integration 7.x-1.0-beta11, 2011-11-16
+------------------------------
+#1328886 by drasgardian, Nick_vh, pwolanin: fix for access module fails for realm names with spaces.
+#1340232 by milesw, Nick_vh: Added Did You Mean suggestions should be broken out from core search form.
+#1343646 by Nick_vh: Fixed Empty Search behavior is not working.
+#1301646 by Nick_vh: Fixed Coder Review + Drupal coding standard.
+#1097976 by Nick_vh, jpmckinney: Fixed Use ShowFileRequestHandler, gettableFiles is deprecated.
+#1342134 by Nick_vh: Fixed 'Creating default object from empty value" Notice in node access and indexing test.
+#1341860 by pwolanin: Fixed Notice: Undefined index: fq in apachesolr_search_conditions_default() (line 401 of apachesolr_search().module).
+#1053126 by jpmckinney, Nick_vh | pwolanin: Remove duplicate sort hooks in 7.x? follow-up.
+#1053126 by jpmckinney, Nick_vh | pwolanin: Remove duplicate sort hooks in 7.x?.
+#1341854 by pwolanin: Pass the query object into hooks altering search results.
+#1340552 by pwolanin: Make facet generation more flexible/overrideable.
+#1341840 by pwolanin: Fix for undefined index 'core_search' while running tests.
+#1271964 by Nick_vh | wmostrey: Fix for no way to delete content recommendation blocks.
+#1314406 by Nick_vh, scor: Fixed De-duplication of the apachesolr_search_execute() and apachesolr_search_user_defined_search_page().
+#1161538 by Nick_vh, pwolanin | domidc: Fixed The numeric field id should not be used for Solr index field names.
+#1333904 by Nick_vh | vrc3: Restore flexible 'results per page' option.
+#1161444 by Nick_vh | cpliakas: Modify Facet API field definitions to reflect API change for the 'query type" key.
+#1334216 by Nick_vh: Fixed Convert all static parameters to drupal_static().
 #1328854 by Josh Waihi: Added Tag cron database queries to allow modules to alter conditions of updating index table.
 #1323758 by Nick_vh | Frippuz: Fixed hook_apachesolr_process_results() make no impact on results.
 #1265124 by InternetDevels.Com: Fixed Not output pager in search results.
